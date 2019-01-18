@@ -18,97 +18,58 @@
 **Uwaga** Aby znaleźć w uruchomionej apce gdzie jest wasz plik nad którym pracujecie po prostu przeklikujcie i patrzcie kiedy nazwa pliku ukaże się w adresie.
 
 **@Dorota Gil** \
-        - [ ] zarządzanie ogólnym stylem graficznym aplikacji poprzez plik style.css(a co za tym idzie tło strony, czcionka nagłówka itp.) 
+        - [ ] zarządzanie ogólnym stylem graficznym aplikacji poprzez plik style.css(a co za tym idzie tło strony, czcionka nagłówka itp.) <br/>
+	- [ ] opracowanie navbara i stopki <br/>
+	- [ ] opracowanie poniższych plików *.cshtml  <br/>
 	
-		- [ ] opracowanie navbara i stopki 
-		
-		- [ ] opracowanie plików *.cshtml  
-		
 		  - [ ] Create_Zgloszenie.cshtml  
-		  
 		  - [ ] Create_Dokumentacja.cshtml 
-		  
 		  - [ ] Create_Personel.cshtml 
-		  
 		  - [ ] Create_Pozwolenie.cshtml 
-		  
 		  - [ ] Klient_Sukces.cshtml 
-		  
 		  - [ ] Index.cshtml 
-		  
-		  - [ ] Klienci.cshtml 
-		  
-		  - [ ] Pracownik.cshtml 
-		  
-		  - [ ] Pozwolenia.cshtml 
-		  
+		  - [ ] Klienci.cshtml   
+		  - [ ] Pracownik.cshtml  
+		  - [ ] Pozwolenia.cshtml  
 		  - [ ] Personel.cshtml 
-		  
-		  - [ ] Uczestnik_imprezy_Sukces.cshtml 
-		  
-		  - [ ] Uczestnik_imprezy_Create.cshtml 
-		  
-		  - [ ] Dokumentacja.cshtml 
-		  
+		  - [ ] Uczestnik_imprezy_Sukces.cshtml  
+		  - [ ] Uczestnik_imprezy_Create.cshtml   
+		  - [ ] Dokumentacja.cshtml   
 		  - [ ] Przelozony_Listaimprez.cshtml 
 		  
 **@Damian Gnatkowski** \
-        - [ ] spolszczenie aplikacji i wprowadzenie jednolitych nazw. np. przycisk powrotu na każdej stronie ma taką samą nazwę i oprawę graficzną 
-	
-		- [ ] kontrola działania przycisków (powiązanie ich tak aby działały zgodnie z zamierzeniem) 
-		
-		- [ ] opracowanie plików *.cshtml 
+        - [ ] spolszczenie aplikacji i wprowadzenie jednolitych nazw. np. przycisk powrotu na każdej stronie ma taką samą nazwę i oprawę graficzną <br/>
+	- [ ] kontrola działania przycisków (powiązanie ich tak aby działały zgodnie z zamierzeniem) <br/>
+	- [ ] opracowanie plików *.cshtml <br/>
 		
 		  - [ ] Details_Pracownik.cshtml 
-		  
 		  - [ ] Details_Przelozony.cshtml 
-		  
 		  - [ ] DetailsDokumentacja.cshtml  
-		  
 		  - [ ] DetailsPersonel.cshtml 
-		  
 		  - [ ] DetailsPozwolenia.cshtml  
-		  
 		  - [ ] Przelozony_Imprezy_Details.cshtml  
-		  
 		  - [ ] Imprezy_Details.cshtml 
-		  
 		  - [ ] EditUczestnik.cshtml 
-		  
 		  - [ ] EditPersonel.cshtml 
-		  
 		  - [ ] EditPozwolenie.cshtml 
-		  
 		  - [ ] Edit_Przelozony.cshtml 
-		  
 		  - [ ] EditDokumentacja.cshtml 
 
 **@Maciej Kozikowski** \
-        - [ ] testowanie funkcjonowania aplikacji i zgłaszanie usterek 
-		- [ ] opracowanie plików *.cshtml  
+        - [ ] testowanie funkcjonowania aplikacji i zgłaszanie usterek <br/>
+	- [ ] opracowanie poniższych plików *.cshtml  <br/>
 		
-		  - [ ] Delete_Przelozony.cshtml 
-		  
+		  - [ ] Delete_Przelozony.cshtml   
 		  - [ ] DeleteDokumentacja.cshtml 
-		  
 		  - [ ] DeletePersonel.cshtml 
-		  
 		  - [ ] DeletePozwolenie.cshtml 
-		  
 		  - [ ] DeleteUczestnik.cshtml 
-		  
 		  - [ ] Imprezy_Delete.cshtml 
-		  
 		  - [ ] Imprezy_Dostepne.cshtml 
-		  
 		  - [ ] Imprezy_Edit.cshtml 
-		  
 		  - [ ] Przelozony.cshtml 
-		  
 		  - [ ] Uczestnicy_Lista.cshtml
-		  
 		  - [ ] Uczestnik_imprezy.cshtml 
-		  
 		  - [ ] Zgloszenia_Przelozony.cshtml 
 
 
