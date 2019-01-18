@@ -1,0 +1,169 @@
+﻿@model crud.Models.Zgloszenia
+
+@{
+    <!-- tytul strony -->
+    ViewBag.Title = "Tytul strony";
+}
+
+<head>
+    <!-- zalaczenie biblioteki globalnej style.css -->
+    <link rel="Stylesheet" href="~/Content/style.css" type="text/css" />
+</head>
+
+<div class="naglowekStrony">
+    Szczegóły projektu
+</div>
+
+<div>
+    <h4>Zgloszenia</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.imie_nazwisko)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.imie_nazwisko)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.firma)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.firma)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nr_telefonu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nr_telefonu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.m_zamieszkania)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.m_zamieszkania)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nazwa_imprezy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nazwa_imprezy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rodzaj_tresc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rodzaj_tresc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.miejsce_realizacji)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.miejsce_realizacji)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.czas_trwania)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.czas_trwania)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cyklicznosc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cyklicznosc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.charakter_uczestnictwa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.charakter_uczestnictwa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.forma_organizacyjna)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.forma_organizacyjna)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cele)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cele)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.termin_odbycia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.termin_odbycia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ceny_bilet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ceny_bilet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dod_uslugi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dod_uslugi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.stanZgloszenia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.stanZgloszenia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dataOtrzymaniaZgloszenia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dataOtrzymaniaZgloszenia)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Pracownik")
+</p>

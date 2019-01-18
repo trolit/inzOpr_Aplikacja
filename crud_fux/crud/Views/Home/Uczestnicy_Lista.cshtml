@@ -1,0 +1,50 @@
+﻿@model IEnumerable<crud.Models.Uczestnik>
+
+@{
+    <!-- tytul strony -->
+    ViewBag.Title = "Tytul strony";
+}
+
+<head>
+    <!-- zalaczenie biblioteki globalnej style.css -->
+    <link rel="Stylesheet" href="~/Content/style.css" type="text/css" />
+</head>
+
+<div class="naglowekStrony">
+    Lista uczestników
+</div>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.imieNazwisko)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nrTelefonu)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.imieNazwisko)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nrTelefonu)
+            </td>
+            <td>
+                @Html.ActionLink("Zmień dane uczestnika", "EditUczestnik", new { id = item.idUczestnika }, new { @class = "btn btn-success" }) |
+                @Html.ActionLink("Usuń uczestnika", "DeleteUczestnik", new { id = item.idUczestnika }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+
+</table>
