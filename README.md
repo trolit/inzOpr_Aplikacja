@@ -72,7 +72,7 @@ Wykonanie w: ASP.NET MVC4 (VS 2017 Community)
 
 ## OGÓLNE ZASADY (JAK OPRACOWAĆ PLIKI)
 
-1. Przed zaczęciem pracy nad projektem róbcie "Pull" repozytorium bo może ktoś już coś zedytował (żebyście pracowali na najnowszej wersji)
+1. Przed zaczęciem pracy nad projektem róbcie "Pull" repozytorium bo może ktoś już coś zedytował (żebyście pracowali na najnowszej wersji). Jeżeli korzystacie z aplikacji to jak wejdziecie na repozytorium to kliknijcie "Refresh_repository" zeby zobaczyc czy nie ma nowych wstawek.
 2. Stosujcie się do konwencji interfejsu, który wykonaliśmy w dokumentacji aby było jednolicie u każdego.
 3. We fragmencie, który odpowiada za tytuł strony(nazwa którą widać w zakładce w przeglądarce), umieśćcie sensowny tytuł strony.
 4. Urozmaicajcie interfejs(np. ikonami, zdjęciami adekwatnymi do pliku, który ogarniacie).
@@ -92,6 +92,7 @@ Tu fotka jak ma wyglądać układ waszych stron
 6. **Nie usuwajcie bloku nagłówka z klasą** "naglowekStrony" aby @Dorota mogła zarządzać tym blokiem poprzez style.css
 7. Korzystajcie z dobroci Bootstrapa (jednak miejcie na uwadze ze mamy tu wersje 3.0.0)
 8. Nie zmieniajcie nazw plików żeby nie było konfliktów.
+9. Nie modyfikujcie elementów za które nie jesteście odpowiedzialni żeby nie robić konfliktów :)
 
 ### Sugestie 
 
