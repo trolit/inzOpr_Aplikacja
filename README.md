@@ -93,6 +93,8 @@ Tu fotka jak ma wyglądać układ waszych stron
 7. Korzystajcie z dobroci Bootstrapa (jednak miejcie na uwadze ze mamy tu wersje 3.0.0)
 8. Nie zmieniajcie nazw plików żeby nie było konfliktów.
 9. Nie modyfikujcie elementów za które nie jesteście odpowiedzialni żeby nie robić konfliktów :)
+10. Najlepiej testujcie swoje zmiany w przeglądarce "Chrome" żeby nie było potem niespodzianek że np. w Firefox nagłówek jest dziwny :PLIKI
+
 
 ### Sugestie 
 
