@@ -32,9 +32,9 @@ Ksiazki/Ksiazka=Zgloszenia
 
 IMPREZY
 KsiazkiEntities1=ImprezyEntities
-Ksiazki/Ksiazka=Zgloszenia
+Ksiazki/Ksiazka=Imprezy
 
 UCZESTNIK IMPREZY
-KsiazkiEntities1=ImprezyEntities
+KsiazkiEntities1=UczestnicyImprezEntities
 Ksiazki/Ksiazka=Zgloszenia
 
