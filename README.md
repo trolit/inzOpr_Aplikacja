@@ -75,7 +75,7 @@
 
 ## OGÓLNE ZASADY (JAK OPRACOWAĆ PLIKI)
 
-1. Przed zaczęciem pracy nad projektem **róbcie "Pull"** repozytorium bo może ktoś już coś zedytował (żebyście pracowali na najnowszej wersji). Jeżeli korzystacie z aplikacji to jak wejdziecie na repozytorium to kliknijcie "Refresh_repository" zeby zobaczyc czy nie ma nowych wstawek.
+1. Przed zaczęciem pracy nad projektem **róbcie "Pull"** repozytorium bo może ktoś już coś zedytował (żebyście pracowali na najnowszej wersji). Jeżeli korzystacie z aplikacji to jak wejdziecie na repozytorium to kliknijcie "Fetch origin" zeby zobaczyc czy nie ma nowych wstawek od kogos!.
 2. Stosujcie się do **konwencji interfejsu**, który wykonaliśmy w dokumentacji aby było jednolicie u każdego.
 3. We fragmencie, który odpowiada za tytuł strony(nazwa którą widać w zakładce w przeglądarce), umieśćcie sensowny tytuł strony.
 4. **Urozmaicajcie interfejs**(np. ikonami, zdjęciami adekwatnymi do pliku, który ogarniacie) ale bez przesady.
