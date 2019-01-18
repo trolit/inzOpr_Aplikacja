@@ -38,7 +38,7 @@
 		  - [ ] Przelozony_Listaimprez.cshtml 
 		  
 **@Damian Gnatkowski** \
-        - [ ] spolszczenie aplikacji i wprowadzenie jednolitych nazw. np. przycisk powrotu na każdej stronie ma taką samą nazwę i oprawę graficzną <br/>
+        - [ ] spolszczenie aplikacji(dotyczy to wszystkich plików cshtml), wprowadzenie jednolitych nazw. np. przycisk powrotu na każdej stronie ma taką samą nazwę i oprawę graficzną i zrobienie żeby w widokach z formularzami np. edycji Dokumentacji labelami(etykietami)nie były nazwy pól z tabeli a sensowny tekst(czyli zamiast np. nrTel to profesjonalnie: Numer telefonu) <br/>
 	- [ ] kontrola działania przycisków (powiązanie ich tak aby działały zgodnie z zamierzeniem) <br/>
 	- [ ] opracowanie plików *.cshtml <br/>
 		
@@ -101,7 +101,7 @@ Tu fotka jak ma wyglądać układ waszych stron
 
 ## Sugestie 
 
-**Uwaga** Jeżeli macie np. formularz to warto pomyśleć o dodaniu w inputach "value" 
+**Uwaga** Jeżeli macie np. formularz do "podkręcenia" to warto pomyśleć o dodaniu w inputach "value" (w jednym z inputow to zaimplementowalem i pisze np. bilet, np. przy Imie/nazwisko mogloby byc "Podaj imie i nazwisko..." etc) 
 (tu podpowiedź: [KLIKNIJ MNIE](https://stackoverflow.com/questions/6062528/html-editorfor-set-default-value) ) 
 
 **Uwaga** Jeżeli macie formularz to warto pomyśleć o sugestiach przy polach w formie ikonek znaków zapytania  - możemy je zrobić za pomocą tzw. tooltip w bootstrapie
