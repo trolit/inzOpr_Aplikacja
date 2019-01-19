@@ -8,9 +8,18 @@
 
 /* Pierwszy blok na każdej stronie będący tytułem strony - NIE USUWAC! */
 .naglowekStrony {
+    width: 100%;
+    margin: 0;
+    padding: 0;
     font-size: 35px;
     font-weight: bold;
-    background-color: gray;
+    background-color: #8f8f8f;
+    color:black;
+}
+
+body {
+    background-color: #454545;
+    color: white;
 }
 
 /* Klasa przycisków odpowiadających za powrót do poprzedniej strony - NIE USUWAC! */
