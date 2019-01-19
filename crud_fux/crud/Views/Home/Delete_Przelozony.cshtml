@@ -14,21 +14,20 @@
     Usunięcie zgłoszenia
 </div>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Jesteś pewien czy chcesz usunąć to zgłoszenie?</h3>
 <div>
-    <h4>Zgloszenia</h4>
     <hr />
-    <dl class="dl-horizontal">
+    <dl class="dl-horizontal col-md-12">
         <dt>
-            @Html.DisplayNameFor(model => model.imie_nazwisko)
+            Imię i nazwisko
         </dt>
-        t
+        
         <dd>
             @Html.DisplayFor(model => model.imie_nazwisko)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.firma)
+            Firma
         </dt>
 
         <dd>
@@ -36,7 +35,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.nr_telefonu)
+            Numer telefonu
         </dt>
 
         <dd>
@@ -44,7 +43,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.mail)
+            Mail
         </dt>
 
         <dd>
@@ -52,7 +51,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.m_zamieszkania)
+            Aktualne miejsce zamieszkania
         </dt>
 
         <dd>
@@ -60,7 +59,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.nazwa_imprezy)
+            Nazwa imprezy masowej
         </dt>
 
         <dd>
@@ -68,7 +67,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.rodzaj_tresc)
+            Rodzaj/treść
         </dt>
 
         <dd>
@@ -76,7 +75,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.miejsce_realizacji)
+            Proponowane miejsce realizacji
         </dt>
 
         <dd>
@@ -84,7 +83,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.czas_trwania)
+            Czas trwania
         </dt>
 
         <dd>
@@ -92,7 +91,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.cyklicznosc)
+            Cykliczność
         </dt>
 
         <dd>
@@ -100,7 +99,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.charakter_uczestnictwa)
+            Charakter uczestnictwa
         </dt>
 
         <dd>
@@ -108,7 +107,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.forma_organizacyjna)
+            Forma organizacyjna
         </dt>
 
         <dd>
@@ -116,7 +115,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.cele)
+            Cele
         </dt>
 
         <dd>
@@ -124,7 +123,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.termin_odbycia)
+            Proponowany termin odbycia imprezy
         </dt>
 
         <dd>
@@ -132,7 +131,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ceny_bilet)
+            Ceny biletów
         </dt>
 
         <dd>
@@ -140,7 +139,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.dod_uslugi)
+            Dodatkowe usługi
         </dt>
 
         <dd>
@@ -148,7 +147,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.stanZgloszenia)
+            Stan zgłoszenia
         </dt>
 
         <dd>
@@ -156,7 +155,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.dataOtrzymaniaZgloszenia)
+            Data otrzymania zgłoszenia
         </dt>
 
         <dd>
@@ -170,8 +169,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Zgloszenia_Przelozony")
+            @Html.ActionLink("Wróć", "Zgloszenia_Przelozony", null, null, new { @class = "btn btn-primary btn-md przyciskPowrot" })
+            <input type="submit" value="Usuń" class="btn btn-danger" />
         </div>
     }
 </div>

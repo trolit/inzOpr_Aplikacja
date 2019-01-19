@@ -25,7 +25,7 @@
         @Html.HiddenFor(model => model.idDokumentu)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.nazwaDokumentu, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Nazwa dokumentu", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.nazwaDokumentu, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.nazwaDokumentu, "", new { @class = "text-danger" })
@@ -33,7 +33,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.czyUkonczony, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Czy ukończony?", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.czyUkonczony)
@@ -44,14 +44,14 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Zapisz" class="btn btn-success" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Dokumentacja")
+    @Html.ActionLink("Wróć", "Dokumentacja", null, null, new { @class = "btn btn-primary btn-md przyciskPowrot" })
 </div>
 
 @section Scripts {

@@ -17,22 +17,22 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.nazwaImprezy)
+            Nazwa imprezy
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.miejsce)
+            Miejsce
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.czasTrwania)
+            Czas trwania
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.charakterUczestnictwa)
+            Charakter uczestnictwa
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.cenaBiletu)
+            Ceny biletów
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.liczbaUczestnikow)
+            Liczba uczestników
         </th>
         <th></th>
     </tr>
@@ -59,10 +59,11 @@
                 @Html.DisplayFor(modelItem => item.liczbaUczestnikow)
             </td>
             <td>
-                @Html.ActionLink("Zapisz mnie!", "Uczestnik_imprezy_Create", new { id = item.idImpreza }, new { @class = "btn btn-success" }) |
-                @Html.ActionLink("Szczegóły imprezy", "Imprezy_Details", new { id = item.idImpreza }, new { @class = "btn btn-warning" })
+                @Html.ActionLink("Zapisz mnie!", "Uczestnik_imprezy_Create", new { id = item.idImpreza }, new { @class = "btn btn-success" })
+                @Html.ActionLink("Szczegóły imprezy", "Imprezy_Details", new { id = item.idImpreza }, new { @class = "btn btn-info" })
             </td>
         </tr>
     }
 
 </table>
+<input type="button" value="Powrót" class="btn btn-primary btn-lg" onclick="window.location='@Url.Action("Klienci", "Home")'" />

@@ -14,13 +14,12 @@
     Usunięcie wpisu z dokumentacją
 </div>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Jesteś pewien czy chcesz usunąć tę dokumentację?</h3>
 <div>
-    <h4>Dokumentacja</h4>
     <hr />
-    <dl class="dl-horizontal">
+    <dl class="dl-horizontal col-md-12">
         <dt>
-            @Html.DisplayNameFor(model => model.nazwaDokumentu)
+            Nazwa dokumentu
         </dt>
 
         <dd>
@@ -28,7 +27,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.czyUkonczony)
+            Czy ukończony?
         </dt>
 
         <dd>
@@ -41,9 +40,9 @@
     {
         @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Dokumentacja")
-        </div>
+    <div class="form-actions no-color">
+        @Html.ActionLink("Wróć", "Dokumentacja", null, null, new { @class = "btn btn-primary btn-md przyciskPowrot" })
+        <input type="submit" value="Usuń" class="btn btn-danger" />
+    </div>
     }
 </div>

@@ -6,9 +6,9 @@
 ###########################################################################
 
 **Autorzy:**
-* Paweł Idzikowski (backend)
-* Dorota Gil (frontend)
-* Damian Gnatkowski (frontend, tłumaczenie)
+* Paweł Idzikowski (backend, testowanie)
+* Dorota Gil (frontend, testowanie)
+* Damian Gnatkowski (frontend, tłumaczenie, testowanie)
 * Maciej Kozikowski (frontend, testowanie)
 
 ** Wykonanie w ** ASP.NET MVC4 (VS 2017 Community)
@@ -19,7 +19,7 @@
 
 **@Dorota Gil** \
         - [ ] zarządzanie ogólnym stylem graficznym aplikacji poprzez plik style.css(a co za tym idzie tło strony, czcionka nagłówka itp.) <br/>
-	- [ ] opracowanie navbara i stopki <br/>
+	- [X] opracowanie navbara i stopki <br/>
 	- [ ] opracowanie poniższych plików *.cshtml  <br/>
 	
 		  - [ ] Create_Zgloszenie.cshtml  
@@ -27,7 +27,7 @@
 		  - [ ] Create_Personel.cshtml 
 		  - [ ] Create_Pozwolenie.cshtml 
 		  - [ ] Klient_Sukces.cshtml 
-		  - [ ] Index.cshtml 
+		  - [X] Index.cshtml 
 		  - [ ] Klienci.cshtml   
 		  - [ ] Pracownik.cshtml  
 		  - [ ] Pozwolenia.cshtml  
@@ -36,6 +36,7 @@
 		  - [ ] Uczestnik_imprezy_Create.cshtml   
 		  - [ ] Dokumentacja.cshtml   
 		  - [ ] Przelozony_Listaimprez.cshtml 
+		  - [ ] Przelozony.cshtml (nowe)
 		  
 **@Damian Gnatkowski** \
         - [ ] spolszczenie aplikacji(dotyczy to wszystkich plików cshtml), wprowadzenie jednolitych nazw. np. przycisk powrotu na każdej stronie ma taką samą nazwę i oprawę graficzną i zrobienie żeby w widokach z formularzami np. edycji Dokumentacji labelami(etykietami)nie były nazwy pól z tabeli a sensowny tekst(czyli zamiast np. nrTel to profesjonalnie: Numer telefonu) <br/>
@@ -67,7 +68,7 @@
 		  - [ ] Imprezy_Delete.cshtml 
 		  - [ ] Imprezy_Dostepne.cshtml 
 		  - [ ] Imprezy_Edit.cshtml 
-		  - [ ] Przelozony.cshtml 
+		  - [ ] -----------------------
 		  - [ ] Uczestnicy_Lista.cshtml
 		  - [ ] Uczestnik_imprezy.cshtml 
 		  - [ ] Zgloszenia_Przelozony.cshtml 
@@ -93,7 +94,7 @@ Tu fotka jak ma wyglądać układ waszych stron
 ![Error](https://github.com/trolit/inzOpr_Aplikacja/blob/master/images/example.PNG)
 
 6. **Nie usuwajcie bloku nagłówka z klasą** "naglowekStrony" aby @Dorota mogła zarządzać tym blokiem poprzez style.css
-7. Korzystajcie z dobroci Bootstrapa (jednak miejcie na uwadze ze mamy tu wersje 3.0.0)
+7. Korzystajcie z dobroci Bootstrapa (~~jednak miejcie na uwadze ze mamy tu wersje 3.0.0~~)
 8. **Nie zmieniajcie nazw plików żeby nie było konfliktów**.
 9. Nie modyfikujcie elementów za które nie jesteście odpowiedzialni żeby nie robić konfliktów :)
 10. Najlepiej **testujcie swoje zmiany w przeglądarce "Chrome"** żeby nie było potem niespodzianek że np. w Firefox nagłówek jest dziwny :PLIKI
