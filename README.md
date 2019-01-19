@@ -18,71 +18,69 @@
 **Uwaga** Aby znaleźć w uruchomionej apce gdzie jest wasz plik nad którym pracujecie po prostu przeklikujcie i patrzcie kiedy nazwa pliku ukaże się w adresie.
 
 **@Dorota Gil** \
-        - [ ] zarządzanie ogólnym stylem graficznym aplikacji poprzez plik style.css(a co za tym idzie tło strony, czcionka nagłówka itp.) <br/>
+        - [X] zarządzanie ogólnym stylem graficznym aplikacji poprzez plik style.css(a co za tym idzie tło strony, czcionka nagłówka itp.) <br/>
 	- [X] opracowanie navbara i stopki <br/>
-	- [ ] opracowanie poniższych plików *.cshtml  <br/>
+	- [X] opracowanie poniższych plików *.cshtml  <br/>
 	
-		  - [ ] Create_Zgloszenie.cshtml  
-		  - [ ] Create_Dokumentacja.cshtml 
-		  - [ ] Create_Personel.cshtml 
-		  - [ ] Create_Pozwolenie.cshtml 
-		  - [ ] Klient_Sukces.cshtml 
+		  - [X] Create_Zgloszenie.cshtml  
+		  - [X] Create_Dokumentacja.cshtml 
+		  - [X] Create_Personel.cshtml 
+		  - [X] Create_Pozwolenie.cshtml 
+		  - [X] Klient_Sukces.cshtml 
 		  - [X] Index.cshtml 
-		  - [ ] Klienci.cshtml   
-		  - [ ] Pracownik.cshtml  
-		  - [ ] Pozwolenia.cshtml  
-		  - [ ] Personel.cshtml 
-		  - [ ] Uczestnik_imprezy_Sukces.cshtml  
-		  - [ ] Uczestnik_imprezy_Create.cshtml   
-		  - [ ] Dokumentacja.cshtml   
-		  - [ ] Przelozony_Listaimprez.cshtml 
-		  - [ ] Przelozony.cshtml (nowe)
+		  - [X] Klienci.cshtml   
+		  - [X] Pracownik.cshtml  
+		  - [X] Pozwolenia.cshtml  
+		  - [X] Personel.cshtml 
+		  - [X] Uczestnik_imprezy_Sukces.cshtml  
+		  - [X] Uczestnik_imprezy_Create.cshtml   
+		  - [X] Dokumentacja.cshtml   
+		  - [X] Przelozony_Listaimprez.cshtml 
+		  - [X] Przelozony.cshtml ~~(nowe)~~
 		  
 **@Damian Gnatkowski** \
-        - [ ] spolszczenie aplikacji(dotyczy to wszystkich plików cshtml), wprowadzenie jednolitych nazw. np. przycisk powrotu na każdej stronie ma taką samą nazwę i oprawę graficzną i zrobienie żeby w widokach z formularzami np. edycji Dokumentacji labelami(etykietami)nie były nazwy pól z tabeli a sensowny tekst(czyli zamiast np. nrTel to profesjonalnie: Numer telefonu) <br/>
-	- [ ] kontrola działania przycisków (powiązanie ich tak aby działały zgodnie z zamierzeniem) <br/>
-	- [ ] opracowanie plików *.cshtml <br/>
+        - [X] spolszczenie aplikacji(dotyczy to wszystkich plików cshtml), wprowadzenie jednolitych nazw. np. przycisk powrotu na każdej stronie ma taką samą nazwę i oprawę graficzną i zrobienie żeby w widokach z formularzami np. edycji Dokumentacji labelami(etykietami)nie były nazwy pól z tabeli a sensowny tekst(czyli zamiast np. nrTel to profesjonalnie: Numer telefonu) <br/>
+	- [X] kontrola działania przycisków (powiązanie ich tak aby działały zgodnie z zamierzeniem) <br/>
+	- [X] opracowanie plików *.cshtml <br/>
 		
-		  - [ ] Details_Pracownik.cshtml 
-		  - [ ] Details_Przelozony.cshtml 
-		  - [ ] DetailsDokumentacja.cshtml  
-		  - [ ] DetailsPersonel.cshtml 
-		  - [ ] DetailsPozwolenia.cshtml  
-		  - [ ] Przelozony_Imprezy_Details.cshtml  
-		  - [ ] Imprezy_Details.cshtml 
-		  - [ ] EditUczestnik.cshtml 
-		  - [ ] EditPersonel.cshtml 
-		  - [ ] EditPozwolenie.cshtml 
-		  - [ ] Edit_Przelozony.cshtml 
-		  - [ ] EditDokumentacja.cshtml 
+		  - [X] Details_Pracownik.cshtml 
+		  - [X] Details_Przelozony.cshtml 
+		  - [X] DetailsDokumentacja.cshtml  
+		  - [X] DetailsPersonel.cshtml 
+		  - [X] DetailsPozwolenia.cshtml  
+		  - [X] Przelozony_Imprezy_Details.cshtml  
+		  - [X] Imprezy_Details.cshtml 
+		  - [X] EditUczestnik.cshtml 
+		  - [X] EditPersonel.cshtml 
+		  - [X] EditPozwolenie.cshtml 
+		  - [X] Edit_Przelozony.cshtml 
+		  - [X] EditDokumentacja.cshtml 
 
 **@Maciej Kozikowski** \
-        - [ ] testowanie funkcjonowania aplikacji i zgłaszanie usterek <br/>
-	- [ ] opracowanie poniższych plików *.cshtml  <br/>
+        - [X] testowanie funkcjonowania aplikacji i zgłaszanie usterek <br/>
+	- [X] opracowanie poniższych plików *.cshtml  <br/>
 		
-		  - [ ] Delete_Przelozony.cshtml   
-		  - [ ] DeleteDokumentacja.cshtml 
-		  - [ ] DeletePersonel.cshtml 
-		  - [ ] DeletePozwolenie.cshtml 
-		  - [ ] DeleteUczestnik.cshtml 
-		  - [ ] Imprezy_Delete.cshtml 
-		  - [ ] Imprezy_Dostepne.cshtml 
-		  - [ ] Imprezy_Edit.cshtml 
-		  - [ ] -----------------------
-		  - [ ] Uczestnicy_Lista.cshtml
-		  - [ ] Uczestnik_imprezy.cshtml 
-		  - [ ] Zgloszenia_Przelozony.cshtml 
+		  - [X] Delete_Przelozony.cshtml   
+		  - [X] DeleteDokumentacja.cshtml 
+		  - [X] DeletePersonel.cshtml 
+		  - [X] DeletePozwolenie.cshtml 
+		  - [X] DeleteUczestnik.cshtml 
+		  - [X] Imprezy_Delete.cshtml 
+		  - [X] Imprezy_Dostepne.cshtml 
+		  - [X] Imprezy_Edit.cshtml 
+		  - [X] -----------------------
+		  - [X] Uczestnicy_Lista.cshtml
+		  - [X] Uczestnik_imprezy.cshtml 
+		  - [X] Zgloszenia_Przelozony.cshtml 
 
 
 ## OGÓLNE ZASADY (JAK OPRACOWAĆ PLIKI)
 
-1. Przed zaczęciem pracy nad projektem **róbcie "Pull"** repozytorium bo może ktoś już coś zedytował (żebyście pracowali na najnowszej wersji). Jeżeli korzystacie z aplikacji to jak wejdziecie na repozytorium to kliknijcie "Fetch origin" zeby zobaczyc czy nie ma nowych wstawek od kogos!.
-2. Stosujcie się do **konwencji interfejsu**, który wykonaliśmy w dokumentacji aby było jednolicie u każdego.
+1. Pull'am.
+2. ~~Stosujcie się do **konwencji interfejsu z projektu**.~~
 3. We fragmencie, który odpowiada za tytuł strony(nazwa którą widać w zakładce w przeglądarce), umieśćcie sensowny tytuł strony.
-4. **Urozmaicajcie interfejs**(np. ikonami, zdjęciami adekwatnymi do pliku, który ogarniacie) ale bez przesady.
+4. **Urozmaicajcie interfejs**(np. ikonami, zdjęciami adekwatnymi do pliku) ale bez przesady.
 5. Zgodnie z projektem interfejsu **podstawowe elementy, które mają znaleźć się w waszych plikach** to:
-a) nagłówek strony
-b) treść strony
 c) przycisk powrotu do poprzedniego okna (przycisk powinien być jednolity wszędzie zatem rzucam tu kodem
 aby wrzucić przycisk(@Damian): 
 
@@ -90,22 +88,6 @@ aby wrzucić przycisk(@Damian):
 
 ** Szczególnie zwróć tu **@Damian** uwagę aby każdy przycisk który działa jako powrót do poprzedniej strony miał klasę "przyciskPowrot" żeby można było łatwiej tym zarządzać. **
 
-Tu fotka jak ma wyglądać układ waszych stron
-![Error](https://github.com/trolit/inzOpr_Aplikacja/blob/master/images/example.PNG)
-
 6. **Nie usuwajcie bloku nagłówka z klasą** "naglowekStrony" aby @Dorota mogła zarządzać tym blokiem poprzez style.css
 7. Korzystajcie z dobroci Bootstrapa (~~jednak miejcie na uwadze ze mamy tu wersje 3.0.0~~)
 8. **Nie zmieniajcie nazw plików żeby nie było konfliktów**.
-9. Nie modyfikujcie elementów za które nie jesteście odpowiedzialni żeby nie robić konfliktów :)
-10. Najlepiej **testujcie swoje zmiany w przeglądarce "Chrome"** żeby nie było potem niespodzianek że np. w Firefox nagłówek jest dziwny :PLIKI
-
-
-## Sugestie 
-
-**Uwaga** Jeżeli macie np. formularz do "podkręcenia" to warto pomyśleć o dodaniu w inputach "value" (w jednym z inputow to zaimplementowalem i pisze np. bilet, np. przy Imie/nazwisko mogloby byc "Podaj imie i nazwisko..." etc) 
-(tu podpowiedź: [KLIKNIJ MNIE](https://stackoverflow.com/questions/6062528/html-editorfor-set-default-value) ) 
-
-**Uwaga** Jeżeli macie formularz to warto pomyśleć o sugestiach przy polach w formie ikonek znaków zapytania  - możemy je zrobić za pomocą tzw. tooltip w bootstrapie
-(tu zobaczycie jak to wygląda: [KLIKNIJ MNIE](https://www.w3schools.com/bootstrap/bootstrap_tooltip.asp) ) 
-
-**Uwaga** Może formularz dać wewnątrz karty? :) (link: [KLIKNIJ MNIE](https://getbootstrap.com/docs/4.0/components/card/) ) 
