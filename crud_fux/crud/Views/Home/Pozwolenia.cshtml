@@ -15,35 +15,36 @@
 </div>
 
 <p>
-    @Html.ActionLink("Utwórz nowy wpis", "CreatePozwolenie", new { @class = "btn btn-primary" })
+    @Html.ActionLink("Utwórz nowy wpis", "CreatePozwolenie", null, null, new { @class = "btn btn-primary" })
 </p>
 
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.nazwa)
+            Nazwa
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.czyZdobyte)
+            Czy zdobyte?
         </th>
         <th></th>
     </tr>
 
     @foreach (var item in Model)
     {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.nazwa)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.czyZdobyte)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "EditPozwolenie", new { id = item.idPozwolenia }) |
-            @Html.ActionLink("Details", "DetailsPozwolenia", new { id = item.idPozwolenia }) |
-            @Html.ActionLink("Delete", "DeletePozwolenie", new { id = item.idPozwolenia })
-        </td>
-    </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nazwa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.czyZdobyte)
+            </td>
+            <td>
+                @Html.ActionLink("Edytuj", "EditPozwolenie", new { id = item.idPozwolenia }, new { @class = "btn btn-primary" })
+                @Html.ActionLink("Szczegóły", "DetailsPozwolenia", new { id = item.idPozwolenia }, new { @class = "btn btn-info" })
+                @Html.ActionLink("Usuń", "DeletePozwolenie", new { id = item.idPozwolenia }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
     }
 
 </table>
+@Html.ActionLink("Wróć", "Pracownik", null, null, new { @class = "btn btn-primary" })

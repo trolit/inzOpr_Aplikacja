@@ -15,7 +15,7 @@
 </div>
 
 <p>
-    @Html.ActionLink("Stwórz nową", "CreateDokumentacja", null, null, new { @class = "btn btn-success" })
+    @Html.ActionLink("Stwórz nową", "CreateDokumentacja", null, null, new { @class = "btn btn-primary" })
 </p>
 <table class="table">
     <tr>
@@ -38,7 +38,7 @@
                 @Html.DisplayFor(modelItem => item.czyUkonczony)
             </td>
             <td>
-                @Html.ActionLink("Edytuj", "EditDokumentacja", null, new { id = item.idDokumentu }, new { @class = "btn btn-success" })
+                @Html.ActionLink("Edytuj", "EditDokumentacja", null, new { id = item.idDokumentu }, new { @class = "btn btn-primary" })
                 @Html.ActionLink("Szczegóły", "DetailsDokumentacja", null, new { id = item.idDokumentu }, new { @class = "btn btn-info" })
                 @Html.ActionLink("Usuń", "DeleteDokumentacja", null, new { id = item.idDokumentu }, new { @class = "btn btn-danger" })
             </td>
