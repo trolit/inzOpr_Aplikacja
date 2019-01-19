@@ -20,7 +20,7 @@
             Imię i nazwisko
         </th>
         <th>
-            E-mail
+            Mail
         </th>
         <th>
             Numer telefonu
@@ -41,12 +41,11 @@
                 @Html.DisplayFor(modelItem => item.nrTelefonu)
             </td>
             <td>
-                @Html.ActionLink("Zmień dane uczestnika", "EditUczestnik", new { id = item.idUczestnika }, new { @class = "btn btn-success" }) |
+                @Html.ActionLink("Zmień dane uczestnika", "EditUczestnik", new { id = item.idUczestnika }, new { @class = "btn btn-primary" })
                 @Html.ActionLink("Usuń uczestnika", "DeleteUczestnik", new { id = item.idUczestnika }, new { @class = "btn btn-danger" })
             </td>
         </tr>
     }
 
 </table>
-
-<input type="button" value="Powrót" class="btn btn-primary btn-lg" onclick="window.location='@Url.Action("Przelozony_Listaimprez", "Home")'" />
+@Html.ActionLink("Wróć", "Przelozony_Listaimprez", null, null, new { @class = "btn btn-primary" })

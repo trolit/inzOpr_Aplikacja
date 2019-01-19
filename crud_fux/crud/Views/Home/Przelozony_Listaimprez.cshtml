@@ -14,22 +14,19 @@
     Lista dostępnych imprez
 </div>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.nazwaImprezy)
+            Nazwa imprezy
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.rodzaj)
+            Rodzaj/treść
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.miejsce)
+            Miejsce
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.liczbaUczestnikow)
+            Liczba uczestników
         </th>
         <th></th>
     </tr>
@@ -50,12 +47,13 @@
                 @Html.DisplayFor(modelItem => item.liczbaUczestnikow)
             </td>
             <td>
-                @Html.ActionLink("Edytuj szczegóły", "Imprezy_Edit", new { id = item.idImpreza }, new { @class = "btn btn-success" }) |
-                @Html.ActionLink("Szczegóły imprezy", "Przelozony_Imprezy_Details", new { id = item.idImpreza }, new { @class = "btn btn-warning" }) |
-                @Html.ActionLink("Lista uczestników", "Uczestnicy_Lista", new { id = item.idImpreza }, new { @class = "btn btn-primary" }) |
-                @Html.ActionLink("Usuń impreze", "Imprezy_Delete", new { id = item.idImpreza }, new { @class = "btn btn-danger" })
+                @Html.ActionLink("Edytuj szczegóły", "Imprezy_Edit", new { id = item.idImpreza }, new { @class = "btn btn-primary" }) 
+                @Html.ActionLink("Szczegóły imprezy", "Przelozony_Imprezy_Details", new { id = item.idImpreza }, new { @class = "btn btn-info" }) 
+                @Html.ActionLink("Lista uczestników", "Uczestnicy_Lista", new { id = item.idImpreza }, new { @class = "btn btn-primary" }) 
+                @Html.ActionLink("Usuń imprezę", "Imprezy_Delete", new { id = item.idImpreza }, new { @class = "btn btn-danger" })
             </td>
         </tr>
     }
 
 </table>
+@Html.ActionLink("Wróć", "Przelozony", null, null, new { @class = "btn btn-primary" })

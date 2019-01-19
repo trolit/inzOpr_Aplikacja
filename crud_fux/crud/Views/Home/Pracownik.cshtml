@@ -36,29 +36,30 @@
 
     @foreach (var item in Model)
     {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.idOferty)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.imie_nazwisko)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.nr_telefonu)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.mail)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.stanZgloszenia)
-        </td>
-        <td>
-            @Html.ActionLink("Pozwolenia", "Pozwolenia", new { id = item.idOferty }, new { @class = "btn btn-primary" }) |
-            @Html.ActionLink("Personel", "Personel", new { id = item.idOferty }, new { @class = "btn btn-primary" }) |
-            @Html.ActionLink("Dokumentacja", "Dokumentacja", new { id = item.idOferty }, new { @class = "btn btn-primary" }) |
-            @Html.ActionLink("Szczegóły", "Details_Pracownik", new { id = item.idOferty }, new { @class = "btn btn-primary" })
-        </td>
-    </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.idOferty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.imie_nazwisko)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nr_telefonu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.mail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.stanZgloszenia)
+            </td>
+            <td>
+                @Html.ActionLink("Pozwolenia", "Pozwolenia", new { id = item.idOferty }, new { @class = "btn btn-primary" }) |
+                @Html.ActionLink("Personel", "Personel", new { id = item.idOferty }, new { @class = "btn btn-primary" }) |
+                @Html.ActionLink("Dokumentacja", "Dokumentacja", new { id = item.idOferty }, new { @class = "btn btn-primary" }) |
+                @Html.ActionLink("Szczegóły", "Details_Pracownik", new { id = item.idOferty }, new { @class = "btn btn-primary" })
+            </td>
+        </tr>
     }
 
 </table>
+@Html.ActionLink("Wróć", "Index", null, null, new { @class = "btn btn-primary" })

@@ -24,7 +24,7 @@
         @Html.HiddenFor(model => model.idImpreza)
 
         <div class="form-group">
-            <div class="col-md-2">Nazwa imprezy</div>
+            @Html.Label("Nazwa imprezy", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.nazwaImprezy, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.nazwaImprezy, "", new { @class = "text-danger" })
@@ -32,7 +32,7 @@
         </div>
 
         <div class="form-group">
-            <div class="col-md-2">Rodzaj</div>
+            @Html.Label("Rodzaj/treść", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.rodzaj, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.rodzaj, "", new { @class = "text-danger" })
@@ -40,7 +40,7 @@
         </div>
 
         <div class="form-group">
-            <div class="col-md-2">Miejsce</div>
+            @Html.Label("Proponowane miejsce realizacji", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.miejsce, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.miejsce, "", new { @class = "text-danger" })
@@ -48,7 +48,7 @@
         </div>
 
         <div class="form-group">
-            <div class="col-md-2">Czas trwania</div>
+            @Html.Label("Czas trwania", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.czasTrwania, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.czasTrwania, "", new { @class = "text-danger" })
@@ -56,7 +56,7 @@
         </div>
 
         <div class="form-group">
-            <div class="col-md-2">Cykliczność</div>
+            @Html.Label("Cykliczność", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.cyklicznosc, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.cyklicznosc, "", new { @class = "text-danger" })
@@ -64,7 +64,7 @@
         </div>
 
         <div class="form-group">
-            <div class="col-md-2">Charakter uczestnictwa</div>
+            @Html.Label("Charakter uczestnictwa", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.charakterUczestnictwa, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.charakterUczestnictwa, "", new { @class = "text-danger" })
@@ -72,7 +72,7 @@
         </div>
 
         <div class="form-group">
-            <div class="col-md-2">Forma organizacyjna</div>
+            @Html.Label("Forma organizacyjna", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.formaOrganizacyjna, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.formaOrganizacyjna, "", new { @class = "text-danger" })
@@ -80,7 +80,7 @@
         </div>
 
         <div class="form-group">
-            <div class="col-md-2">Cena biltu</div>
+            @Html.Label("Cena biletów", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.cenaBiletu, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.cenaBiletu, "", new { @class = "text-danger" })
@@ -88,7 +88,7 @@
         </div>
 
         <div class="form-group">
-            <div class="col-md-2">Liczba uczestników</div>
+            @Html.Label("Liczba uczestników", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.liczbaUczestnikow, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.liczbaUczestnikow, "", new { @class = "text-danger" })
@@ -96,8 +96,7 @@
         </div>
 
         <div class="form-group">
-            <div class="col-md-2">Identyfikator porównania</div>
-            
+            @Html.Label("Identyfikator porównania", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.identyfikatorPorownania, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.identyfikatorPorownania, "", new { @class = "text-danger" })
@@ -106,13 +105,15 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-success btn-lg" />
-                <input type="button" value="Powrót" class="btn btn-primary btn-lg" onclick="window.location='@Url.Action("Przelozony_Listaimprez", "Home")'" />
+                <input type="submit" value="Zapisz" class="btn btn-success" />
             </div>
         </div>
     </div>
 }
 
+<div>
+    @Html.ActionLink("Wróć", "Przelozony_Listaimprez", null, null, new { @class = "btn btn-primary btn-md przyciskPowrot" })
+</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

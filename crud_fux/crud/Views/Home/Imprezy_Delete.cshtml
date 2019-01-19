@@ -14,7 +14,7 @@
     Usuwanie imprezy
 </div>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Jesteś pewien czy chcesz usunąć tę imprezę?</h3>
 <div>
     <hr />
     <dl class="dl-horizontal">
@@ -27,7 +27,7 @@
         </dd>
 
         <dt>
-            Rodzaj
+            Rodzaj/treść
         </dt>
 
         <dd>
@@ -35,7 +35,7 @@
         </dd>
 
         <dt>
-            Miejsce
+            Proponowane miejsce realizacji
         </dt>
 
         <dd>
@@ -75,7 +75,7 @@
         </dd>
 
         <dt>
-            Cena biletu
+            Ceny biletów
         </dt>
 
         <dd>
@@ -105,8 +105,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-success btn-lg" /> |
-            <input type="button" value="Powrót" class="btn btn-primary btn-lg" onclick="window.location='@Url.Action("Przelozony_Listaimprez", "Home")'" />
+            @Html.ActionLink("Wróć", "Przelozony_Listaimprez", null, null, new { @class = "btn btn-primary btn-md przyciskPowrot" })
+            <input type="submit" value="Usuń" class="btn btn-danger" />
         </div>
     }
 </div>

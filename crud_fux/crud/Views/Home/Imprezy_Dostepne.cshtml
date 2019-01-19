@@ -29,7 +29,7 @@
             Charakter uczestnictwa
         </th>
         <th>
-            Cena biletu
+            Ceny biletów
         </th>
         <th>
             Liczba uczestników
@@ -59,8 +59,8 @@
                 @Html.DisplayFor(modelItem => item.liczbaUczestnikow)
             </td>
             <td>
-                @Html.ActionLink("Zapisz mnie!", "Uczestnik_imprezy_Create", new { id = item.idImpreza }, new { @class = "btn btn-success" }) |
-                @Html.ActionLink("Szczegóły imprezy", "Imprezy_Details", new { id = item.idImpreza }, new { @class = "btn btn-warning" })
+                @Html.ActionLink("Zapisz mnie!", "Uczestnik_imprezy_Create", new { id = item.idImpreza }, new { @class = "btn btn-success" })
+                @Html.ActionLink("Szczegóły imprezy", "Imprezy_Details", new { id = item.idImpreza }, new { @class = "btn btn-info" })
             </td>
         </tr>
     }

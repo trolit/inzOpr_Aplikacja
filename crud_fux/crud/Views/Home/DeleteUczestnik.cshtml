@@ -27,7 +27,7 @@
         </dd>
 
         <dt>
-            E-mail
+            Mail
         </dt>
 
         <dd>
@@ -48,9 +48,9 @@
     {
         @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-success btn-lg" /> |
-            @Html.ActionLink("Back to List", "Uczestnicy_Lista")
-        </div>
+    <div class="form-actions no-color">
+        @Html.ActionLink("Wróć", "Uczestnicy_Lista", null, null, new { @class = "btn btn-primary btn-md przyciskPowrot" })
+        <input type="submit" value="Usuń" class="btn btn-danger" />
+    </div>
     }
 </div>
