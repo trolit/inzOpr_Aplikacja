@@ -20,7 +20,7 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.imieNazwisko)
+            Imię i nazwisko
         </dt>
 
         <dd>
@@ -28,7 +28,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.email)
+            Mail
         </dt>
 
         <dd>
@@ -36,7 +36,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.nrTelefonu)
+            Numer telefonu
         </dt>
 
         <dd>
@@ -49,9 +49,9 @@
     {
         @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Uczestnicy_Lista")
-        </div>
+    <div class="form-actions no-color">
+        @Html.ActionLink("Wróć", "Uczestnicy_Lista", null, null, new { @class = "btn btn-primary btn-md przyciskPowrot" })
+        <input type="submit" value="Usuń" class="btn btn-danger" />
+    </div>
     }
 </div>

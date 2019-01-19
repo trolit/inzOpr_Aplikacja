@@ -15,34 +15,35 @@
 </div>
 
 <p>
-    @Html.ActionLink("Create New", "CreateDokumentacja")
+    @Html.ActionLink("Stwórz nową", "CreateDokumentacja", null, null, new { @class = "btn btn-success" })
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.nazwaDokumentu)
+            Nazwa dokumentu
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.czyUkonczony)
+            Czy ukończony?
         </th>
         <th></th>
     </tr>
 
     @foreach (var item in Model)
     {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.nazwaDokumentu)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.czyUkonczony)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "EditDokumentacja", new { id = item.idDokumentu }) |
-            @Html.ActionLink("Details", "DetailsDokumentacja", new { id = item.idDokumentu }) |
-            @Html.ActionLink("Delete", "DeleteDokumentacja", new { id = item.idDokumentu })
-        </td>
-    </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nazwaDokumentu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.czyUkonczony)
+            </td>
+            <td>
+                @Html.ActionLink("Edytuj", "EditDokumentacja", null, new { id = item.idDokumentu }, new { @class = "btn btn-success" })
+                @Html.ActionLink("Szczegóły", "DetailsDokumentacja", null, new { id = item.idDokumentu }, new { @class = "btn btn-info" })
+                @Html.ActionLink("Usuń", "DeleteDokumentacja", null, new { id = item.idDokumentu }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
     }
 
 </table>
+@Html.ActionLink("Wróć", "Pracownik", null, null, new { @class = "btn btn-primary btn-md przyciskPowrot" })

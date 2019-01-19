@@ -47,7 +47,7 @@
     </div>
 
     <div class="form-group">
-        @Html.Label("Adres e-mail", htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.Label("Mail", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.mail, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.mail, "", new { @class = "text-danger" })
@@ -55,7 +55,7 @@
     </div>
 
     <div class="form-group">
-        @Html.Label("Miejsce zamieszkania", htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.Label("Aktualne miejsce zamieszkania", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.m_zamieszkania, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.m_zamieszkania, "", new { @class = "text-danger" })
@@ -63,7 +63,7 @@
     </div>
 
     <div class="form-group">
-        @Html.Label("Nazwa imprezy", htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.Label("Nazwa imprezy masowej", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.nazwa_imprezy, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.nazwa_imprezy, "", new { @class = "text-danger" })
@@ -79,7 +79,7 @@
     </div>
 
     <div class="form-group">
-        @Html.Label("Miejsce realizacji", htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.Label("Proponowane miejsce realizacji", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.miejsce_realizacji, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.miejsce_realizacji, "", new { @class = "text-danger" })
@@ -119,7 +119,7 @@
     </div>
 
     <div class="form-group">
-        @Html.Label("Cele imprezy", htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.Label("Cele", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.cele, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.cele, "", new { @class = "text-danger" })
@@ -127,7 +127,7 @@
     </div>
 
     <div class="form-group">
-        @Html.Label("Termin imprezy", htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.Label("Proponowany termin odbycia imprezy", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.termin_odbycia, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.termin_odbycia, "", new { @class = "text-danger" })
@@ -135,7 +135,7 @@
     </div>
 
     <div class="form-group">
-        @Html.Label("Cena biletu", htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.Label("Ceny biletów", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.ceny_bilet, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.ceny_bilet, "", new { @class = "text-danger" })
