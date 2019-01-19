@@ -38,18 +38,23 @@
          Pamietaj aby plik css znajdowal sie w katalogu ~/Content/ tak jak wyżej style.css -->
 </head>
 
-<body class="col-md-12">
-    <div class="naglowekStrony">
-        Strona główna
+<body class="col-md-12" style="margin-left: 0; margin-right:0; padding-left: 0; padding-right: 0;">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="naglowekStrony">
+                Strona główna
+            </div>
+
+            <div class="text-center">
+                <!-- przyciski nawigacyjne -->
+                <!-- fragment: Url.Action("Pracownik", "Home") działa na zasadzie "przejdź do plik Pracownik w katalogu Home" -->
+                <button type="button" class="btn btn-lg przyciskNawigacyjny" style="background-color: #004B8D; !important" onclick="window.location='@Url.Action("Pracownik", "Home")'"><span><i class="fas fa-hammer fa-5x"></i><br/>Pracownicy</span></button>
+                <button type="button" class="btn btn-lg przyciskNawigacyjny" style="background-color: #FE9614; !important" onclick="window.location='@Url.Action("Przelozony", "Home")'"><span><i class="fas fa-stamp fa-5x"></i><br/>Przełożony</span></button>
+                <button type="button" class="btn btn-lg przyciskNawigacyjny" style="background-color: #008000; !important" onclick="window.location='@Url.Action("Klienci", "Home")'"><span><i class="far fa-eye fa-5x"></i><br/>Klienci</span></button>
+            </div>
+        </div>
     </div>
 
-    <div>
-        <!-- przyciski nawigacyjne -->
-        <!-- fragment: Url.Action("Pracownik", "Home") działa na zasadzie "przejdź do plik Pracownik w katalogu Home" -->
-        <input type="button" value="Pracownicy" class="btn btn-primary btn-lg" onclick="window.location='@Url.Action("Pracownik", "Home")'" />
-        <input type="button" value="Przełożony" class="btn btn-primary btn-lg" onclick="window.location='@Url.Action("Przelozony", "Home")'" />
-        <input type="button" value="Klienci" class="btn btn-primary btn-lg" onclick="window.location='@Url.Action("Klienci", "Home")'" />
-    </div>
 </body>
 
 

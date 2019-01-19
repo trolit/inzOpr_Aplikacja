@@ -7,37 +7,38 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
+    <!-- niestandardowe ikonki -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+    <!-- niestandardowa czcionka -->
+    <link href='http://fonts.googleapis.com/css?family=Capriola&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 </head>
 <body>
     <!-- navbar starts here! -->
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-expand-sm navbar-dark fixed-top bg-dark">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>    <!-- ("nazwa w navbar", "plik do ktorego klikajac przejdziemy", "katalog do pliku") -->
-                @Html.ActionLink("Aplikacja KEBAB", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <!-- nawigacyjne menu w navbarze, zakomentowalem -->
-                    <!-- <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                         <li>@Html.ActionLink("About", "About", "Home")</li>
-                         <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <i class="fas fa-home" style="color: white; font-size: 25px; vertical-align: central;"></i> &nbsp; &nbsp; @Html.ActionLink("projekt aplikacji", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            <div class="navbar-collapse collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav mr-auto">
+                    <!--
+                    <li class="nav-item">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("About", "About", "Home", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })</li>
+                        -->
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
-    </div>
+    </nav>
     <!-- usuniecie klasy container i body-content rozszerza szerokosc zawartosci strony -->
     <div>
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Aplikacja ASP.NET</p>
+            <p>&copy; @DateTime.Now.Year - Projekt aplikacji w ASP.NET</p>
         </footer>
     </div>
 

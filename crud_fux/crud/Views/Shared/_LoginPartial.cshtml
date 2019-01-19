@@ -15,8 +15,8 @@
 }
 else
 {
-    <ul class="nav navbar-nav navbar-right">
-        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    <ul class="nav navbar-nav navbar-right" style="color: white; !important">
+        <li><button type="button" class="btn btn-secondary" onclick="window.location='@Url.Action("Register", "Account")'"><i class="fas fa-user-plus" style="font-size: 15px; vertical-align: central;"></i> Zarejestruj się</button></li> &nbsp; &nbsp;
+        <li><button type="button" class="btn btn-secondary" onclick="window.location='@Url.Action("Login", "Account")'"><i class="fas fa-sign-in-alt" style="font-size: 15px; vertical-align: central;"></i> Logowanie</button></li>
     </ul>
 }
