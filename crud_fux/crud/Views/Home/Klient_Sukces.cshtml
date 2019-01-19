@@ -6,10 +6,12 @@
 <head>
     <!-- zalaczenie biblioteki globalnej style.css -->
     <link rel="Stylesheet" href="~/Content/style.css" type="text/css" />
+
+    <link href='http://fonts.googleapis.com/css?family=Arima+Madurai&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 </head>
 
 <div class="naglowekStrony">
-    Udało się! :)
+    Udało się! 
 </div>
 
 <head>
@@ -17,13 +19,18 @@
     <link rel="Stylesheet" href="~/Content/style.css" type="text/css" />
 </head>
 
-<h2>Klient</h2>
-
-<div>
-    <p>
-        SUKCES! ZGLOSZENIE ZOSTALO WYSLANE! CZEKAJ NA ODPOWIEDZ NA MAILU, ZWYKLE ODPOWIEDZ WYSYLAMY W CIAGU 7 DNI ROBOCZYCH OD DATY
-        WYSLANIA WIADOMOSCI. KLIKNIJ PRZYCISK NA DOLE ABY WROCIC DO MENU. :)
-    </p>
-
-    <input type="button" value="Powrót do menu" class="btn btn-primary" onclick="window.location='@Url.Action("Klienci", "Home")'" />
+<div class="col-lg-6 col-md-8 mx-auto jumbotron">
+    <div class="text-center">
+        <i class="fas fa-smile-wink fa-9x" style="color: #00cd00;"></i>
+    </div>
+    <div style="font-family: 'Arima Madurai', sans-serif; font-size:130%; margin-top: 5%;">
+        <p class="text-center" style="font-weight: bold;">SUKCES! ZGŁOSZENIE ZOSTAŁO WYSŁANE! </p>
+        <p class="text-justify">CZEKAJ NA ODPOWIEDŹ NA MAILU, ZWYKLE ODPOWIEDŹ WYSYŁAMY W CIĄGU 7 DNI ROBOCZYCH OD DATY
+            WYSŁANIA WIADOMOŚCI. </p>
+        <div class="text-center">
+            <input type="button" value="Powrót do menu" class="btn btn-primary btn-lg" onclick="window.location='@Url.Action("Klienci", "Home")'" />
+        </div>
+    </div>
 </div>
+
+

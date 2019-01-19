@@ -22,7 +22,7 @@
         <th>
             Nazwa dokumentu
         </th>
-        <th>
+        <th class="text-center">
             Czy ukończony?
         </th>
         <th></th>
@@ -30,17 +30,17 @@
 
     @foreach (var item in Model)
     {
-        <tr>
+        <tr class="parzysty nieparzysty">
             <td>
                 @Html.DisplayFor(modelItem => item.nazwaDokumentu)
             </td>
-            <td>
+            <td class="text-center">
                 @Html.DisplayFor(modelItem => item.czyUkonczony)
             </td>
             <td>
-                @Html.ActionLink("Edytuj", "EditDokumentacja", null, new { id = item.idDokumentu }, new { @class = "btn btn-primary" })
-                @Html.ActionLink("Szczegóły", "DetailsDokumentacja", null, new { id = item.idDokumentu }, new { @class = "btn btn-info" })
-                @Html.ActionLink("Usuń", "DeleteDokumentacja", null, new { id = item.idDokumentu }, new { @class = "btn btn-danger" })
+                @Html.ActionLink("Edytuj", "EditDokumentacja", null, new { id = item.idDokumentu }, new { @class = "btn btn-primary przyciskWiekszy" })
+                @Html.ActionLink("Szczegóły", "DetailsDokumentacja", null, new { id = item.idDokumentu }, new { @class = "btn btn-info przyciskWiekszy" })
+                @Html.ActionLink("Usuń", "DeleteDokumentacja", null, new { id = item.idDokumentu }, new { @class = "btn btn-danger przyciskMniejszy" })
             </td>
         </tr>
     }

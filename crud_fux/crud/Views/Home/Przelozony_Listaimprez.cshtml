@@ -15,7 +15,7 @@
 </div>
 
 <table class="table">
-    <tr>
+    <tr class="text-center">
         <th>
             Nazwa imprezy
         </th>
@@ -33,7 +33,7 @@
 
     @foreach (var item in Model)
     {
-        <tr>
+        <tr class="parzysty nieparzysty text-center">
             <td>
                 @Html.DisplayFor(modelItem => item.nazwaImprezy)
             </td>
@@ -47,9 +47,9 @@
                 @Html.DisplayFor(modelItem => item.liczbaUczestnikow)
             </td>
             <td>
-                @Html.ActionLink("Edytuj szczegóły", "Imprezy_Edit", new { id = item.idImpreza }, new { @class = "btn btn-primary" }) 
-                @Html.ActionLink("Szczegóły imprezy", "Przelozony_Imprezy_Details", new { id = item.idImpreza }, new { @class = "btn btn-info" }) 
-                @Html.ActionLink("Lista uczestników", "Uczestnicy_Lista", new { id = item.idImpreza }, new { @class = "btn btn-primary" }) 
+                @Html.ActionLink("Edytuj szczegóły", "Imprezy_Edit", new { id = item.idImpreza }, new { @class = "btn btn-primary przyciskWiekszy" }) 
+                @Html.ActionLink("Szczegóły imprezy", "Przelozony_Imprezy_Details", new { id = item.idImpreza }, new { @class = "btn btn-info przyciskWiekszy" }) 
+                @Html.ActionLink("Lista uczestników", "Uczestnicy_Lista", new { id = item.idImpreza }, new { @class = "btn btn-success przyciskWiekszy" }) 
                 @Html.ActionLink("Usuń imprezę", "Imprezy_Delete", new { id = item.idImpreza }, new { @class = "btn btn-danger" })
             </td>
         </tr>

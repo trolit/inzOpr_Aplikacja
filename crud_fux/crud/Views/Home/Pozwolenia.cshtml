@@ -23,7 +23,7 @@
         <th>
             Nazwa
         </th>
-        <th>
+        <th class="text-center">
             Czy zdobyte?
         </th>
         <th></th>
@@ -31,20 +31,21 @@
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
+        <tr class="parzysty nieparzysty">
+            <td class="text-justify">
                 @Html.DisplayFor(modelItem => item.nazwa)
             </td>
-            <td>
+            <td class="text-center">
                 @Html.DisplayFor(modelItem => item.czyZdobyte)
             </td>
             <td>
-                @Html.ActionLink("Edytuj", "EditPozwolenie", new { id = item.idPozwolenia }, new { @class = "btn btn-primary" })
-                @Html.ActionLink("Szczegóły", "DetailsPozwolenia", new { id = item.idPozwolenia }, new { @class = "btn btn-info" })
-                @Html.ActionLink("Usuń", "DeletePozwolenie", new { id = item.idPozwolenia }, new { @class = "btn btn-danger" })
+                @Html.ActionLink("Edytuj", "EditPozwolenie", new { id = item.idPozwolenia }, new { @class = "btn btn-primary przyciskWiekszy" })
+                @Html.ActionLink("Szczegóły", "DetailsPozwolenia", new { id = item.idPozwolenia }, new { @class = "btn btn-info przyciskWiekszy" })
+                @Html.ActionLink("Usuń", "DeletePozwolenie", new { id = item.idPozwolenia }, new { @class = "btn btn-danger przyciskMniejszy" })
             </td>
         </tr>
     }
 
 </table>
-@Html.ActionLink("Wróć", "Pracownik", null, null, new { @class = "btn btn-primary" })
+
+@Html.ActionLink("Wróć", "Pracownik", null, null, new { @class = "btn btn-primary przyciskPowrot" })

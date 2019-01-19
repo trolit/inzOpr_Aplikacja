@@ -15,7 +15,7 @@
 </div>
 
 <table class="table">
-    <tr>
+    <tr class="text-center">
         <th>
             Imię i nazwisko
         </th>
@@ -29,8 +29,8 @@
     </tr>
 
     @foreach (var item in Model)
-    {
-        <tr>
+    { 
+        <tr class="parzysty nieparzysty text-center">
             <td>
                 @Html.DisplayFor(modelItem => item.imieNazwisko)
             </td>
@@ -48,4 +48,5 @@
     }
 
 </table>
-@Html.ActionLink("Wróć", "Przelozony_Listaimprez", null, null, new { @class = "btn btn-primary" })
+
+@Html.ActionLink("Wróć", "Przelozony_Listaimprez", null, null, new { @class = "btn btn-primary przyciskPowrot" })

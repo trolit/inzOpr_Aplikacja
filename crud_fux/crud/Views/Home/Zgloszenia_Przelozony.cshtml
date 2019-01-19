@@ -22,7 +22,7 @@
         <th>
             Numer telefonu
         </th>
-        <th>
+        <th class="text-center">
             Mail
         </th>
         <th>
@@ -42,7 +42,7 @@
 
     @foreach (var item in Model)
     {
-        <tr>
+        <tr class="parzysty nieparzysty text-center">
             <td>
                 @Html.DisplayFor(modelItem => item.imie_nazwisko)
             </td>
@@ -65,12 +65,14 @@
                 @Html.DisplayFor(modelItem => item.dataOtrzymaniaZgloszenia)
             </td>
             <td>
-                @Html.ActionLink("Edytuj", "Edit_Przelozony", null, new { id = item.idOferty }, new { @class = "btn btn-primary" })
+                @Html.ActionLink("Edytuj", "Edit_Przelozony", null, new { id = item.idOferty }, new { @class = "btn btn-primary przyciskWiekszy" })
                 @Html.ActionLink("Szczegóły", "Details_Przelozony", null, new { id = item.idOferty }, new { @class = "btn btn-info" })
-                @Html.ActionLink("Usuń", "Delete_Przelozony", null, new { id = item.idOferty }, new { @class = "btn btn-danger" })
+                @Html.ActionLink("Odrzuć", "Delete_Przelozony", null, new { id = item.idOferty }, new { @class = "btn btn-danger przyciskWiekszy" })
             </td>
         </tr>
     }
 
 </table>
-@Html.ActionLink("Wróć", "Przelozony", null, null, new { @class = "btn btn-primary" })
+
+@Html.ActionLink("Wróć", "Przelozony", null, null, new { @class = "btn btn-primary przyciskPowrot" })
+
