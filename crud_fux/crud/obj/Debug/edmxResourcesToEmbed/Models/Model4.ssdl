@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PozwoleniaModel3.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Zgloszenia">
+    <Key>
+      <PropertyRef Name="idOferty" />
+    </Key>
+    <Property Name="idOferty" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="imie_nazwisko" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="firma" Type="varchar" MaxLength="80" />
+    <Property Name="nr_telefonu" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="mail" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="m_zamieszkania" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nazwa_imprezy" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="rodzaj_tresc" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="miejsce_realizacji" Type="varchar" MaxLength="50" />
+    <Property Name="czas_trwania" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cyklicznosc" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="charakter_uczestnictwa" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="forma_organizacyjna" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cele" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="termin_odbycia" Type="varchar" MaxLength="50" />
+    <Property Name="ceny_bilet" Type="varchar" MaxLength="50" />
+    <Property Name="dod_uslugi" Type="varchar" MaxLength="50" />
+    <Property Name="stanZgloszenia" Type="varchar" MaxLength="50" />
+    <Property Name="dataOtrzymaniaZgloszenia" Type="datetime" />
+  </EntityType>
+  <EntityContainer Name="PozwoleniaModel3StoreContainer">
+    <EntitySet Name="Zgloszenia" EntityType="Self.Zgloszenia" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

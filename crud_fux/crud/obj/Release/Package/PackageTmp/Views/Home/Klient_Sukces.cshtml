@@ -1,0 +1,29 @@
+﻿@{
+    <!-- tytul strony (chodzi o zakladke) -->
+    ViewBag.Title = "Tytul";
+}
+
+<head>
+    <!-- zalaczenie biblioteki globalnej style.css -->
+    <link rel="Stylesheet" href="~/Content/style.css" type="text/css" />
+</head>
+
+<div class="naglowekStrony">
+    Udało się! :)
+</div>
+
+<head>
+    <!-- zalaczenie biblioteki globalnej style.css -->
+    <link rel="Stylesheet" href="~/Content/style.css" type="text/css" />
+</head>
+
+<h2>Klient</h2>
+
+<div>
+    <p>
+        SUKCES! ZGLOSZENIE ZOSTALO WYSLANE! CZEKAJ NA ODPOWIEDZ NA MAILU, ZWYKLE ODPOWIEDZ WYSYLAMY W CIAGU 7 DNI ROBOCZYCH OD DATY
+        WYSLANIA WIADOMOSCI. KLIKNIJ PRZYCISK NA DOLE ABY WROCIC DO MENU. :)
+    </p>
+
+    <input type="button" value="Powrót do menu" class="btn btn-primary" onclick="window.location='@Url.Action("Klienci", "Home")'" />
+</div>

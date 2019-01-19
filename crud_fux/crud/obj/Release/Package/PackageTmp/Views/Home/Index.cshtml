@@ -1,0 +1,52 @@
+﻿@{
+    <!-- tytul strony -->
+    ViewBag.Title = "Strona główna";
+}
+
+<!--
+    <><><><><><><><><><><> INFORMACJE WSTĘPNE ZANIM BEDZIECIE MANIPULOWAC STRONAMI <><><><><><><><><><><>
+
+    1) navbar można edytować w pliku _layout.cshtml, który znajduje się w katalogu /Views/Shared (info dla Dorota)
+
+    2) uważajcie na edytowanie gotowych elementów np. pól formularzy w plikach cshtml - spoglądajcie jak np.
+    odwołać się do klasy w takim elemencie, jeżeli macie wątpliwości to napiszcie na fejsie na grupie albo
+    do mnie to je postaramy się rozwiać - PA_WWW :) (ewentualnie stackoverflow lub próba błędu i CTRL-Z)
+
+    3) pliki cshtml możecie edytować w trakcie gdy macie uruchomioną aplikacje także nie ma problemu aby stosować
+    taktykę - uruchamiam apkę, przechodze gdzieś, patrze które to w kodzie i ew. zmieniam np. napis,
+    zapisuje i odświeżam w przeglądarce apke 
+
+    4) korzystajcie z dobroci bootstrapa!!! - mamy tu najnowsza wersje(chyba) - mile widziane ikonki, karty, lepsze
+    rozłożenie np. elementów do wysłania zgłoszenia => tak jak mamy w projekcie interfejsu w dokumentacji !!
+    pamietajcie ze on sprawdza tez zgodnosc z dokumentacja
+
+    Tylko PS: mamy tu wersje Bootstrap: v.3.0.0 więc nie wiem czy np. te karty wejda
+
+    5) katalogi Controller, Model (i pliki w nich się znajdujące), konstrukcje tabel - nie zmieniajcie bez
+    zapowiedzi żeby nie było niespodzianek :]
+
+    6) możecie dodawać skrypty js jeśli chcecie (katalog: Scripts)
+-->
+
+<head>
+    <!-- zalaczenie biblioteki globalnej style.css -
+         UWAGA: zaimplementowana we wszystkich stronach!!!
+    -->
+    <link rel="Stylesheet" href="~/Content/style.css" type="text/css" />
+
+    <!-- tu mozesz zalaczyc swoja biblioteke jezeli chcesz dodac styl tylko na kilku stronach.
+         Pamietaj aby plik css znajdowal sie w katalogu ~/Content/ tak jak wyżej style.css -->
+</head>
+
+<div class="naglowekStrony">
+    Strona główna
+</div>
+
+<div>
+    <!-- przyciski nawigacyjne -->
+    <!-- fragment: Url.Action("Pracownik", "Home") działa na zasadzie "przejdź do plik Pracownik w katalogu Home" -->
+    <input type="button" value="Pracownicy" class="btn btn-primary btn-lg" onclick="window.location='@Url.Action("Pracownik", "Home")'" />
+    <input type="button" value="Przełożony" class="btn btn-primary btn-lg" onclick="window.location='@Url.Action("Przelozony", "Home")'" />
+    <input type="button" value="Klienci" class="btn btn-primary btn-lg" onclick="window.location='@Url.Action("Klienci", "Home")'" />
+</div>
+

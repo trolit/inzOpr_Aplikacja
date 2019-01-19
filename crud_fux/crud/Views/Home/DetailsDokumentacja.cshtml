@@ -1,0 +1,42 @@
+﻿@model crud.Models.Dokumentacja
+
+@{
+    <!-- tytul strony -->
+    ViewBag.Title = "Tytul strony";
+}
+
+<head>
+    <!-- zalaczenie biblioteki globalnej style.css -->
+    <link rel="Stylesheet" href="~/Content/style.css" type="text/css" />
+</head>
+
+<div class="naglowekStrony">
+    Szczegóły wpisu
+</div>
+
+<div>
+    <h4>Dokumentacja</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nazwaDokumentu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nazwaDokumentu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.czyUkonczony)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.czyUkonczony)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditDokumentacja", new { id = Model.idDokumentu }) |
+    @Html.ActionLink("Back to List", "Dokumentacja")
+</p>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PozwoleniaModel5.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Uczestnik">
+    <Key>
+      <PropertyRef Name="idUczestnika" />
+    </Key>
+    <Property Name="idUczestnika" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="imieNazwisko" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nrTelefonu" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="PozwoleniaModel5StoreContainer">
+    <EntitySet Name="Uczestnik" EntityType="Self.Uczestnik" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

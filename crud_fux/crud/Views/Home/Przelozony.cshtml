@@ -1,0 +1,18 @@
+﻿@{
+    <!-- tytul strony -->
+    ViewBag.Title = "Tytul strony";
+}
+
+<head>
+    <!-- zalaczenie biblioteki globalnej style.css -->
+    <link rel="Stylesheet" href="~/Content/style.css" type="text/css" />
+</head>
+
+<div class="naglowekStrony">
+    Panel Przełożonego
+</div>
+
+<div>
+    <input type="button" value="Zgloszenia" onclick="window.location='@Url.Action("Zgloszenia_Przelozony", "Home")'" />
+    <input type="button" value="Sprawdź imprezy i liczbę zapisanych" onclick="window.location='@Url.Action("Przelozony_Listaimprez", "Home")'" />
+</div>

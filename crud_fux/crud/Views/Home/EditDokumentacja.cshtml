@@ -1,0 +1,59 @@
+﻿@model crud.Models.Dokumentacja
+
+@{
+    <!-- tytul strony -->
+    ViewBag.Title = "Tytul strony";
+}
+
+<head>
+    <!-- zalaczenie biblioteki globalnej style.css -->
+    <link rel="Stylesheet" href="~/Content/style.css" type="text/css" />
+</head>
+
+<div class="naglowekStrony">
+    Edycja wpisu
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Dokumentacja</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.idDokumentu)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.nazwaDokumentu, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.nazwaDokumentu, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.nazwaDokumentu, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.czyUkonczony, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.czyUkonczony)
+                    @Html.ValidationMessageFor(model => model.czyUkonczony, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Dokumentacja")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

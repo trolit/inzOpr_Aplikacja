@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PozwoleniaModel4StoreContainer" CdmEntityContainer="ImprezyEntities">
+    <EntitySetMapping Name="Imprezy">
+      <EntityTypeMapping TypeName="PozwoleniaModel4.Imprezy">
+        <MappingFragment StoreEntitySet="Imprezy">
+          <ScalarProperty Name="idImpreza" ColumnName="idImpreza" />
+          <ScalarProperty Name="nazwaImprezy" ColumnName="nazwaImprezy" />
+          <ScalarProperty Name="rodzaj" ColumnName="rodzaj" />
+          <ScalarProperty Name="miejsce" ColumnName="miejsce" />
+          <ScalarProperty Name="czasTrwania" ColumnName="czasTrwania" />
+          <ScalarProperty Name="cyklicznosc" ColumnName="cyklicznosc" />
+          <ScalarProperty Name="charakterUczestnictwa" ColumnName="charakterUczestnictwa" />
+          <ScalarProperty Name="formaOrganizacyjna" ColumnName="formaOrganizacyjna" />
+          <ScalarProperty Name="cenaBiletu" ColumnName="cenaBiletu" />
+          <ScalarProperty Name="liczbaUczestnikow" ColumnName="liczbaUczestnikow" />
+          <ScalarProperty Name="identyfikatorPorownania" ColumnName="identyfikatorPorownania" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

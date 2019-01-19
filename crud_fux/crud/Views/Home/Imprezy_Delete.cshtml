@@ -1,0 +1,113 @@
+﻿@model crud.Models.Imprezy
+
+@{
+    <!-- tytul strony -->
+    ViewBag.Title = "Tytul strony";
+}
+
+<head>
+    <!-- zalaczenie biblioteki globalnej style.css -->
+    <link rel="Stylesheet" href="~/Content/style.css" type="text/css" />
+</head>
+
+<div class="naglowekStrony">
+    Usuwanie imprezy
+</div>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Imprezy</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nazwaImprezy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nazwaImprezy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rodzaj)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rodzaj)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.miejsce)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.miejsce)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.czasTrwania)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.czasTrwania)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cyklicznosc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cyklicznosc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.charakterUczestnictwa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.charakterUczestnictwa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.formaOrganizacyjna)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.formaOrganizacyjna)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cenaBiletu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cenaBiletu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.liczbaUczestnikow)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.liczbaUczestnikow)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.identyfikatorPorownania)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.identyfikatorPorownania)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Przelozony_Listaimprez")
+        </div>
+    }
+</div>

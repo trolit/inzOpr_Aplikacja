@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PozwoleniaModel3.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Zgloszenia">
+          <Key>
+            <PropertyRef Name="idOferty" />
+          </Key>
+          <Property Name="idOferty" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="imie_nazwisko" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="firma" Type="varchar" MaxLength="80" />
+          <Property Name="nr_telefonu" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="mail" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="m_zamieszkania" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="nazwa_imprezy" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="rodzaj_tresc" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="miejsce_realizacji" Type="varchar" MaxLength="50" />
+          <Property Name="czas_trwania" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="cyklicznosc" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="charakter_uczestnictwa" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="forma_organizacyjna" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="cele" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="termin_odbycia" Type="varchar" MaxLength="50" />
+          <Property Name="ceny_bilet" Type="varchar" MaxLength="50" />
+          <Property Name="dod_uslugi" Type="varchar" MaxLength="50" />
+          <Property Name="stanZgloszenia" Type="varchar" MaxLength="50" />
+          <Property Name="dataOtrzymaniaZgloszenia" Type="datetime" />
+        </EntityType>
+        <EntityContainer Name="PozwoleniaModel3StoreContainer">
+          <EntitySet Name="Zgloszenia" EntityType="Self.Zgloszenia" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PozwoleniaModel3" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Zgloszenia">
+          <Key>
+            <PropertyRef Name="idOferty" />
+          </Key>
+          <Property Name="idOferty" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="imie_nazwisko" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="firma" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="nr_telefonu" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="m_zamieszkania" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nazwa_imprezy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="rodzaj_tresc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="miejsce_realizacji" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="czas_trwania" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cyklicznosc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="charakter_uczestnictwa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="forma_organizacyjna" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cele" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="termin_odbycia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ceny_bilet" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="dod_uslugi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="stanZgloszenia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="dataOtrzymaniaZgloszenia" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="ZgloszeniaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Zgloszenia" EntityType="Self.Zgloszenia" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PozwoleniaModel3StoreContainer" CdmEntityContainer="ZgloszeniaEntities">
+          <EntitySetMapping Name="Zgloszenia">
+            <EntityTypeMapping TypeName="PozwoleniaModel3.Zgloszenia">
+              <MappingFragment StoreEntitySet="Zgloszenia">
+                <ScalarProperty Name="dataOtrzymaniaZgloszenia" ColumnName="dataOtrzymaniaZgloszenia" />
+                <ScalarProperty Name="idOferty" ColumnName="idOferty" />
+                <ScalarProperty Name="imie_nazwisko" ColumnName="imie_nazwisko" />
+                <ScalarProperty Name="firma" ColumnName="firma" />
+                <ScalarProperty Name="nr_telefonu" ColumnName="nr_telefonu" />
+                <ScalarProperty Name="mail" ColumnName="mail" />
+                <ScalarProperty Name="m_zamieszkania" ColumnName="m_zamieszkania" />
+                <ScalarProperty Name="nazwa_imprezy" ColumnName="nazwa_imprezy" />
+                <ScalarProperty Name="rodzaj_tresc" ColumnName="rodzaj_tresc" />
+                <ScalarProperty Name="miejsce_realizacji" ColumnName="miejsce_realizacji" />
+                <ScalarProperty Name="czas_trwania" ColumnName="czas_trwania" />
+                <ScalarProperty Name="cyklicznosc" ColumnName="cyklicznosc" />
+                <ScalarProperty Name="charakter_uczestnictwa" ColumnName="charakter_uczestnictwa" />
+                <ScalarProperty Name="forma_organizacyjna" ColumnName="forma_organizacyjna" />
+                <ScalarProperty Name="cele" ColumnName="cele" />
+                <ScalarProperty Name="termin_odbycia" ColumnName="termin_odbycia" />
+                <ScalarProperty Name="ceny_bilet" ColumnName="ceny_bilet" />
+                <ScalarProperty Name="dod_uslugi" ColumnName="dod_uslugi" />
+                <ScalarProperty Name="stanZgloszenia" ColumnName="stanZgloszenia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
