@@ -19,7 +19,7 @@
 
 **@Dorota Gil** \
         - [ ] zarządzanie ogólnym stylem graficznym aplikacji poprzez plik style.css(a co za tym idzie tło strony, czcionka nagłówka itp.) <br/>
-	- [ ] opracowanie navbara i stopki <br/>
+	- [X] opracowanie navbara i stopki <br/>
 	- [ ] opracowanie poniższych plików *.cshtml  <br/>
 	
 		  - [ ] Create_Zgloszenie.cshtml  
@@ -27,7 +27,7 @@
 		  - [ ] Create_Personel.cshtml 
 		  - [ ] Create_Pozwolenie.cshtml 
 		  - [ ] Klient_Sukces.cshtml 
-		  - [ ] Index.cshtml 
+		  - [X] Index.cshtml 
 		  - [ ] Klienci.cshtml   
 		  - [ ] Pracownik.cshtml  
 		  - [ ] Pozwolenia.cshtml  
@@ -36,6 +36,7 @@
 		  - [ ] Uczestnik_imprezy_Create.cshtml   
 		  - [ ] Dokumentacja.cshtml   
 		  - [ ] Przelozony_Listaimprez.cshtml 
+		  - [ ] Przelozony.cshtml (nowe)
 		  
 **@Damian Gnatkowski** \
         - [ ] spolszczenie aplikacji(dotyczy to wszystkich plików cshtml), wprowadzenie jednolitych nazw. np. przycisk powrotu na każdej stronie ma taką samą nazwę i oprawę graficzną i zrobienie żeby w widokach z formularzami np. edycji Dokumentacji labelami(etykietami)nie były nazwy pól z tabeli a sensowny tekst(czyli zamiast np. nrTel to profesjonalnie: Numer telefonu) <br/>
@@ -67,7 +68,7 @@
 		  - [ ] Imprezy_Delete.cshtml 
 		  - [ ] Imprezy_Dostepne.cshtml 
 		  - [ ] Imprezy_Edit.cshtml 
-		  - [ ] ~~Przelozony.cshtml~~ 
+		  - [ ] -----------------------
 		  - [ ] Uczestnicy_Lista.cshtml
 		  - [ ] Uczestnik_imprezy.cshtml 
 		  - [ ] Zgloszenia_Przelozony.cshtml 
