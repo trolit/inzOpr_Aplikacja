@@ -16,11 +16,11 @@
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>Personel</h4>
+    
     <hr />
-    <dl class="dl-horizontal">
+    <dl class="dl-horizontal col-md-12">
         <dt>
-            @Html.DisplayNameFor(model => model.nazwaPersonelu)
+            Nazwa personelu
         </dt>
 
         <dd>
@@ -28,7 +28,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.czyUstalony)
+            Czy ustalony
         </dt>
 
         <dd>
@@ -42,7 +42,7 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <input type="submit" value="Delete" class="btn btn-success btn-lg" /> |
             @Html.ActionLink("Back to List", "Personel")
         </div>
     }

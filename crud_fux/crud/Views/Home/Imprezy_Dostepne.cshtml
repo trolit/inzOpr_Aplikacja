@@ -17,22 +17,22 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.nazwaImprezy)
+            Nazwa imprezy
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.miejsce)
+            Miejsce
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.czasTrwania)
+            Czas trwania
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.charakterUczestnictwa)
+            Charakter uczestnictwa
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.cenaBiletu)
+            Cena biletu
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.liczbaUczestnikow)
+            Liczba uczestników
         </th>
         <th></th>
     </tr>
@@ -66,3 +66,4 @@
     }
 
 </table>
+<input type="button" value="Powrót" class="btn btn-primary btn-lg" onclick="window.location='@Url.Action("Klienci", "Home")'" />
