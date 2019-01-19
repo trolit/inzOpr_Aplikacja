@@ -38,15 +38,18 @@
          Pamietaj aby plik css znajdowal sie w katalogu ~/Content/ tak jak wyżej style.css -->
 </head>
 
-<div class="naglowekStrony">
-    Strona główna
-</div>
+<body class="col-md-12">
+    <div class="naglowekStrony">
+        Strona główna
+    </div>
 
-<div>
-    <!-- przyciski nawigacyjne -->
-    <!-- fragment: Url.Action("Pracownik", "Home") działa na zasadzie "przejdź do plik Pracownik w katalogu Home" -->
-    <input type="button" value="Pracownicy" class="btn btn-primary btn-lg" onclick="window.location='@Url.Action("Pracownik", "Home")'" />
-    <input type="button" value="Przełożony" class="btn btn-primary btn-lg" onclick="window.location='@Url.Action("Przelozony", "Home")'" />
-    <input type="button" value="Klienci" class="btn btn-primary btn-lg" onclick="window.location='@Url.Action("Klienci", "Home")'" />
-</div>
+    <div>
+        <!-- przyciski nawigacyjne -->
+        <!-- fragment: Url.Action("Pracownik", "Home") działa na zasadzie "przejdź do plik Pracownik w katalogu Home" -->
+        <input type="button" value="Pracownicy" class="btn btn-primary btn-lg" onclick="window.location='@Url.Action("Pracownik", "Home")'" />
+        <input type="button" value="Przełożony" class="btn btn-primary btn-lg" onclick="window.location='@Url.Action("Przelozony", "Home")'" />
+        <input type="button" value="Klienci" class="btn btn-primary btn-lg" onclick="window.location='@Url.Action("Klienci", "Home")'" />
+    </div>
+</body>
+
 
