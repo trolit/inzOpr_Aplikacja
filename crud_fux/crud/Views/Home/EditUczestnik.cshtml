@@ -25,7 +25,7 @@
         @Html.HiddenFor(model => model.idUczestnika)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.imieNazwisko, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Imię i nazwisko", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.imieNazwisko, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.imieNazwisko, "", new { @class = "text-danger" })
@@ -33,7 +33,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Mail", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
@@ -41,7 +41,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.nrTelefonu, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Numer telefonu", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.nrTelefonu, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.nrTelefonu, "", new { @class = "text-danger" })
@@ -50,14 +50,14 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Zapisz" class="btn btn-success" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Uczestnicy_Lista")
+    @Html.ActionLink("Wróć", "Uczestnicy_Lista", null, null, new { @class = "btn btn-primary btn-md przyciskPowrot" })
 </div>
 
 @section Scripts {

@@ -9,19 +9,81 @@
 /* Pierwszy blok na każdej stronie będący tytułem strony - NIE USUWAC! */
 .naglowekStrony {
     width: 100%;
-    margin: 0;
-    padding: 0;
+    padding-top: 25px;
+    margin-bottom: 20px;
     font-size: 35px;
     font-weight: bold;
-    background-color: #8f8f8f;
-    color:black;
+    color: black;
+    font-family: 'Capriola', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 4px;
+    text-decoration: wavy;
 }
 
-body {
-    background-color: #454545;
+/* Lacza do zarejestruj i zaloguj */
+.praweMenu:active {
     color: white;
 }
 
+.praweMenu:hover {
+    color: #b2b2b2;
+}
+
+.praweMenu:visited {
+    color: white;
+}
+
+.praweMenu:link {
+    color: white;
+}
+
+body {
+    background-color: #cbcbcb;
+    color: black;
+}
+
+/* stylowanie przyciskow glownych */
+.przyciskNawigacyjny {
+    border-radius: 4px;
+    /* Kolor przycisku */
+    background-color: #007ea8;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 40px;
+    padding: 20px;
+    width: 442px;
+    height: 400px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.przyciskNawigacyjny span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.przyciskNawigacyjny span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.przyciskNawigacyjny:hover span {
+  padding-right: 25px;
+}
+
+.przyciskNawigacyjny:hover span:after {
+  opacity: 1;
+  right: 0;
+}
 /* Klasa przycisków odpowiadających za powrót do poprzedniej strony - NIE USUWAC! */
 .przyciskPowrot {
 

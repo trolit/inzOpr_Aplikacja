@@ -13,6 +13,7 @@
 </div>
 
 <div>
-    <input type="button" value="Zgloszenia" onclick="window.location='@Url.Action("Zgloszenia_Przelozony", "Home")'" />
-    <input type="button" value="Sprawdź imprezy i liczbę zapisanych" onclick="window.location='@Url.Action("Przelozony_Listaimprez", "Home")'" />
+    <input type="button" class="btn btn-primary" value="Zgloszenia" onclick="window.location='@Url.Action("Zgloszenia_Przelozony", "Home")'" />
+    <input type="button" class="btn btn-primary" value="Sprawdź imprezy i liczbę zapisanych" onclick="window.location='@Url.Action("Przelozony_Listaimprez", "Home")'" />
 </div>
+@Html.ActionLink("Wróć", "Index", null, null, new { @class = "btn btn-primary" })

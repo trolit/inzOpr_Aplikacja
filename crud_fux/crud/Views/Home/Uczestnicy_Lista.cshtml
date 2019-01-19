@@ -17,13 +17,13 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.imieNazwisko)
+            Imię i nazwisko
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.email)
+            Mail
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.nrTelefonu)
+            Numer telefonu
         </th>
         <th></th>
     </tr>
@@ -41,10 +41,11 @@
                 @Html.DisplayFor(modelItem => item.nrTelefonu)
             </td>
             <td>
-                @Html.ActionLink("Zmień dane uczestnika", "EditUczestnik", new { id = item.idUczestnika }, new { @class = "btn btn-success" }) |
+                @Html.ActionLink("Zmień dane uczestnika", "EditUczestnik", new { id = item.idUczestnika }, new { @class = "btn btn-primary" })
                 @Html.ActionLink("Usuń uczestnika", "DeleteUczestnik", new { id = item.idUczestnika }, new { @class = "btn btn-danger" })
             </td>
         </tr>
     }
 
 </table>
+@Html.ActionLink("Wróć", "Przelozony_Listaimprez", null, null, new { @class = "btn btn-primary" })

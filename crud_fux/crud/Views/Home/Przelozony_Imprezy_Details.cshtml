@@ -19,7 +19,7 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.nazwaImprezy)
+            Nazwa imprezy
         </dt>
 
         <dd>
@@ -27,7 +27,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.rodzaj)
+            Rodzaj/treść
         </dt>
 
         <dd>
@@ -35,7 +35,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.miejsce)
+            Miejsce
         </dt>
 
         <dd>
@@ -43,7 +43,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.czasTrwania)
+            Czas trwania
         </dt>
 
         <dd>
@@ -51,7 +51,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.cyklicznosc)
+            Cykliczność
         </dt>
 
         <dd>
@@ -59,7 +59,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.charakterUczestnictwa)
+            Charakter uczestnictwa
         </dt>
 
         <dd>
@@ -67,7 +67,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.formaOrganizacyjna)
+            Forma organizacyjna
         </dt>
 
         <dd>
@@ -75,7 +75,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.cenaBiletu)
+            Cena biletów
         </dt>
 
         <dd>
@@ -83,7 +83,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.liczbaUczestnikow)
+            Liczba uczestników
         </dt>
 
         <dd>
@@ -91,7 +91,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.identyfikatorPorownania)
+            Identyfikator porównania
         </dt>
 
         <dd>
@@ -101,5 +101,5 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Wróć do listy imprez", "Przelozony_Listaimprez")
+    @Html.ActionLink("Wróć", "Przelozony_Listaimprez", null, null, new { @class = "btn btn-primary" })
 </p>
