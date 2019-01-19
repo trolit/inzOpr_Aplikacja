@@ -6,9 +6,9 @@
 ###########################################################################
 
 **Autorzy:**
-* Paweł Idzikowski (backend)
-* Dorota Gil (frontend)
-* Damian Gnatkowski (frontend, tłumaczenie)
+* Paweł Idzikowski (backend, testowanie)
+* Dorota Gil (frontend, testowanie)
+* Damian Gnatkowski (frontend, tłumaczenie, testowanie)
 * Maciej Kozikowski (frontend, testowanie)
 
 ** Wykonanie w ** ASP.NET MVC4 (VS 2017 Community)
@@ -67,7 +67,7 @@
 		  - [ ] Imprezy_Delete.cshtml 
 		  - [ ] Imprezy_Dostepne.cshtml 
 		  - [ ] Imprezy_Edit.cshtml 
-		  - [ ] Przelozony.cshtml 
+		  - [ ] ~~Przelozony.cshtml~~ 
 		  - [ ] Uczestnicy_Lista.cshtml
 		  - [ ] Uczestnik_imprezy.cshtml 
 		  - [ ] Zgloszenia_Przelozony.cshtml 
@@ -93,7 +93,7 @@ Tu fotka jak ma wyglądać układ waszych stron
 ![Error](https://github.com/trolit/inzOpr_Aplikacja/blob/master/images/example.PNG)
 
 6. **Nie usuwajcie bloku nagłówka z klasą** "naglowekStrony" aby @Dorota mogła zarządzać tym blokiem poprzez style.css
-7. Korzystajcie z dobroci Bootstrapa (jednak miejcie na uwadze ze mamy tu wersje 3.0.0)
+7. Korzystajcie z dobroci Bootstrapa (~~jednak miejcie na uwadze ze mamy tu wersje 3.0.0~~)
 8. **Nie zmieniajcie nazw plików żeby nie było konfliktów**.
 9. Nie modyfikujcie elementów za które nie jesteście odpowiedzialni żeby nie robić konfliktów :)
 10. Najlepiej **testujcie swoje zmiany w przeglądarce "Chrome"** żeby nie było potem niespodzianek że np. w Firefox nagłówek jest dziwny :PLIKI

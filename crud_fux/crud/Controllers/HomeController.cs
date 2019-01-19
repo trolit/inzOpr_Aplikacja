@@ -335,6 +335,14 @@ namespace crud.Controllers
         // (widok) strona pozwolenia(lista)
         public ActionResult Pozwolenia(int id = 0)
         {
+            // jezeli id jest 0 to przypomnij sobie
+            if (id == 0)
+            {
+                id = Convert.ToInt32(Session["idOferty"]);
+            }
+
+            Session["idOferty"] = id;
+
             return View(_db.Pozwolenia.Where(x => x.idProjektu == id).ToList());
         }
 
@@ -372,7 +380,7 @@ namespace crud.Controllers
             {
                 _db.Pozwolenia.Add(newPozwolenie);
                 _db.SaveChanges();
-                return RedirectToAction("Pracownik");
+                return RedirectToAction("Pozwolenia");
             }
             else
             {
@@ -402,7 +410,7 @@ namespace crud.Controllers
             {
                 _db.Entry(pozwolenieToEdit).State = System.Data.Entity.EntityState.Modified;
                 _db.SaveChanges();
-                return RedirectToAction("Pracownik");
+                return RedirectToAction("Pozwolenia");
             }
             return View(pozwolenieToEdit);
         }
@@ -432,7 +440,7 @@ namespace crud.Controllers
                 return View(SelKsiazka);
             _db.Pozwolenia.Remove(SelKsiazka);
             _db.SaveChanges();
-            return RedirectToAction("Pracownik");
+            return RedirectToAction("Pozwolenia");
         }
         #endregion
         #region CRUD [Personel]
@@ -443,6 +451,14 @@ namespace crud.Controllers
 
         public ActionResult Personel(int id = 0)
         {
+            // jezeli id jest 0 to przypomnij sobie
+            if (id == 0)
+            {
+                id = Convert.ToInt32(Session["idOferty"]);
+            }
+
+            Session["idOferty"] = id;
+
             return View(_db_Personel.Personel.Where(x => x.idProjektu == id).ToList());
         }
 
@@ -464,7 +480,7 @@ namespace crud.Controllers
             {
                 _db_Personel.Personel.Add(newPersonel);
                 _db_Personel.SaveChanges();
-                return RedirectToAction("Pracownik");
+                return RedirectToAction("Personel");
             }
             else
             {
@@ -496,7 +512,7 @@ namespace crud.Controllers
             {
                 _db_Personel.Entry(personelToEdit).State = System.Data.Entity.EntityState.Modified;
                 _db_Personel.SaveChanges();
-                return RedirectToAction("Pracownik");
+                return RedirectToAction("Personel");
             }
             return View(personelToEdit);
         }
@@ -527,7 +543,7 @@ namespace crud.Controllers
                 return View(SelPersonel);
             _db_Personel.Personel.Remove(SelPersonel);
             _db_Personel.SaveChanges();
-            return RedirectToAction("Pracownik");
+            return RedirectToAction("Personel");
         }
 
 
@@ -549,6 +565,13 @@ namespace crud.Controllers
         // GET: /Home/
         public ActionResult Dokumentacja(int id = 0)
         {
+            // jezeli id jest 0 to przypomnij sobie
+            if(id == 0)
+            {
+                id = Convert.ToInt32(Session["idOferty"]);
+            }
+
+            Session["idOferty"] = id;
             return View(_db_Dokumentacja.Dokumentacja.Where(x => x.idProjektu == id).ToList());
         }
 
@@ -570,7 +593,7 @@ namespace crud.Controllers
             {
                 _db_Dokumentacja.Dokumentacja.Add(newDokumentacja);
                 _db_Dokumentacja.SaveChanges();
-                return RedirectToAction("Pracownik");
+                return RedirectToAction("Dokumentacja");
             }
             else
             {
@@ -601,7 +624,7 @@ namespace crud.Controllers
             {
                 _db_Dokumentacja.Entry(dokumentacjaToEdit).State = System.Data.Entity.EntityState.Modified;
                 _db_Dokumentacja.SaveChanges();
-                return RedirectToAction("Pracownik");
+                return RedirectToAction("Dokumentacja");
             }
             return View(dokumentacjaToEdit);
         }
@@ -630,7 +653,7 @@ namespace crud.Controllers
                 return View(SelDokumentacja);
             _db_Dokumentacja.Dokumentacja.Remove(SelDokumentacja);
             _db_Dokumentacja.SaveChanges();
-            return RedirectToAction("Pracownik");
+            return RedirectToAction("Dokumentacja");
         }
 
 
