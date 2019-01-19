@@ -17,13 +17,13 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.imieNazwisko)
+            Imię i nazwisko
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.email)
+            E-mail
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.nrTelefonu)
+            Numer telefonu
         </th>
         <th></th>
     </tr>
@@ -48,3 +48,5 @@
     }
 
 </table>
+
+<input type="button" value="Powrót" class="btn btn-primary btn-lg" onclick="window.location='@Url.Action("Przelozony_Listaimprez", "Home")'" />
