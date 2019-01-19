@@ -402,7 +402,7 @@ namespace crud.Controllers
             {
                 _db.Entry(pozwolenieToEdit).State = System.Data.Entity.EntityState.Modified;
                 _db.SaveChanges();
-                return RedirectToAction("Pozwolenia");
+                return RedirectToAction("Pracownik");
             }
             return View(pozwolenieToEdit);
         }
@@ -432,7 +432,7 @@ namespace crud.Controllers
                 return View(SelKsiazka);
             _db.Pozwolenia.Remove(SelKsiazka);
             _db.SaveChanges();
-            return RedirectToAction("Pozwolenia");
+            return RedirectToAction("Pracownik");
         }
         #endregion
         #region CRUD [Personel]
@@ -496,7 +496,7 @@ namespace crud.Controllers
             {
                 _db_Personel.Entry(personelToEdit).State = System.Data.Entity.EntityState.Modified;
                 _db_Personel.SaveChanges();
-                return RedirectToAction("Personel");
+                return RedirectToAction("Pracownik");
             }
             return View(personelToEdit);
         }
@@ -527,7 +527,7 @@ namespace crud.Controllers
                 return View(SelPersonel);
             _db_Personel.Personel.Remove(SelPersonel);
             _db_Personel.SaveChanges();
-            return RedirectToAction("Personel");
+            return RedirectToAction("Pracownik");
         }
 
 
@@ -601,7 +601,7 @@ namespace crud.Controllers
             {
                 _db_Dokumentacja.Entry(dokumentacjaToEdit).State = System.Data.Entity.EntityState.Modified;
                 _db_Dokumentacja.SaveChanges();
-                return RedirectToAction("Dokumentacja");
+                return RedirectToAction("Pracownik");
             }
             return View(dokumentacjaToEdit);
         }
@@ -630,7 +630,7 @@ namespace crud.Controllers
                 return View(SelDokumentacja);
             _db_Dokumentacja.Dokumentacja.Remove(SelDokumentacja);
             _db_Dokumentacja.SaveChanges();
-            return RedirectToAction("Dokumentacja");
+            return RedirectToAction("Pracownik");
         }
 
 
