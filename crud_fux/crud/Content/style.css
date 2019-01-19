@@ -84,7 +84,38 @@ body {
   opacity: 1;
   right: 0;
 }
+
 /* Klasa przycisków odpowiadających za powrót do poprzedniej strony - NIE USUWAC! */
 .przyciskPowrot {
+    width: 10%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
 
+/* styl naglowka tabeli */
+tr th {
+    background-color: #62837a;
+}
+
+/* parzyste wiersze tabeli */
+.parzysty:nth-child(even) {
+    background-color: #859f98;
+}
+
+/* nieparzyste wiersze tabeli */
+.nieparzysty:nth-child(odd) {
+    background-color: #96aca6;
+}
+
+
+.przyciskWiekszy {
+    width: 30%;
+}
+
+.przyciskMniejszy {
+    width: 20%;
+}
+
+.przyciskKolor {
+    background-color: #F1EA7F;
 }
