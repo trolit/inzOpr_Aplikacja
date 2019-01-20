@@ -15,7 +15,7 @@
 </div>
 
 <p>
-    @Html.ActionLink("Utwórz nowy", "CreatePersonel", null, null, new { @class = "btn btn-primary" })
+    <button type="button" class="btn btn-lg przyciskNawigacyjnyMINI" onclick="window.location='@Url.Action("CreatePersonel", "Home")'"><span><i class="far fa-plus-square"></i> Utwórz nowy wpis</span></button>
 </p>
 <table class="table">
     <tr>

@@ -8,161 +8,143 @@
 <head>
     <!-- zalaczenie biblioteki globalnej style.css -->
     <link rel="Stylesheet" href="~/Content/style.css" type="text/css" />
+
+    <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 </head>
 
 <div class="naglowekStrony">
     Szczegóły projektu
 </div>
 
-<div>
+<div class="form-horizontal">
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            Imię i nazwisko
-        </dt>
+    <div class="col-lg-6 col-md-8 mx-auto jumbotron">
+        <div style="font-family: 'Arima Madurai', sans-serif; font-size:130%; margin-top: 5%;">
+            <div class="text-center" style="margin-bottom: 15px;">
+                <i class="fas fa-info-circle fa-7x"></i>
+            </div>
+            <p class="text-center" style="font-weight: bold;">Szczegóły</p>
+            <p class="text-justify" style="font-size: 75% !important">
+                <i class="fas fa-exclamation-circle"></i> Przycisk powrotu ekranu znajduje się poniżej.
+            </p>
+            <hr />
+        </div>
+        <div>
+            <dl class="dl-horizontal">
+                <i class="fas fa-arrow-alt-circle-right"></i>
+                <span class="etykietaJumbo">Imię i nazwisko</span>
+    <dd>
+        @Html.EditorFor(model => model.imie_nazwisko, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+    </dd>
+                <i class="fas fa-arrow-alt-circle-right"></i>
+                <span class="etykietaJumbo">Firma</span>
+    
+    <dd>
+        @Html.EditorFor(model => model.firma, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.imie_nazwisko)
-        </dd>
+                <i class="fas fa-arrow-alt-circle-right"></i>
+                <span class="etykietaJumbo">Numer telefonu</span>
+    <dd>
+        @Html.EditorFor(model => model.nr_telefonu, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+    </dd>
 
-        <dt>
-            Firma
-        </dt>
+                <i class="fas fa-arrow-alt-circle-right"></i>
+                <span class="etykietaJumbo">Mail</span>
+    <dd>
+        @Html.EditorFor(model => model.mail, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.firma)
-        </dd>
+                <i class="fas fa-arrow-alt-circle-right"></i>
+                <span class="etykietaJumbo">Miejsce zamieszkania</span>
+    <dd>
+        @Html.EditorFor(model => model.m_zamieszkania, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+    </dd>
 
-        <dt>
-            Numer telefonu        
-        </dt>
+                <i class="fas fa-arrow-alt-circle-right"></i>
+                <span class="etykietaJumbo">Nazwa imprezy masowej</span>
+    <dd>
+        @Html.EditorFor(model => model.nazwa_imprezy, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.nr_telefonu)
-        </dd>
+                <i class="fas fa-arrow-alt-circle-right"></i>
+                <span class="etykietaJumbo">Rodzaj/treść</span>
+    <dd>
+        @Html.EditorFor(model => model.rodzaj_tresc, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+    </dd>
 
-        <dt>
-            Mail
-        </dt>
+                <i class="fas fa-arrow-alt-circle-right"></i>
+                <span class="etykietaJumbo">Proponowane miejsce realizacji</span>
+    <dd>
+        @Html.EditorFor(model => model.miejsce_realizacji, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.mail)
-        </dd>
+                <i class="fas fa-arrow-alt-circle-right"></i>
+                <span class="etykietaJumbo">Czas trwania</span>
+    <dd>
+        @Html.EditorFor(model => model.czas_trwania, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+    </dd>
 
-        <dt>
-            Miejsce zamieszkania
-        </dt>
+                <i class="fas fa-arrow-alt-circle-right"></i>
+                <span class="etykietaJumbo">Cykliczność</span>
+    <dd>
+        @Html.EditorFor(model => model.cyklicznosc, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.m_zamieszkania)
-        </dd>
+                <i class="fas fa-arrow-alt-circle-right"></i>
+                <span class="etykietaJumbo">Charakter uczestnictwa</span>
+    <dd>
+        @Html.EditorFor(model => model.charakter_uczestnictwa, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+    </dd>
 
-        <dt>
-            Nazwa imprezy masowej
-        </dt>
+                <i class="fas fa-arrow-alt-circle-right"></i>
+                <span class="etykietaJumbo">Forma organizacyjna</span>
+    <dd>
+        @Html.EditorFor(model => model.forma_organizacyjna, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.nazwa_imprezy)
-        </dd>
+                <i class="fas fa-arrow-alt-circle-right"></i>
+                <span class="etykietaJumbo">Cele</span>
+    <dd>
+        @Html.EditorFor(model => model.cele, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+    </dd>
 
-        <dt>
-            Rodzaj/treść
-        </dt>
+                <i class="fas fa-arrow-alt-circle-right"></i>
+                <span class="etykietaJumbo">Proponowany termin odbycia imprezy</span>
+    <dd>
+        @Html.EditorFor(model => model.termin_odbycia, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.rodzaj_tresc)
-        </dd>
+                <i class="fas fa-arrow-alt-circle-right"></i>
+                <span class="etykietaJumbo">Ceny biletów</span>
+    <dd>
+        @Html.EditorFor(model => model.ceny_bilet, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+    </dd>
 
-        <dt>
-            Proponowane miejsce realizacji
-        </dt>
+                <i class="fas fa-arrow-alt-circle-right"></i>
+                <span class="etykietaJumbo">Dodatkowe usługi</span>
+    <dd>
+        @Html.EditorFor(model => model.dod_uslugi, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.miejsce_realizacji)
-        </dd>
+                <i class="fas fa-arrow-alt-circle-right"></i>
+                <span class="etykietaJumbo">Stan zgłoszenia</span>
+    <dd>
+        @Html.EditorFor(model => model.stanZgloszenia, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+    </dd>
 
-        <dt>
-            Czas trwania
-        </dt>
+                <i class="fas fa-arrow-alt-circle-right"></i>
+                <span class="etykietaJumbo">Data otrzymania zgłoszenia</span>
+    <dd>
+        @Html.EditorFor(model => model.dataOtrzymaniaZgloszenia, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.czas_trwania)
-        </dd>
-
-        <dt>
-            Cykliczność
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.cyklicznosc)
-        </dd>
-
-        <dt>
-            Charakter uczestnictwa
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.charakter_uczestnictwa)
-        </dd>
-
-        <dt>
-            Forma organizacyjna
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.forma_organizacyjna)
-        </dd>
-
-        <dt>
-            Cele
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.cele)
-        </dd>
-
-        <dt>
-            Proponowany termin odbycia imprezy 
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.termin_odbycia)
-        </dd>
-
-        <dt>
-            Ceny biletów
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ceny_bilet)
-        </dd>
-
-        <dt>
-            Dodatkowe usługi
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.dod_uslugi)
-        </dd>
-
-        <dt>
-            Stan zgłoszenia
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.stanZgloszenia)
-        </dd>
-
-        <dt>
-            Data otrzymania zgłoszenia
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.dataOtrzymaniaZgloszenia)
-        </dd>
-
-    </dl>
+    <div class="form-group" style="margin-top: 30px;">
+        @Html.ActionLink("Wróć", "Pracownik", null, null, new { @class = "btn btn-primary btn-md btn-lg" })
+    </div>
+</dl>
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Wróć", "Pracownik", null, null, new { @class = "btn btn-primary btn-md przyciskPowrot" })
-</p>
+
+

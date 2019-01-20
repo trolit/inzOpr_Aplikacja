@@ -22,7 +22,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.nazwaDokumentu)
+            @Html.EditorFor(model => model.nazwaDokumentu, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
         </dd>
 
         <dt>
@@ -30,7 +30,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.czyUkonczony)
+            @Html.EditorFor(model => model.czyUkonczony, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
         </dd>
 
     </dl>
