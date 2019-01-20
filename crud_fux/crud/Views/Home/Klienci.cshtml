@@ -1,28 +1,25 @@
 ﻿@{
     <!-- tytul strony (chodzi o zakladke) -->
-    ViewBag.Title = "Tytul";
+    ViewBag.Title = "Panel klienta";
 }
-
 <head>
     <!-- zalaczenie biblioteki globalnej style.css -->
     <link rel="Stylesheet" href="~/Content/style.css" type="text/css" />
 </head>
-
 <div class="naglowekStrony">
     Panel klienta
 </div>
-
 <head>
     <!-- zalaczenie biblioteki globalnej style.css -
          UWAGA: zaimplementowana we wszystkich stronach!!!
     -->
     <link rel="Stylesheet" href="~/Content/style.css" type="text/css" />
-
     <!-- tu mozesz zalaczyc swoja biblioteke jezeli chcesz dodac styl tylko na kilku stronach.
          Pamietaj aby plik css znajdowal sie w katalogu ~/Content/ tak jak wyżej style.css -->
 </head>
-
 <div class="text-center">
-    <button type="button" class="btn btn-lg przyciskNawigacyjny" style="background-color: #008000; !important" onclick="window.location='@Url.Action("Create_Zgloszenie", "Home")'"><span><i class="fas fa-envelope fa-5x"></i><br/>Wyślij ofertę</span></button>
-    <button type="button" class="btn btn-lg przyciskNawigacyjny" style="background-color: #008000; !important" onclick="window.location='@Url.Action("Imprezy_Dostepne", "Home")'"><span><i class="fab fa-itunes-note fa-5x"></i><br/>Dostępne imprezy</span></button>
+    <button type="button" class="btn btn-lg przyciskNawigacyjny" style="background-color: #008000; !important" onclick="window.location='@Url.Action("Create_Zgloszenie", "Home")'"><span><i class="fas fa-envelope fa-5x"></i><br />Wyślij ofertę</span></button>
+    <button type="button" class="btn btn-lg przyciskNawigacyjny" style="background-color: #008000; !important" onclick="window.location='@Url.Action("Imprezy_Dostepne", "Home")'"><span><i class="fab fa-itunes-note fa-5x"></i><br />Dostępne imprezy</span></button>
 </div>
+
+<input type="button" value="Wróć" class="btn btn-primary btn-md przyciskPowrot" onclick="window.location='@Url.Action("Index", "Home")'" />

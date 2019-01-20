@@ -2,7 +2,7 @@
 
 @{
     <!-- tytul strony -->
-    ViewBag.Title = "Tytul strony";
+    ViewBag.Title = "Szczegóły - dokumentacja";
 }
 
 <head>
@@ -15,7 +15,6 @@
 </div>
 
 <div>
-    <h4>Dokumentacja</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -38,5 +37,5 @@
 </div>
 <p>
     @Html.ActionLink("Wróć", "Dokumentacja", null, null, new { @class = "btn btn-primary btn-md przyciskPowrot" })
-    @Html.ActionLink("Edytuj", "EditDokumentacja", null, new { id = Model.idDokumentu }, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Edytuj", "EditDokumentacja", null, new { id = Model.idDokumentu }, new { @class = "btn btn-info" })
 </p>

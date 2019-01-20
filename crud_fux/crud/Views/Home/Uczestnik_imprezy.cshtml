@@ -1,22 +1,31 @@
-﻿@{
+﻿<!-- NIEUZYWANY PLIK !!!!! -->
+<!-- NIEUZYWANY PLIK !!!!! -->
+<!-- NIEUZYWANY PLIK !!!!! -->
+<!-- NIEUZYWANY PLIK !!!!! -->
+<!-- NIEUZYWANY PLIK !!!!! -->
+<!-- NIEUZYWANY PLIK !!!!! -->
+<!-- NIEUZYWANY PLIK !!!!! -->
+<!-- NIEUZYWANY PLIK !!!!! -->
+<!-- NIEUZYWANY PLIK !!!!! -->
+<!-- NIEUZYWANY PLIK !!!!! -->
+<!-- NIEUZYWANY PLIK !!!!! -->
+
+
+@{
     <!-- tytul strony -->
     ViewBag.Title = "Panel klienta";
 }
-
 <head>
     <!-- zalaczenie biblioteki globalnej style.css -
          UWAGA: zaimplementowana we wszystkich stronach!!!
     -->
     <link rel="Stylesheet" href="~/Content/style.css" type="text/css" />
-
     <!-- tu mozesz zalaczyc swoja biblioteke jezeli chcesz dodac styl tylko na kilku stronach.
          Pamietaj aby plik css znajdowal sie w katalogu ~/Content/ tak jak wyżej style.css -->
 </head>
-
 <div class="naglowekStrony">
     Panel Uczestnika
 </div>
-
 <div>
     <input type="button" value="" class="btn btn-primary btn-lg" onclick="window.location='@Url.Action("Create_Zgloszenie", "Home")'" />
     <input type="button" value="Sprawdź dostępne imprezy" class="btn btn-primary btn-lg" onclick="window.location='@Url.Action("Uczestnik_imprezy", "Home")'" />

@@ -2,12 +2,22 @@
 
 @{
     <!-- tytul strony (chodzi o zakladke) -->
-    ViewBag.Title = "Zgłoszenia";
+    ViewBag.Title = "Tworzenie zgłoszenia";
 }
 
 <head>
     <!-- zalaczenie biblioteki globalnej style.css -->
     <link rel="Stylesheet" href="~/Content/style.css" type="text/css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://unpkg.com/gijgo@1.9.11/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.11/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+
+    <script>
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
 </head>
 
 <div class="naglowekStrony">
@@ -19,144 +29,262 @@
     @Html.AntiForgeryToken()
 
 <div class="form-horizontal">
-    <h4>Zgloszenia</h4>
     <hr />
+    <div>
+        Wypełnij formularz. Pola oznaczone gwiazdką są obowiązkowe! <br /> Jeżeli nie wiesz jakie dane wprowadzić najedź na znak zapytania po kilka sugestii <br /><br />
+    </div>
+
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <div class="form-group">
         @Html.Label("Imię i nazwisko", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.imie_nazwisko, new { htmlAttributes = new { @class = "form-control" } })
+            <div class="input-group">
+                <div class="input-group-addon " style="width: 50px; !important;">
+                    <i class="fas fa-user-tie text-center"></i>
+                </div>
+                @Html.EditorFor(model => model.imie_nazwisko, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
             @Html.ValidationMessageFor(model => model.imie_nazwisko, "", new { @class = "text-danger" })
         </div>
     </div>
-
     <div class="form-group">
         @Html.Label("Firma", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.firma, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.firma, "", new { @class = "text-danger" })
+            <div class="input-group">
+                <div class="input-group-addon" style="width: 50px; !important;">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                @Html.EditorFor(model => model.firma, new { htmlAttributes = new { @class = "form-control" } })
+                <div class="input-group-addon" style="width: auto; !important;">
+                    <a data-toggle="tooltip" data-placement="right" title="Podaj tutaj nazwę własną firmy - jeżeli jesteś osobą prywatną pozostaw pole puste."><i class="fas fa-question text-center"></i></a>
+                </div>
+            </div>
+                @Html.ValidationMessageFor(model => model.firma, "", new { @class = "text-danger" })
+            </div>
         </div>
-    </div>
-
     <div class="form-group">
         @Html.Label("Numer telefonu", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.nr_telefonu, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.nr_telefonu, "", new { @class = "text-danger" })
+            <div class="input-group">
+                <div class="input-group-addon " style="width: 50px; !important;">
+                    <i class="fas fa-phone text-center"></i>
+                </div>
+                @Html.EditorFor(model => model.nr_telefonu, new { htmlAttributes = new { @class = "form-control" } })
+                <div class="input-group-addon" style="width: auto; !important;">
+                    <a data-toggle="tooltip" data-placement="right" title="Podaj numer telefonu wg. szablonu AAA-AAA-AAA lub +AA AAA-AAA-AAA"><i class="fas fa-question text-center"></i></a>
+                </div>
+            </div>
+                @Html.ValidationMessageFor(model => model.nr_telefonu, "", new { @class = "text-danger" })
+            </div>
         </div>
-    </div>
-
     <div class="form-group">
         @Html.Label("Mail", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.mail, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.mail, "", new { @class = "text-danger" })
+            <div class="input-group">
+                <div class="input-group-addon " style="width: 50px; !important;">
+                    <i class="fas fa-envelope text-center"></i>
+                </div>
+                @Html.EditorFor(model => model.mail, new { htmlAttributes = new { @class = "form-control" } })
+                <div class="input-group-addon" style="width: auto; !important;">
+                    <a data-toggle="tooltip" data-placement="right" title="Podaj swój adres email w schemacie nazwa@poczta.domena"><i class="fas fa-question text-center"></i></a>
+                </div>
+            </div>
+                @Html.ValidationMessageFor(model => model.mail, "", new { @class = "text-danger" })
+            </div>
         </div>
-    </div>
-
     <div class="form-group">
         @Html.Label("Aktualne miejsce zamieszkania", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.m_zamieszkania, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.m_zamieszkania, "", new { @class = "text-danger" })
+            <div class="input-group">
+                <div class="input-group-addon " style="width: 50px; !important;">
+                    <i class="fas fa-home text-center"></i>
+                </div>
+                @Html.EditorFor(model => model.m_zamieszkania, new { htmlAttributes = new { @class = "form-control" } })
+                <div class="input-group-addon" style="width: auto; !important;">
+                    <a data-toggle="tooltip" data-placement="right" title="Podaj adres aktualnego zamieszkania, miasto, kod pocztowy, ulica i nr. mieszkania/domu"><i class="fas fa-question text-center"></i></a>
+                </div>
+            </div>
+                @Html.ValidationMessageFor(model => model.m_zamieszkania, "", new { @class = "text-danger" })
+            </div>
         </div>
-    </div>
-
     <div class="form-group">
         @Html.Label("Nazwa imprezy masowej", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.nazwa_imprezy, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.nazwa_imprezy, "", new { @class = "text-danger" })
+            <div class="input-group">
+                <div class="input-group-addon " style="width: 50px; !important;">
+                    <i class="fas fa-glass-cheers text-center"></i>
+                </div>
+                @Html.EditorFor(model => model.nazwa_imprezy, new { htmlAttributes = new { @class = "form-control" } })
+                <div class="input-group-addon" style="width: auto; !important;">
+                    <a data-toggle="tooltip" data-placement="right" title="Podaj nazwę jaką ma mieć Twoja impreza masowa"><i class="fas fa-question text-center"></i></a>
+                </div>
+            </div>
+                @Html.ValidationMessageFor(model => model.nazwa_imprezy, "", new { @class = "text-danger" })
+            </div>
         </div>
-    </div>
-
     <div class="form-group">
         @Html.Label("Rodzaj/treść", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.rodzaj_tresc, new { htmlAttributes = new { @class = "form-control", placeholder = "np. występy" } })
-            @Html.ValidationMessageFor(model => model.rodzaj_tresc, "", new { @class = "text-danger" })
+            <div class="input-group">
+                <div class="input-group-addon " style="width: 50px; !important;">
+                    <i class="fas fa-archive text-center"></i>
+                </div>
+                @Html.EditorFor(model => model.rodzaj_tresc, new { htmlAttributes = new { @class = "form-control", placeholder = "np. występy" } })
+                <div class="input-group-addon" style="width: auto; !important;">
+                    <a data-toggle="tooltip" data-placement="right" title="Podaj rodzaj/treść imprezy np. wydarzenie sportowe, występy, inne"><i class="fas fa-question text-center"></i></a>
+                </div>
+            </div>
+                @Html.ValidationMessageFor(model => model.rodzaj_tresc, "", new { @class = "text-danger" })
+            </div>
         </div>
-    </div>
-
     <div class="form-group">
         @Html.Label("Proponowane miejsce realizacji", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.miejsce_realizacji, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.miejsce_realizacji, "", new { @class = "text-danger" })
-        </div>
+            <div class="input-group">
+                <div class="input-group-addon " style="width: 50px; !important;">
+                    <i class="fas fa-map-marker-alt text-center"></i>
+                </div>
+                @Html.EditorFor(model => model.miejsce_realizacji, new { htmlAttributes = new { @class = "form-control" } })
+                <div class="input-group-addon" style="width: auto; !important;">
+                    <a data-toggle="tooltip" data-placement="right" title="Podaj sugestię gdzie chcesz aby odbyła się Twoja impreza"><i class="fas fa-question text-center"></i></a>
+                </div>
+            </div>
+                @Html.ValidationMessageFor(model => model.miejsce_realizacji, "", new { @class = "text-danger" })
+            </div>
     </div>
-
     <div class="form-group">
         @Html.Label("Czas trwania", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.czas_trwania, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.czas_trwania, "", new { @class = "text-danger" })
+            <div class="input-group">
+                <div class="input-group-addon " style="width: 50px; !important;">
+                    <i class="fas fa-clock text-center"></i>
+                </div>
+                @Html.EditorFor(model => model.czas_trwania, new { htmlAttributes = new { @class = "form-control" } })
+                <div class="input-group-addon" style="width: auto; !important;">
+                    <a data-toggle="tooltip" data-placement="right" title="jednodniowe, wielodniowe - ile? - podawaj np: 2 dni, 1 dzień"><i class="fas fa-question text-center"></i></a>
+                </div>
+            </div>
+                @Html.ValidationMessageFor(model => model.czas_trwania, "", new { @class = "text-danger" })
+            </div>
         </div>
-    </div>
-
     <div class="form-group">
         @Html.Label("Cykliczność", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.cyklicznosc, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.cyklicznosc, "", new { @class = "text-danger" })
+            <div class="input-group">
+                <div class="input-group-addon " style="width: 50px; !important;">
+                    <i class="fas fa-calendar-day text-center"></i>
+                </div>
+                @Html.EditorFor(model => model.cyklicznosc, new { htmlAttributes = new { @class = "form-control" } })
+                <div class="input-group-addon" style="width: auto; !important;">
+                    <a data-toggle="tooltip" data-placement="right" title="jednorazowe, okazjonalne, powtarzalne - ile? np. 2 razy w roku"><i class="fas fa-question text-center"></i></a>
+                </div>
+            </div>
+                @Html.ValidationMessageFor(model => model.cyklicznosc, "", new { @class = "text-danger" })
+            </div>
         </div>
-    </div>
-
     <div class="form-group">
         @Html.Label("Charakter uczestnictwa", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.charakter_uczestnictwa, new { htmlAttributes = new { @class = "form-control", placeholder = "otwarte/zamknięte" } })
-            @Html.ValidationMessageFor(model => model.charakter_uczestnictwa, "", new { @class = "text-danger" })
+            <div class="input-group">
+                <div class="input-group-addon " style="width: 50px; !important;">
+                    <i class="fas fa-lock-open text-center"></i>
+                </div>
+                @Html.EditorFor(model => model.charakter_uczestnictwa, new { htmlAttributes = new { @class = "form-control", placeholder = "otwarte/zamknięte" } })
+                <div class="input-group-addon" style="width: auto; !important;">
+                    <a data-toggle="tooltip" data-placement="right" title="otwarte/zamknięte, inne?"><i class="fas fa-question text-center"></i></a>
+                </div>
+            </div>
+                @Html.ValidationMessageFor(model => model.charakter_uczestnictwa, "", new { @class = "text-danger" })
+            </div>
         </div>
-    </div>
-
     <div class="form-group">
         @Html.Label("Forma organizacyjna", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.forma_organizacyjna, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.forma_organizacyjna, "", new { @class = "text-danger" })
+            <div class="input-group">
+                <div class="input-group-addon " style="width: 50px; !important;">
+                    <i class="fab fa-wpforms text-center"></i>
+                </div>
+                @Html.EditorFor(model => model.forma_organizacyjna, new { htmlAttributes = new { @class = "form-control" } })
+                <div class="input-group-addon" style="width: auto; !important;">
+                    <a data-toggle="tooltip" data-placement="right" title="festyn/turniej/liga/konkurs/koncert/wystawa, inne - jakie?"><i class="fas fa-question text-center"></i></a>
+                </div>
+            </div>
+                @Html.ValidationMessageFor(model => model.forma_organizacyjna, "", new { @class = "text-danger" })
+            </div>
         </div>
-    </div>
-
     <div class="form-group">
         @Html.Label("Cele", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.cele, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.cele, "", new { @class = "text-danger" })
+            <div class="input-group">
+                <div class="input-group-addon " style="width: 50px; !important;">
+                    <i class="fas fa-tasks text-center"></i>
+                </div>
+                @Html.EditorFor(model => model.cele, new { htmlAttributes = new { @class = "form-control" } })
+                <div class="input-group-addon" style="width: auto; !important;">
+                    <a data-toggle="tooltip" data-placement="right" title="Na przykład: popularyzatorskie, wychowawcze, poznawcze, zabawowe, wypoczynkowe, zdrowotne, inne - jakie?"><i class="fas fa-question text-center"></i></a>
+                </div>
+            </div>
+                @Html.ValidationMessageFor(model => model.cele, "", new { @class = "text-danger" })
+            </div>
         </div>
-    </div>
-
     <div class="form-group">
         @Html.Label("Proponowany termin odbycia imprezy", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.termin_odbycia, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.termin_odbycia, "", new { @class = "text-danger" })
+            <div class="input-group">
+                <div class="input-group-addon col-md-4">
+                    <a data-toggle="tooltip" data-placement="right" title="w formacie dzień/miesiąc/rok, jeżeli wielodniowa to podać ręcznie od kiedy do kiedy miałaby się odbyć impreza"><i class="fas fa-question text-center" style="margin-bottom: 10px;"></i></a>
+                    @Html.EditorFor(model => model.termin_odbycia, new { htmlAttributes = new { @class = "form-control", id = "datepicker" } })
+
+                </div>
+            </div>
+                @Html.ValidationMessageFor(model => model.termin_odbycia, "", new { @class = "text-danger" })
+            </div>
         </div>
-    </div>
+    <script>
+        $('#datepicker').datepicker({
+            uiLibrary: 'bootstrap4'
+        });
+    </script>
 
     <div class="form-group">
         @Html.Label("Ceny biletów", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.ceny_bilet, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.ceny_bilet, "", new { @class = "text-danger" })
+            <div class="input-group">
+                <div class="input-group-addon " style="width: 50px; !important;">
+                    <i class="fas fa-ticket-alt text-center"></i>
+                </div>
+                @Html.EditorFor(model => model.ceny_bilet, new { htmlAttributes = new { @class = "form-control" } })
+                <div class="input-group-addon" style="width: auto; !important;">
+                    <a data-toggle="tooltip" data-placement="right" title="Proszę podać w formie cena waluta np. 150zł - jeżeli impreza otwarta to proszę wpisać liczbę 0"><i class="fas fa-question text-center"></i></a>
+                </div>
+            </div>
+                @Html.ValidationMessageFor(model => model.ceny_bilet, "", new { @class = "text-danger" })
+            </div>
         </div>
-    </div>
-
     <div class="form-group">
         @Html.Label("Dodatkowe usługi", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.dod_uslugi, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.dod_uslugi, "", new { @class = "text-danger" })
+            <div class="input-group">
+                <div class="input-group-addon " style="width: 50px; !important;">
+                    <i class="fas fa-plus-square text-center"></i>
+                </div>
+                @Html.EditorFor(model => model.dod_uslugi, new { htmlAttributes = new { @class = "form-control" } })
+                <div class="input-group-addon" style="width: auto; !important;">
+                    <a data-toggle="tooltip" data-placement="right" title="Proszę wymienić dodatkowe usługi(odpłatne) np. - reklama wydarzenia w ŚMP(Środek Masowego Przekazu), szukanie sponsorów, stworzenie tematycznej strony imprezy, przeprowadzenie zapisów na imprezę masową"><i class="fas fa-question text-center"></i></a>
+                </div>
+            </div>
+                @Html.ValidationMessageFor(model => model.dod_uslugi, "", new { @class = "text-danger" })
+            </div>
         </div>
-    </div>
-
-    <div class="form-group">
+    <div class="form-group" style="display: none;">
         @Html.Label("Stan zgłoszenia", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.stanZgloszenia, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.stanZgloszenia, "", new { @class = "text-danger" })
+            <div class="input-group">
+                @Html.EditorFor(model => model.stanZgloszenia, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+                @Html.ValidationMessageFor(model => model.stanZgloszenia, "", new { @class = "text-danger" })
+            </div>
         </div>
-    </div>
 
     <!--
            Uwaga, ponizszy div odpowiada za wygenerowanie daty otrzymania zgloszenia -
@@ -169,7 +297,6 @@
             @Html.ValidationMessageFor(model => model.dataOtrzymaniaZgloszenia, "", new { @class = "text-danger" })
         </div>
     </div>
-
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
             <input type="submit" value="Prześlij zgłoszenie" class="btn btn-success btn-lg" />

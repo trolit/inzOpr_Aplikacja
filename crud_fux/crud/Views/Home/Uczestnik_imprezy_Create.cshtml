@@ -2,7 +2,7 @@
 
 @{
     <!-- tytul strony (chodzi o zakladke) -->
-    ViewBag.Title = "Wpis o dokumencie";
+    ViewBag.Title = "Zapisanie na impreze";
 }
 
 <head>
@@ -20,32 +20,46 @@
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>Uczestnik</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             @Html.Label("Imię i nazwisko", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.imieNazwisko, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.imieNazwisko, "", new { @class = "text-danger" })
+                <div class="input-group">
+                    <div class="input-group-addon " style="width: 50px; !important;">
+                        <i class="fas fa-user text-center"></i>
+                    </div>
+                    @Html.EditorFor(model => model.imieNazwisko, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+                    @Html.ValidationMessageFor(model => model.imieNazwisko, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
 
         <div class="form-group">
             @Html.Label("Mail", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+                <div class="input-group">
+                    <div class="input-group-addon " style="width: 50px; !important;">
+                        <i class="fas fa-envelope text-center"></i>
+                    </div>
+                    @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+                    @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
 
         <div class="form-group">
             @Html.Label("Numer telefonu", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.nrTelefonu, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.nrTelefonu, "", new { @class = "text-danger" })
+                <div class="input-group">
+                    <div class="input-group-addon " style="width: 50px; !important;">
+                        <i class="fas fa-phone-square text-center"></i>
+                    </div>
+                    @Html.EditorFor(model => model.nrTelefonu, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+                    @Html.ValidationMessageFor(model => model.nrTelefonu, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
@@ -56,7 +70,7 @@
 }
 
 <div>
-    @Html.ActionLink("Wróć", "Klienci", null, null, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Wróć", "Imprezy_Dostepne", null, null, new { @class = "btn btn-primary przyciskPowrot" })
 </div>
 
 @section Scripts {
