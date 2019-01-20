@@ -6,12 +6,12 @@
 ###########################################################################
 
 **Autorzy:**
-* Paweł Idzikowski (backend, testowanie aplikacji)
+* Paweł Idzikowski (frontend, backend, testowanie aplikacji)
 * Dorota Gil (frontend, testowanie aplikacji)
 * Damian Gnatkowski (frontend, tłumaczenie i poprawa etykiet, testowanie aplikacji)
 * Maciej Kozikowski (frontend, testowanie aplikacji)
 
-** Wykonanie w ** ASP.NET MVC4 (VS 2017 Community)
+**Wykonanie w** ASP.NET MVC4 (VS 2017 Community)
 
 ## PRZYDZIAŁ PLIKÓW I ZADAŃ
 

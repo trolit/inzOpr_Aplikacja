@@ -32,7 +32,7 @@
         <div class="form-group">
             @Html.Label("Nazwa dokumentu", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.nazwaDokumentu, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.nazwaDokumentu, new { htmlAttributes = new { @class = "form-control", @required = "required" } })
                 @Html.ValidationMessageFor(model => model.nazwaDokumentu, "", new { @class = "text-danger" })
             </div>
         </div>

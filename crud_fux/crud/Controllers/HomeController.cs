@@ -316,7 +316,12 @@ namespace crud.Controllers
         [HttpPost]
         public ActionResult Create_Zgloszenie(Zgloszenia newZgloszenie)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && !String.IsNullOrEmpty(newZgloszenie.imie_nazwisko) && !String.IsNullOrEmpty(newZgloszenie.nr_telefonu)
+                && !String.IsNullOrEmpty(newZgloszenie.mail) && !String.IsNullOrEmpty(newZgloszenie.m_zamieszkania)
+                && !String.IsNullOrEmpty(newZgloszenie.nazwa_imprezy) && !String.IsNullOrEmpty(newZgloszenie.rodzaj_tresc)
+                && !String.IsNullOrEmpty(newZgloszenie.czas_trwania) && !String.IsNullOrEmpty(newZgloszenie.cyklicznosc)
+                && !String.IsNullOrEmpty(newZgloszenie.charakter_uczestnictwa) && !String.IsNullOrEmpty(newZgloszenie.forma_organizacyjna)
+                && !String.IsNullOrEmpty(newZgloszenie.cele))
             {
                 _db_Zgloszenia.Zgloszenia.Add(newZgloszenie);
                 _db_Zgloszenia.SaveChanges();
@@ -376,7 +381,7 @@ namespace crud.Controllers
         [HttpPost]
         public ActionResult CreatePozwolenie(Pozwolenie newPozwolenie)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && (newPozwolenie.idProjektu != null) && !String.IsNullOrEmpty(newPozwolenie.nazwa))
             {
                 _db.Pozwolenia.Add(newPozwolenie);
                 _db.SaveChanges();
@@ -476,7 +481,7 @@ namespace crud.Controllers
         [HttpPost]
         public ActionResult CreatePersonel(Personel newPersonel)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && (newPersonel.idProjektu != null) && !String.IsNullOrEmpty(newPersonel.nazwaPersonelu))
             {
                 _db_Personel.Personel.Add(newPersonel);
                 _db_Personel.SaveChanges();
@@ -589,7 +594,7 @@ namespace crud.Controllers
         [HttpPost]
         public ActionResult CreateDokumentacja(Dokumentacja newDokumentacja)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && (newDokumentacja.idProjektu != null) && !String.IsNullOrEmpty(newDokumentacja.nazwaDokumentu))
             {
                 _db_Dokumentacja.Dokumentacja.Add(newDokumentacja);
                 _db_Dokumentacja.SaveChanges();
