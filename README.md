@@ -6,10 +6,10 @@
 ###########################################################################
 
 **Autorzy:**
-* Paweł Idzikowski (backend, testowanie)
-* Dorota Gil (frontend, testowanie)
-* Damian Gnatkowski (frontend, tłumaczenie, testowanie)
-* Maciej Kozikowski (frontend, testowanie)
+* Paweł Idzikowski (backend, testowanie aplikacji)
+* Dorota Gil (frontend, testowanie aplikacji)
+* Damian Gnatkowski (frontend, tłumaczenie i poprawa etykiet, testowanie aplikacji)
+* Maciej Kozikowski (frontend, testowanie aplikacji)
 
 ** Wykonanie w ** ASP.NET MVC4 (VS 2017 Community)
 
