@@ -537,7 +537,6 @@ D:\Github\inzOpr_Aplikacja\crud_fux\crud\bin\Microsoft.Owin.Security.OAuth.xml
 D:\Github\inzOpr_Aplikacja\crud_fux\crud\bin\Microsoft.Owin.Security.Google.xml
 D:\Github\inzOpr_Aplikacja\crud_fux\crud\bin\Microsoft.Owin.Security.Twitter.xml
 D:\Github\inzOpr_Aplikacja\crud_fux\crud\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-D:\Github\inzOpr_Aplikacja\crud_fux\crud\obj\Debug\crud.csprojAssemblyReference.cache
 D:\Github\inzOpr_Aplikacja\crud_fux\crud\obj\Debug\crud.csproj.CoreCompileInputs.cache
 D:\Github\inzOpr_Aplikacja\crud_fux\crud\obj\Debug\crud.csproj.CopyComplete
 D:\Github\inzOpr_Aplikacja\crud_fux\crud\obj\Debug\crud.dll
@@ -667,3 +666,4 @@ D:\Git\bin\inzOpr_Aplikacja\crud_fux\crud\obj\Debug\crud.csprojResolveAssemblyRe
 D:\Git\bin\inzOpr_Aplikacja\crud_fux\crud\obj\Debug\crud.csproj.CoreCompileInputs.cache
 D:\Git\bin\inzOpr_Aplikacja\crud_fux\crud\obj\Debug\crud.dll
 D:\Git\bin\inzOpr_Aplikacja\crud_fux\crud\obj\Debug\crud.pdb
+D:\Github\inzOpr_Aplikacja\crud_fux\crud\obj\Debug\crud.csprojAssemblyReference.cache
