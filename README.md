@@ -21,7 +21,8 @@
 **Uwaga** Aby znaleźć w uruchomionej apce gdzie jest wasz plik nad którym pracujecie po prostu przeklikujcie i patrzcie kiedy nazwa pliku ukaże się w adresie.
 
 **@Dorota Gil** \
-          - [X] zarządzanie ogólnym stylem graficznym aplikacji poprzez plik style.css(a co za tym idzie tło strony, czcionka nagłówka itp.) <br/>
+
+          	  - [X] zarządzanie ogólnym stylem graficznym aplikacji poprzez plik style.css(a co za tym idzie tło strony, czcionka nagłówka itp.) <br/>
 		  - [X] opracowanie navbara i stopki <br/>
 		  - [X] opracowanie poniższych plików *.cshtml  <br/>
 		  - [X] Create_Zgloszenie.cshtml  
@@ -41,6 +42,7 @@
 		  - [X] Przelozony.cshtml ~~(nowe)~~
 		  
 **@Damian Gnatkowski** \
+
           - [X] spolszczenie aplikacji(dotyczy to wszystkich plików cshtml), wprowadzenie jednolitych nazw. np. przycisk powrotu na każdej stronie ma taką samą nazwę i oprawę graficzną i zrobienie żeby w widokach z formularzami np. edycji Dokumentacji labelami(etykietami)nie były nazwy pól z tabeli a sensowny tekst(czyli zamiast np. nrTel to profesjonalnie: Numer telefonu)
 	      - [X] kontrola działania przycisków (powiązanie ich tak aby działały zgodnie z zamierzeniem) 
 		  - [X] opracowanie plików *.cshtml <br/>
@@ -58,6 +60,7 @@
 		  - [X] EditDokumentacja.cshtml 
 
 **@Maciej Kozikowski** \
+
 		  - [X] testowanie funkcjonowania aplikacji i zgłaszanie usterek 
 		  - [X] opracowanie poniższych plików *.cshtml  
 		  - [X] Delete_Przelozony.cshtml   
