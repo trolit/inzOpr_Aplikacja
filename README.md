@@ -43,8 +43,8 @@
 		  
 **@Damian Gnatkowski** \
 
-          - [X] spolszczenie aplikacji(dotyczy to wszystkich plików cshtml), wprowadzenie jednolitych nazw. np. przycisk powrotu na każdej stronie ma taką samą nazwę i oprawę graficzną i zrobienie żeby w widokach z formularzami np. edycji Dokumentacji labelami(etykietami)nie były nazwy pól z tabeli a sensowny tekst(czyli zamiast np. nrTel to profesjonalnie: Numer telefonu)
-	      - [X] kontrola działania przycisków (powiązanie ich tak aby działały zgodnie z zamierzeniem) 
+          	  - [X] spolszczenie aplikacji(dotyczy to wszystkich plików cshtml), wprowadzenie jednolitych nazw. np. przycisk powrotu na każdej stronie ma taką samą nazwę i oprawę graficzną i zrobienie żeby w widokach z formularzami np. edycji Dokumentacji labelami(etykietami)nie były nazwy pól z tabeli a sensowny tekst(czyli zamiast np. nrTel to profesjonalnie: Numer telefonu)
+	      	  - [X] kontrola działania przycisków (powiązanie ich tak aby działały zgodnie z zamierzeniem) 
 		  - [X] opracowanie plików *.cshtml <br/>
 		  - [X] Details_Pracownik.cshtml 
 		  - [X] Details_Przelozony.cshtml 
