@@ -8,89 +8,88 @@
 <head>
     <!-- zalaczenie biblioteki globalnej style.css -->
     <link rel="Stylesheet" href="~/Content/style.css" type="text/css" />
+
+    <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 </head>
 
 <div class="naglowekStrony">
     Szczegóły imprezy
 </div>
 
-<div>
+<div class="form-horizontal">
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            Nazwa imprezy
-        </dt>
+    <div class="col-lg-6 col-md-8 mx-auto jumbotron">
+        <div style="font-family: 'Arima Madurai', sans-serif; font-size:130%; margin-top: 5%;">
+            <div class="text-center" style="margin-bottom: 15px;">
+                <i class="fas fa-info-circle fa-7x"></i>
+            </div>
+            <p class="text-center" style="font-weight: bold;">Szczegóły</p>
+            <p class="text-justify" style="font-size: 75% !important">
+                <i class="fas fa-exclamation-circle"></i> Przycisk powrotu ekranu znajduje się poniżej.
+            </p>
+            <hr />
+        </div>
+            <div>
+                <dl class="dl-horizontal">
+                    <i class="fas fa-arrow-alt-circle-right"></i>
+                    <span class="etykietaJumbo">Nazwa imprezy</span>
 
-        <dd>
-            @Html.DisplayFor(model => model.nazwaImprezy)
-        </dd>
+                    <dd>
+                        @Html.EditorFor(model => model.nazwaImprezy, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                    </dd>
 
-        <dt>
-            Rodzaj/treść
-        </dt>
+                    <i class="fas fa-arrow-alt-circle-right"></i>
+                    <span class="etykietaJumbo">Rodzaj/treść</span>
+                    <dd>
+                        @Html.EditorFor(model => model.rodzaj, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.rodzaj)
-        </dd>
+                    <i class="fas fa-arrow-alt-circle-right"></i>
+                    <span class="etykietaJumbo">Proponowane miejsce realizacji</span>
+                    <dd>
+                        @Html.EditorFor(model => model.miejsce, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                    </dd>
 
-        <dt>
-            Proponowane miejsce realizacji
-        </dt>
+                    <i class="fas fa-arrow-alt-circle-right"></i>
+                    <span class="etykietaJumbo">Czas trwania</span>
+                    <dd>
+                        @Html.EditorFor(model => model.czasTrwania, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.miejsce)
-        </dd>
+                    <i class="fas fa-arrow-alt-circle-right"></i>
+                    <span class="etykietaJumbo">Cykliczność</span>
+                    <dd>
+                        @Html.EditorFor(model => model.cyklicznosc, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                    </dd>
 
-        <dt>
-            Czas trwania
-        </dt>
+                    <i class="fas fa-arrow-alt-circle-right"></i>
+                    <span class="etykietaJumbo">Charakter uczestnictwa</span>
+                    <dd>
+                        @Html.EditorFor(model => model.charakterUczestnictwa, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.czasTrwania)
-        </dd>
+                    <i class="fas fa-arrow-alt-circle-right"></i>
+                    <span class="etykietaJumbo">Forma organizacyjna</span>
+                    <dd>
+                        @Html.EditorFor(model => model.formaOrganizacyjna, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                    </dd>
 
-        <dt>
-            Cykliczność
-        </dt>
+                    <i class="fas fa-arrow-alt-circle-right"></i>
+                    <span class="etykietaJumbo">Ceny biletów</span>
+                    <dd>
+                        @Html.EditorFor(model => model.cenaBiletu, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.cyklicznosc)
-        </dd>
+                    <i class="fas fa-arrow-alt-circle-right"></i>
+                    <span class="etykietaJumbo">Liczba uczestników</span>
+                    <dd>
+                        @Html.EditorFor(model => model.liczbaUczestnikow, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                    </dd>
+                    <div class="form-group" style="margin-top: 30px;">
+                         @Html.ActionLink("Wróć", "Imprezy_Dostepne", null, null, new { @class = "btn btn-primary btn-md btn-lg" })
+                    </div>
+                </dl>
+            </div>
+        </div>
+    </div>
 
-        <dt>
-            Charakter uczestnictwa
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.charakterUczestnictwa)
-        </dd>
-
-        <dt>
-            Forma organizacyjna
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.formaOrganizacyjna)
-        </dd>
-
-        <dt>
-            Ceny biletów
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.cenaBiletu)
-        </dd>
-
-        <dt>
-            Liczba uczestników
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.liczbaUczestnikow)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Wróć", "Imprezy_Dostepne", null, null, new { @class = "btn btn-primary btn-md przyciskPowrot" })
-</p>

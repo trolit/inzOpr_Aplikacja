@@ -21,58 +21,72 @@
 
     <div class="form-horizontal">
         <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.Label("Imię i nazwisko", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="input-group">
-                    <div class="input-group-addon " style="width: 50px; !important;">
-                        <i class="fas fa-user text-center"></i>
-                    </div>
-                    @Html.EditorFor(model => model.imieNazwisko, new { htmlAttributes = new { @class = "form-control" } })
+        <div class="col-lg-6 col-md-8 mx-auto jumbotron">
+            <div style="font-family: 'Arima Madurai', sans-serif; font-size:130%; margin-top: 5%;">
+                <div class="text-center" style="margin-bottom: 15px;">
+                    <i class="fas fa-id-card fa-7x"></i>
                 </div>
-                    @Html.ValidationMessageFor(model => model.imieNazwisko, "", new { @class = "text-danger" })
-                </div>
+                <p class="text-center" style="font-weight: bold;">Formularz uczestnika</p>
+                <p class="text-justify" style="font-size: 75% !important">
+                    <i class="fas fa-exclamation-circle"></i> Wypełnij wszystkie pola.
+                </p>
+                <hr />
             </div>
-
-        <div class="form-group">
-            @Html.Label("Mail", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="input-group">
-                    <div class="input-group-addon " style="width: 50px; !important;">
-                        <i class="fas fa-envelope text-center"></i>
+            <div>
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.Label("Imię i nazwisko", htmlAttributes: new { @class = "control-label col-md-5" })
+                    <div class="col-md-10">
+                        <div class="input-group">
+                            <div class="input-group-text" style="width: 40px; !important;">
+                                <i class="fas fa-user text-center"></i>
+                            </div>
+                            @Html.EditorFor(model => model.imieNazwisko, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                        @Html.ValidationMessageFor(model => model.imieNazwisko, "", new { @class = "text-danger" })
                     </div>
-                    @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
                 </div>
-                    @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
-                </div>
-            </div>
 
-        <div class="form-group">
-            @Html.Label("Numer telefonu", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="input-group">
-                    <div class="input-group-addon " style="width: 50px; !important;">
-                        <i class="fas fa-phone-square text-center"></i>
+                <div class="form-group">
+                    @Html.Label("Mail", htmlAttributes: new { @class = "control-label col-md-5" })
+                    <div class="col-md-10">
+                        <div class="input-group">
+                            <div class="input-group-text" style="width: 40px; !important;">
+                                <i class="fas fa-envelope text-center"></i>
+                            </div>
+                            @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                        @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
                     </div>
-                    @Html.EditorFor(model => model.nrTelefonu, new { htmlAttributes = new { @class = "form-control" } })
                 </div>
-                    @Html.ValidationMessageFor(model => model.nrTelefonu, "", new { @class = "text-danger" })
-                </div>
-            </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Utwórz" class="btn btn-success" />
+                <div class="form-group">
+                    @Html.Label("Numer telefonu", htmlAttributes: new { @class = "control-label col-md-5" })
+                    <div class="col-md-10">
+                        <div class="input-group">
+                            <div class="input-group-text" style="width: 40px; !important;">
+                                <i class="fas fa-phone-square text-center"></i>
+                            </div>
+                            @Html.EditorFor(model => model.nrTelefonu, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                        @Html.ValidationMessageFor(model => model.nrTelefonu, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-top: 30px;">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Utwórz" class="btn btn-success btn-lg" />
+                        <input type="button" value="Wróć" class="btn btn-primary btn-lg" onclick="window.location='@Url.Action("Imprezy_Dostepne", "Home")'" />
+                    </div>
+                </div>
+                @section Scripts {
+                    @Scripts.Render("~/bundles/jqueryval")
+                }
             </div>
         </div>
     </div>
 }
 
-<div>
-    @Html.ActionLink("Wróć", "Imprezy_Dostepne", null, null, new { @class = "btn btn-primary przyciskPowrot" })
-</div>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+
+

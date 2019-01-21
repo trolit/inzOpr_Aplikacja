@@ -94,22 +94,30 @@ body {
 
 /* styl naglowka tabeli */
 tr th {
-    background-color: #62837a;
+    background-color: #47101b;
+    color: white;
 }
 
 /* parzyste wiersze tabeli */
 .parzysty:nth-child(even) {
-    background-color: #859f98;
+    background-color: #996a71;
+    color: white;
 }
 
 /* nieparzyste wiersze tabeli */
 .nieparzysty:nth-child(odd) {
-    background-color: #96aca6;
+    background-color: #8a5c62;
+    color: white;
 }
 
 
 .przyciskWiekszy {
     width: 30%;
+}
+
+/* klasa dla przyciskow w Przelozony_Listaimprez.cshtml */
+.przyciskListaimprez {
+    width: 25%;
 }
 
 .przyciskMniejszy {
@@ -118,4 +126,85 @@ tr th {
 
 .przyciskKolor {
     background-color: #F1EA7F;
+}
+
+/*czcionka w jumbotronie*/
+.etykietaJumbo {
+    font-family: 'Alegreya Sans', sans-serif;
+}
+
+
+/* stylowanie przyciskow Utworzenia!  */
+.przyciskNawigacyjnyMINI {
+    border-radius: 4px;
+    /* Kolor przycisku */
+    background-color: #766F57;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 16px;
+    width: 220px;
+    height: 45px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.przyciskNawigacyjnyMINI span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.przyciskNawigacyjnyMINI span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.przyciskNawigacyjnyMINI:hover span {
+    padding-right: 25px;
+}
+
+.przyciskNawigacyjnyMINI:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+/* stylowanie przyciskow Personel,Dokumentacja,Pozwolenia!  */
+.przyciskSterowania1 {
+    border-radius: 4px;
+    /* Kolor przycisku */
+    background-color: #672E3B;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 16px;
+    width: 120px;
+    height: 35px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+/* stylowanie przyciskow Szczegóły!  */
+/* DODAC DO WSZYSTKICH PRZYCISKOW SZCZEGOLY !!!!! - TO DO */
+/* DODAC NIESTANDARDOWA CZCIONKE DO NAGLOWKA i EW DO WIERSZY */
+.przyciskSterowania2 {
+    border-radius: 4px;
+    /* Kolor przycisku */
+    background-color: #944743;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 16px;
+    width: 100px;
+    height: 35px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
 }

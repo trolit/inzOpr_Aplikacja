@@ -22,7 +22,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.nazwaImprezy)
+            @Html.EditorFor(model => model.nazwaImprezy, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
         </dd>
 
         <dt>
@@ -30,7 +30,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.rodzaj)
+            @Html.EditorFor(model => model.rodzaj, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
         </dd>
 
         <dt>
@@ -38,7 +38,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.miejsce)
+            @Html.EditorFor(model => model.miejsce, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
         </dd>
 
         <dt>
@@ -46,7 +46,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.czasTrwania)
+           @Html.EditorFor(model => model.czasTrwania, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
         </dd>
 
         <dt>
@@ -54,7 +54,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.cyklicznosc)
+            @Html.EditorFor(model => model.cyklicznosc, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
         </dd>
 
         <dt>
@@ -62,7 +62,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.charakterUczestnictwa)
+            @Html.EditorFor(model => model.charakterUczestnictwa, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
         </dd>
 
         <dt>
@@ -70,7 +70,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.formaOrganizacyjna)
+            @Html.EditorFor(model => model.formaOrganizacyjna, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
         </dd>
 
         <dt>
@@ -78,7 +78,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.cenaBiletu)
+            @Html.EditorFor(model => model.cenaBiletu, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
         </dd>
 
         <dt>
@@ -86,7 +86,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.liczbaUczestnikow)
+            @Html.EditorFor(model => model.liczbaUczestnikow, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
         </dd>
 
         <dt>
@@ -94,11 +94,11 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.identyfikatorPorownania)
+            @Html.EditorFor(model => model.identyfikatorPorownania, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Wróć", "Przelozony_Listaimprez", null, null, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Wróć", "Przelozony_Listaimprez", null, null, new { @class = "btn btn-primary przyciskPowrot" })
 </p>
