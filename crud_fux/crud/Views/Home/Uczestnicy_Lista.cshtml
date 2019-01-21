@@ -41,12 +41,12 @@
                 @Html.DisplayFor(modelItem => item.nrTelefonu)
             </td>
             <td>
-                @Html.ActionLink("Zmień dane uczestnika", "EditUczestnik", new { id = item.idUczestnika }, new { @class = "btn btn-primary" })
-                @Html.ActionLink("Usuń uczestnika", "DeleteUczestnik", new { id = item.idUczestnika }, new { @class = "btn btn-danger" })
+                @Html.ActionLink("Edytuj", "EditUczestnik", new { id = item.idUczestnika }, new { @class = "btn przyciskSterowania3" })
+                @Html.ActionLink("Usuń", "DeleteUczestnik", new { id = item.idUczestnika }, new { @class = "btn przyciskSterowania4" })
             </td>
         </tr>
     }
 
 </table>
 
-@Html.ActionLink("Wróć", "Przelozony_Listaimprez", null, null, new { @class = "btn btn-primary przyciskPowrot" })
+@Html.ActionLink("Wróć", "Przelozony_Listaimprez", null, null, new { @class = "btn przyciskPowrot" })

@@ -8,34 +8,51 @@
 <head>
     <!-- zalaczenie biblioteki globalnej style.css -->
     <link rel="Stylesheet" href="~/Content/style.css" type="text/css" />
+    
+    <link href='http://fonts.googleapis.com/css?family=Arima+Madurai&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 </head>
 
 <div class="naglowekStrony">
     Szczegóły wpisu
 </div>
 
-<div>
+<div class="form-horizontal">
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            Nazwa
-        </dt>
+    <div class="col-lg-6 col-md-8 mx-auto jumbotron">
+        <div style="font-family: 'Arima Madurai', sans-serif; font-size:130%; margin-top: 5%;">
+            <div class="text-center" style="margin-bottom: 15px;">
+                <i class="fas fa-info-circle fa-7x"></i>
+            </div>
+            <p class="text-center" style="font-weight: bold;">Szczegóły</p>
+            <p class="text-justify" style="font-size: 75% !important">
+                <i class="fas fa-exclamation-circle"></i> By edytować, kliknij przycisk "Edytuj"
+            </p>
+            <hr />
+            <div>
+                <dl class="dl-horizontal col-md-12" style="font-size: 75% !important">
+                    <dt>
+                        Nazwa
+                    </dt>
 
-        <dd>
-            @Html.EditorFor(model => model.nazwa, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
-        </dd>
+                    <dd>
+                        @Html.EditorFor(model => model.nazwa, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                    </dd>
 
-        <dt>
-            Czy zdobyte?
-        </dt>
+                    <dt>
+                        Czy zdobyte?
+                    </dt>
 
-        <dd>
-            @Html.EditorFor(model => model.czyZdobyte, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
-        </dd>
+                    <dd class="text-left">
+                        @Html.EditorFor(model => model.czyZdobyte, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                    </dd>
 
-    </dl>
+                </dl>
+            </div>
+            <p>
+                @Html.ActionLink("Wróć", "Pozwolenia", null, null, new { @class = "btn przyciskPowrot" })
+                @Html.ActionLink("Edytuj", "EditPozwolenie", null, new { id = Model.idPozwolenia }, new { @class = "btn przyciskSterowania3" })
+            </p>
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Wróć", "Pozwolenia", null, null, new { @class = "btn btn-primary btn-md przyciskPowrot" })
-    @Html.ActionLink("Edytuj", "EditPozwolenie", null, new { id = Model.idPozwolenia }, new { @class = "btn btn-info" })
-</p>
+

@@ -11,10 +11,11 @@
     width: 100%;
     padding-top: 25px;
     margin-bottom: 20px;
-    font-size: 35px;
+    font-size: 48px;
     font-weight: bold;
     color: black;
-    font-family: 'Capriola', sans-serif;
+    font-family: 'Marcellus', sans-serif;
+    margin-top: 10px;
     text-transform: uppercase;
     text-align: center;
     letter-spacing: 4px;
@@ -39,10 +40,11 @@
 }
 
 body {
-    background-color: #cbcbcb;
+    background-color: #deafb2;
     color: black;
 }
 
+/* ************************************************ */
 /* stylowanie przyciskow glownych */
 .przyciskNawigacyjny {
     border-radius: 4px;
@@ -53,7 +55,7 @@ body {
     text-align: center;
     font-size: 40px;
     padding: 20px;
-    width: 442px;
+    width: 436px;
     height: 400px;
     transition: all 0.5s;
     cursor: pointer;
@@ -85,29 +87,29 @@ body {
   right: 0;
 }
 
-/* Klasa przycisków odpowiadających za powrót do poprzedniej strony - NIE USUWAC! */
-.przyciskPowrot {
-    width: 10%;
-    padding-top: 1%;
-    padding-bottom: 1%;
-}
-
 /* styl naglowka tabeli */
 tr th {
     background-color: #47101b;
     color: white;
+    /* czcionka dla naglowka */
+    font-family: 'Marmelad', sans-serif;
 }
 
+/* ************************************************ */
 /* parzyste wiersze tabeli */
 .parzysty:nth-child(even) {
     background-color: #996a71;
     color: white;
+    /* czcionka dla wierszy */
+    font-family: 'Maven Pro', sans-serif;
 }
 
 /* nieparzyste wiersze tabeli */
 .nieparzysty:nth-child(odd) {
     background-color: #8a5c62;
     color: white;
+    /* czcionka dla wierszy */
+    font-family: 'Maven Pro', sans-serif;
 }
 
 
@@ -115,6 +117,7 @@ tr th {
     width: 30%;
 }
 
+/* ************************************************ */
 /* klasa dla przyciskow w Przelozony_Listaimprez.cshtml */
 .przyciskListaimprez {
     width: 25%;
@@ -134,11 +137,12 @@ tr th {
 }
 
 
+/* ************************************************ */
 /* stylowanie przyciskow Utworzenia!  */
 .przyciskNawigacyjnyMINI {
     border-radius: 4px;
     /* Kolor przycisku */
-    background-color: #766F57;
+    background-color: #571f2a;
     border: none;
     color: #FFFFFF;
     text-align: center;
@@ -175,6 +179,7 @@ tr th {
     right: 0;
 }
 
+/* ************************************************ */
 /* stylowanie przyciskow Personel,Dokumentacja,Pozwolenia!  */
 .przyciskSterowania1 {
     border-radius: 4px;
@@ -191,8 +196,25 @@ tr th {
     margin: 5px;
 }
 
+/* ************************************************ */
+/* stylowanie przycisku Powrotu!  */
+.przyciskPowrot {
+    border-radius: 4px;
+    /* Kolor przycisku */
+    background-color: #5c2d33;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 16px;
+    width: 120px;
+    height: 35px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+/* ************************************************ */
 /* stylowanie przyciskow Szczegóły!  */
-/* DODAC DO WSZYSTKICH PRZYCISKOW SZCZEGOLY !!!!! - TO DO */
 /* DODAC NIESTANDARDOWA CZCIONKE DO NAGLOWKA i EW DO WIERSZY */
 .przyciskSterowania2 {
     border-radius: 4px;
@@ -202,7 +224,108 @@ tr th {
     color: #FFFFFF;
     text-align: center;
     font-size: 16px;
+    width: 120px;
+    height: 35px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+
+/* ************************************************ */
+/* PRZYCISK EDYTUJ */
+.przyciskSterowania3 {
+    border-radius: 4px;
+    /* Kolor przycisku */
+    background-color: #4d1e23;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 16px;
     width: 100px;
+    height: 35px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+
+/* ************************************************ */
+/* PRZYCISK USUŃ */
+.przyciskSterowania4 {
+    border-radius: 4px;
+    /* Kolor przycisku */
+    background-color: #DC4C46;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 16px;
+    width: 100px;
+    height: 35px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+/* ************************************************ */
+/* STYLOWANIE TABEL */
+.table {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 6px solid #672E3B;
+}
+
+.table td {
+    border: 1px solid #38010c;
+    margin: auto;
+}
+
+.table td {
+    border: 2px solid #45111b;
+    margin: auto;
+    vertical-align: middle;
+}
+
+.table th {
+    vertical-align: middle;
+}
+
+.stopkaIkona {
+    text-decoration: none;
+    color: black; !important;
+    opacity: 0.4;
+    font-size: 42px;
+}
+
+.stopkaIkona:hover {
+    opacity: 1;
+}
+
+.zapiszMnie {
+    border-radius: 4px;
+    /* Kolor przycisku */
+    background-color: #4d1e23;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 16px;
+    width: 130px;
+    height: 35px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.szczegolyImprezy {
+    border-radius: 4px;
+    /* Kolor przycisku */
+    background-color: #944743;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 16px;
+    width: 170px;
     height: 35px;
     transition: all 0.5s;
     cursor: pointer;

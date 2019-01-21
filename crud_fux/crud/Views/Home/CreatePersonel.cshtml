@@ -8,6 +8,7 @@
 <head>
     <!-- zalaczenie biblioteki globalnej style.css -->
     <link rel="Stylesheet" href="~/Content/style.css" type="text/css" />
+    <link href='http://fonts.googleapis.com/css?family=Arima+Madurai&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 </head>
 
 <div class="naglowekStrony">
@@ -20,43 +21,55 @@
 
     <div class="form-horizontal">
         <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.Label("Podaj identyfikator projektu", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.idProjektu, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.idProjektu, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.Label("Nazwa personelu", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.nazwaPersonelu, new { htmlAttributes = new { @class = "form-control", @required = "required" } })
-                @Html.ValidationMessageFor(model => model.nazwaPersonelu, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.Label("Czy ustalony?", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.czyUstalony)
-                    @Html.ValidationMessageFor(model => model.czyUstalony, "", new { @class = "text-danger" })
+        <div class="col-lg-6 col-md-8 mx-auto jumbotron">
+            <div style="font-family: 'Arima Madurai', sans-serif; font-size:130%; margin-top: 5%;">
+                <div class="text-center" style="margin-bottom: 15px;">
+                    <i class="fas fa-folder-plus fa-7x"></i>
                 </div>
-            </div>
-        </div>
+                <p class="text-center" style="font-weight: bold;">Utwórz wpis</p>
+                <p class="text-justify" style="font-size: 75% !important">
+                    <i class="fas fa-exclamation-circle"></i> Wypełnij pola, a następnie kliknij przycisk "Utwórz"
+                </p>
+                <hr />
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Utwórz" class="btn btn-success" />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group" style="font-size: 75% !important">
+                    @Html.Label("Podaj identyfikator projektu", htmlAttributes: new { @class = "control-label col-md-6" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.idProjektu, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.idProjektu, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group" style="font-size: 75% !important">
+                    @Html.Label("Nazwa personelu", htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.nazwaPersonelu, new { htmlAttributes = new { @class = "form-control", @required = "required" } })
+                        @Html.ValidationMessageFor(model => model.nazwaPersonelu, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group" style="font-size: 75% !important">
+                    @Html.Label("Czy ustalony?", htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-10">
+                        <div class="checkbox">
+                            @Html.EditorFor(model => model.czyUstalony)
+                            @Html.ValidationMessageFor(model => model.czyUstalony, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Utwórz" class="btn btn-success" />
+                        <input type="button" value="Wróć" class="btn przyciskPowrot" onclick="window.location='@Url.Action("Personel", "Home")'" />
+                    </div>
+                </div>
+
             </div>
         </div>
-    </div>
+    </div>     
 }
-
-
-<input type="button" value="Wróć" class="btn btn-primary btn-md przyciskPowrot" onclick="window.location='@Url.Action("Personel", "Home")'" />
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

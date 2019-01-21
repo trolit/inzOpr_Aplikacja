@@ -8,6 +8,10 @@
 <head>
     <!-- zalaczenie biblioteki globalnej style.css -->
     <link rel="Stylesheet" href="~/Content/style.css" type="text/css" />
+    <!-- czcionka do naglowkow tabeli -->
+    <link href='http://fonts.googleapis.com/css?family=Marmelad&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <!-- czcionka do zawartosci tabeli -->
+    <link href='http://fonts.googleapis.com/css?family=Maven+Pro&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 </head>
 
 <div class="naglowekStrony">
@@ -15,7 +19,7 @@
 </div>
 
 <table class="table">
-    <tr>
+    <tr class="text-center" style="font-family: 'Marmelad', sans-serif;">
         <th>
             Imię i nazwisko
         </th>
@@ -29,9 +33,6 @@
             Miejsce realizacji
         </th>
         <th>
-            Czas trwania
-        </th>
-        <th>
             Stan zgłoszenia
         </th>
         <th>
@@ -42,7 +43,7 @@
 
     @foreach (var item in Model)
     {
-        <tr class="parzysty nieparzysty text-center">
+        <tr class="parzysty nieparzysty text-center" style="font-family: 'Maven Pro', sans-serif;">
             <td>
                 @Html.DisplayFor(modelItem => item.imie_nazwisko)
             </td>
@@ -56,23 +57,20 @@
                 @Html.DisplayFor(modelItem => item.miejsce_realizacji)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.czas_trwania)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.stanZgloszenia)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.dataOtrzymaniaZgloszenia)
             </td>
             <td>
-                @Html.ActionLink("Edytuj", "Edit_Przelozony", null, new { id = item.idOferty }, new { @class = "btn btn-primary przyciskWiekszy" })
-                @Html.ActionLink("Szczegóły", "Details_Przelozony", null, new { id = item.idOferty }, new { @class = "btn btn-info" })
-                @Html.ActionLink("Odrzuć", "Delete_Przelozony", null, new { id = item.idOferty }, new { @class = "btn btn-danger przyciskWiekszy" })
+                @Html.ActionLink("Edytuj", "Edit_Przelozony", null, new { id = item.idOferty }, new { @class = "btn przyciskSterowania3" })
+                @Html.ActionLink("Szczegóły", "Details_Przelozony", null, new { id = item.idOferty }, new { @class = "btn przyciskSterowania2" })
+                @Html.ActionLink("Odrzuć", "Delete_Przelozony", null, new { id = item.idOferty }, new { @class = "btn przyciskSterowania4" })
             </td>
         </tr>
     }
 
 </table>
 
-@Html.ActionLink("Wróć", "Przelozony", null, null, new { @class = "btn btn-primary przyciskPowrot" })
+@Html.ActionLink("Wróć", "Przelozony", null, null, new { @class = "btn przyciskPowrot" })
 

@@ -8,6 +8,10 @@
 <head>
     <!-- zalaczenie biblioteki globalnej style.css -->
     <link rel="Stylesheet" href="~/Content/style.css" type="text/css" />
+    <!-- czcionka do naglowkow tabeli -->
+    <link href='http://fonts.googleapis.com/css?family=Marmelad&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <!-- czcionka do zawartosci tabeli -->
+    <link href='http://fonts.googleapis.com/css?family=Maven+Pro&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 </head>
 
 <div class="naglowekStrony">
@@ -18,12 +22,12 @@
     <button type="button" class="btn btn-lg przyciskNawigacyjnyMINI" onclick="window.location='@Url.Action("CreatePozwolenie", "Home")'"><span><i class="far fa-plus-square"></i> Utwórz nowy wpis</span></button>
 </p>
 
-<table class="table">
-    <tr>
+<table class="table text-center" >
+    <tr style="font-family: 'Marmelad', sans-serif;">
         <th>
             Nazwa
         </th>
-        <th class="text-center">
+        <th >
             Czy zdobyte?
         </th>
         <th></th>
@@ -31,21 +35,21 @@
 
     @foreach (var item in Model)
     {
-        <tr class="parzysty nieparzysty">
-            <td class="text-justify">
+        <tr class="parzysty nieparzysty text-center" style="font-family: 'Maven Pro', sans-serif;">
+            <td>
                 @Html.DisplayFor(modelItem => item.nazwa)
             </td>
-            <td class="text-center">
+            <td>
                 @Html.DisplayFor(modelItem => item.czyZdobyte)
             </td>
             <td>
-                @Html.ActionLink("Edytuj", "EditPozwolenie", new { id = item.idPozwolenia }, new { @class = "btn btn-primary przyciskWiekszy" })
-                @Html.ActionLink("Szczegóły", "DetailsPozwolenia", new { id = item.idPozwolenia }, new { @class = "btn btn-info przyciskWiekszy" })
-                @Html.ActionLink("Usuń", "DeletePozwolenie", new { id = item.idPozwolenia }, new { @class = "btn btn-danger przyciskMniejszy" })
+                @Html.ActionLink("Edytuj", "EditPozwolenie", new { id = item.idPozwolenia }, new { @class = "btn przyciskSterowania3" })
+                @Html.ActionLink("Szczegóły", "DetailsPozwolenia", new { id = item.idPozwolenia }, new { @class = "btn przyciskSterowania2" })
+                @Html.ActionLink("Usuń", "DeletePozwolenie", new { id = item.idPozwolenia }, new { @class = "btn przyciskSterowania4" })
             </td>
         </tr>
     }
 
 </table>
 
-@Html.ActionLink("Wróć", "Pracownik", null, null, new { @class = "btn btn-primary przyciskPowrot" })
+@Html.ActionLink("Wróć", "Pracownik", null, null, new { @class = "btn przyciskPowrot" })

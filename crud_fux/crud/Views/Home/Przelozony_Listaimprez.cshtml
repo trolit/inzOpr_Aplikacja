@@ -47,13 +47,13 @@
                 @Html.DisplayFor(modelItem => item.liczbaUczestnikow)
             </td>
             <td>
-                @Html.ActionLink("Edytuj szczegóły", "Imprezy_Edit", new { id = item.idImpreza }, new { @class = "btn btn-primary przyciskListaimprez" }) 
-                @Html.ActionLink("Szczegóły imprezy", "Przelozony_Imprezy_Details", new { id = item.idImpreza }, new { @class = "btn btn-info przyciskListaimprez" }) 
-                @Html.ActionLink("Lista uczestników", "Uczestnicy_Lista", new { id = item.idImpreza }, new { @class = "btn btn-success przyciskListaimprez" }) 
-                @Html.ActionLink("Usuń imprezę", "Imprezy_Delete", new { id = item.idImpreza }, new { @class = "btn btn-danger" })
+                @Html.ActionLink("Edytuj", "Imprezy_Edit", new { id = item.idImpreza }, new { @class = "btn przyciskSterowania3" }) 
+                @Html.ActionLink("Szczegóły", "Przelozony_Imprezy_Details", new { id = item.idImpreza }, new { @class = "btn przyciskSterowania2" }) 
+                @Html.ActionLink("Uczestnicy", "Uczestnicy_Lista", new { id = item.idImpreza }, new { @class = "btn przyciskSterowania2" }) 
+                @Html.ActionLink("Usuń", "Imprezy_Delete", new { id = item.idImpreza }, new { @class = "btn przyciskSterowania4" })
             </td>
         </tr>
     }
 
 </table>
-@Html.ActionLink("Wróć", "Przelozony", null, null, new { @class = "btn btn-primary przyciskPowrot" })
+@Html.ActionLink("Wróć", "Przelozony", null, null, new { @class = "btn przyciskPowrot" })

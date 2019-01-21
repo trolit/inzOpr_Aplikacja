@@ -10,6 +10,7 @@
     <link rel="Stylesheet" href="~/Content/style.css" type="text/css" />
     <!-- tu mozesz zalaczyc swoja biblioteke css ale pamietaj zeby plik zrodlowy
          znajdowal sie w katalogu ~/Content/ tak jak wyżej! -->
+    <link href='http://fonts.googleapis.com/css?family=Arima+Madurai&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 </head>
 
 <div class="naglowekStrony">
@@ -20,172 +21,181 @@
 {
     @Html.AntiForgeryToken()
 
-<div class="form-horizontal">
-    <h4>Zgloszenia</h4>
-    <hr />
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    @Html.HiddenFor(model => model.idOferty)
-    <div class="form-group">
-        @Html.Label("Imię i nazwisko", htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            <div>
-                @Html.EditorFor(model => model.imie_nazwisko, new { htmlAttributes = new { @class = "form-control" } })
+    <div class="form-horizontal">
+        <hr />
+        <div class="col-lg-6 col-md-8 mx-auto jumbotron">
+            <div style="font-family: 'Arima Madurai', sans-serif; font-size:130%; margin-top: 5%;">
+                <div class="text-center" style="margin-bottom: 15px;">
+                    <i class="fas fa-clipboard-check fa-7x"></i>
+                </div>
+                <p class="text-center" style="font-weight: bold;">Edytuj wpis</p>
+                <p class="text-justify" style="font-size: 75% !important">
+                    <i class="fas fa-exclamation-circle"></i> By edytować wpis, kliknij w pole
+                </p>
+                <hr />
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.idOferty)
+                <div class="form-group" style="font-size: 75% !important">
+                    @Html.Label("Imię i nazwisko", htmlAttributes: new { @class = "control-label col-md-6" })
+                    <div class="col-md-10">
+                        <div>
+                            @Html.EditorFor(model => model.imie_nazwisko, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                        @Html.ValidationMessageFor(model => model.imie_nazwisko, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group" style="font-size: 75% !important">
+                    @Html.Label(" Firma", htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.firma, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.firma, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group" style="font-size: 75% !important">
+                    @Html.Label("Numer telefonu", htmlAttributes: new { @class = "control-label col-md-6" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.nr_telefonu, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.nr_telefonu, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group" style="font-size: 75% !important">
+                    @Html.Label(" Mail", htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.mail, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.mail, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group" style="font-size: 75% !important">
+                    @Html.Label("Miejsce zamieszkania", htmlAttributes: new { @class = "control-label col-md-6" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.m_zamieszkania, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.m_zamieszkania, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group" style="font-size: 75% !important">
+                    @Html.Label("Nazwa imprezy masowej", htmlAttributes: new { @class = "control-label col-md-6" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.nazwa_imprezy, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.nazwa_imprezy, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group" style="font-size: 75% !important">
+                    @Html.Label("Rodzaj/treść", htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.rodzaj_tresc, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.rodzaj_tresc, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group" style="font-size: 75% !important">
+                    @Html.Label("Proponowane miejsce realizacji", htmlAttributes: new { @class = "control-label col-md-6" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.miejsce_realizacji, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.miejsce_realizacji, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group" style="font-size: 75% !important">
+                    @Html.Label("Czas trwania", htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.czas_trwania, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.czas_trwania, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group" style="font-size: 75% !important">
+                    @Html.Label("Cykliczność", htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.cyklicznosc, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.cyklicznosc, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group" style="font-size: 75% !important">
+                    @Html.Label("Charakter uczestnictwa", htmlAttributes: new { @class = "control-label col-md-6" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.charakter_uczestnictwa, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.charakter_uczestnictwa, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group" style="font-size: 75% !important">
+                    @Html.Label("Forma organizacyjna", htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.forma_organizacyjna, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.forma_organizacyjna, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group" style="font-size: 75% !important">
+                    @Html.Label(" Cele", htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.cele, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.cele, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group" style="font-size: 75% !important">
+                    @Html.Label("Proponowany termin odbycia imprezy", htmlAttributes: new { @class = "control-label col-md-7" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.termin_odbycia, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.termin_odbycia, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group" style="font-size: 75% !important">
+                    @Html.Label("Ceny biletów", htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.ceny_bilet, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.ceny_bilet, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group" style="font-size: 75% !important">
+                    @Html.Label("Dodatkowe usługi", htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.dod_uslugi, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.dod_uslugi, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group" style="font-size: 75% !important">
+                    @Html.Label("Stan zgłoszenia", htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.stanZgloszenia, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.stanZgloszenia, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <!-- Uwaga, ponizszy div odpowiada za wygenerowanie daty otrzymania zgloszenia -
+                    prosze go nie zmieniac! Ma byc niewidoczny i niezmieniony. -->
+                <div class="form-group" style="display: none; font-size: 75% !important">
+                    @Html.LabelFor(model => model.dataOtrzymaniaZgloszenia, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.dataOtrzymaniaZgloszenia, new { htmlAttributes = new { @class = "form-control", @value = DateTime.Now } })
+                        @Html.ValidationMessageFor(model => model.dataOtrzymaniaZgloszenia, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Zapisz" class="btn btn-success" />
+                        <!-- Back to List to nazwa przycisku, Zgloszenia_Przelozony to nazwa pliku na ktory ma przekierowywac-->
+                        @Html.ActionLink("Wróć", "Zgloszenia_Przelozony", null, null, new { @class = "btn przyciskPowrot" })
+                    </div>
+                </div>
+
             </div>
-            @Html.ValidationMessageFor(model => model.imie_nazwisko, "", new { @class = "text-danger" })
         </div>
-    </div>
-
-    <div class="form-group">
-        @Html.Label("Firma", htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.firma, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.firma, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.Label("Numer telefonu", htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.nr_telefonu, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.nr_telefonu, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.Label("Mail", htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.mail, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.mail, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.Label("Miejsce zamieszkania", htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.m_zamieszkania, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.m_zamieszkania, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.Label("Nazwa imprezy masowej", htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.nazwa_imprezy, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.nazwa_imprezy, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.Label("Rodzaj/treść", htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.rodzaj_tresc, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.rodzaj_tresc, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.Label("Proponowane miejsce realizacji", htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.miejsce_realizacji, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.miejsce_realizacji, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.Label("Czas trwania", htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.czas_trwania, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.czas_trwania, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.Label("Cykliczność", htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.cyklicznosc, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.cyklicznosc, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.Label("Charakter uczestnictwa", htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.charakter_uczestnictwa, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.charakter_uczestnictwa, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.Label("Forma organizacyjna", htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.forma_organizacyjna, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.forma_organizacyjna, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.Label("Cele", htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.cele, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.cele, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.Label("Proponowany termin odbycia imprezy", htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.termin_odbycia, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.termin_odbycia, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.Label("Ceny biletów", htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.ceny_bilet, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.ceny_bilet, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.Label("Dodatkowe usługi", htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.dod_uslugi, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.dod_uslugi, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.Label("Stan zgłoszenia", htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.stanZgloszenia, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.stanZgloszenia, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <!--
-           Uwaga, ponizszy div odpowiada za wygenerowanie daty otrzymania zgloszenia -
-           prosze go nie zmieniac! Ma byc niewidoczny i niezmieniony.
-    -->
-    <div class="form-group" style="display: none;">
-        @Html.LabelFor(model => model.dataOtrzymaniaZgloszenia, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.dataOtrzymaniaZgloszenia, new { htmlAttributes = new { @class = "form-control", @value = DateTime.Now } })
-            @Html.ValidationMessageFor(model => model.dataOtrzymaniaZgloszenia, "", new { @class = "text-danger" })
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Zapisz" class="btn btn-success" />
-        </div>
-    </div>
-</div>
+    </div> 
 }
-
-<div>           <!-- Back to List to nazwa przycisku, Zgloszenia_Przelozony to nazwa pliku na ktory ma przekierowywac-->
-    @Html.ActionLink("Wróć", "Zgloszenia_Przelozony", null, null, new { @class = "btn btn-primary btn-md przyciskPowrot" })
-</div>
-
+         
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

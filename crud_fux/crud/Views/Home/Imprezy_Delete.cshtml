@@ -14,99 +14,115 @@
     Usuwanie imprezy
 </div>
 
-<h3>Jesteś pewien czy chcesz usunąć tę imprezę?</h3>
-<div>
+<div class="form-horizontal">
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            Nazwa imprezy
-        </dt>
+    <div class="col-lg-6 col-md-8 mx-auto jumbotron">
+        <div style="font-family: 'Arima Madurai', sans-serif; font-size:130%; margin-top: 5%;">
+            <div class="text-center" style="margin-bottom: 15px;">
+                <i class="fas fa-trash-alt fa-7x"></i>
+            </div>
+            <p class="text-center" style="font-weight: bold;">Jesteś pewien, że chcesz usunąć imprezę?</p>
+            <p class="text-justify" style="font-size: 75% !important">
+                <i class="fas fa-exclamation-circle"></i> Jeżeli tak, kliknij przycisk "Usuń"
+            </p>
+            <div>
+                <hr />
+                <dl class="dl-horizontal" style="font-size: 75%; !important;">
+                    <dt style="font-weight: 100;">
+                        Nazwa imprezy
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.nazwaImprezy)
-        </dd>
+                    <dd>
+                        @Html.EditorFor(model => model.nazwaImprezy, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                    </dd>
 
-        <dt>
-            Rodzaj/treść
-        </dt>
+                    <dt style="font-weight: 100;">
+                        Rodzaj/treść
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.rodzaj)
-        </dd>
+                    <dd>
+                        @Html.EditorFor(model => model.rodzaj, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                    </dd>
 
-        <dt>
-            Proponowane miejsce realizacji
-        </dt>
+                    <dt style="font-weight: 100;">
+                        Proponowane miejsce realizacji
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.miejsce)
-        </dd>
+                    <dd>
+                        @Html.EditorFor(model => model.miejsce, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                    </dd>
 
-        <dt>
-            Czas trwania
-        </dt>
+                    <dt style="font-weight: 100;">
+                        Czas trwania
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.czasTrwania)
-        </dd>
+                    <dd>
+                        @Html.EditorFor(model => model.czasTrwania, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                    </dd>
 
-        <dt>
-            Cykliczność
-        </dt>
+                    <dt style="font-weight: 100;">
+                        Cykliczność
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.cyklicznosc)
-        </dd>
+                    <dd>
+                        @Html.EditorFor(model => model.cyklicznosc, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                    </dd>
 
-        <dt>
-            Charakter uczestnictwa
-        </dt>
+                    <dt style="font-weight: 100;">
+                        Charakter uczestnictwa
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.charakterUczestnictwa)
-        </dd>
+                    <dd>
+                        @Html.EditorFor(model => model.charakterUczestnictwa, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                    </dd>
 
-        <dt>
-            Forma organizacyjna
-        </dt>
+                    <dt style="font-weight: 100;">
+                        Forma organizacyjna
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.formaOrganizacyjna)
-        </dd>
+                    <dd>
+                        @Html.EditorFor(model => model.formaOrganizacyjna, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                    </dd>
 
-        <dt>
-            Ceny biletów
-        </dt>
+                    <dt style="font-weight: 100;">
+                        Ceny biletów
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.cenaBiletu)
-        </dd>
+                    <dd>
+                        @Html.EditorFor(model => model.cenaBiletu, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                    </dd>
 
-        <dt>
-            Liczba uczestników
-        </dt>
+                    <dt style="font-weight: 100;">
+                        Liczba uczestników
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.liczbaUczestnikow)
-        </dd>
+                    <dd>
+                        @Html.EditorFor(model => model.liczbaUczestnikow, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                    </dd>
 
-        <dt>
-            Identyfikator porównania
-        </dt>
+                    <dt style="font-weight: 100;">
+                        Identyfikator porównania
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.identyfikatorPorownania)
-        </dd>
+                    <dd>
+                        @Html.EditorFor(model => model.identyfikatorPorownania, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                    </dd>
 
-    </dl>
+                </dl>
 
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            @Html.ActionLink("Wróć", "Przelozony_Listaimprez", null, null, new { @class = "btn btn-primary btn-md przyciskPowrot" })
-            <input type="submit" value="Usuń" class="btn btn-danger" />
+                    <div class="form-actions no-color">
+                        @Html.ActionLink("Wróć", "Przelozony_Listaimprez", null, null, new { @class = "btn przyciskPowrot" })
+                        <input type="submit" value="Usuń" class="btn btn-danger" />
+                    </div>
+                }
+            </div>
+
         </div>
-    }
+    </div>
 </div>
+
+

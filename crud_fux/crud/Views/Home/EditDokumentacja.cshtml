@@ -8,6 +8,7 @@
 <head>
     <!-- zalaczenie biblioteki globalnej style.css -->
     <link rel="Stylesheet" href="~/Content/style.css" type="text/css" />
+    <link href='http://fonts.googleapis.com/css?family=Arima+Madurai&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 </head>
 
 <div class="naglowekStrony">
@@ -18,47 +19,59 @@
 {
     @Html.AntiForgeryToken()
 
-<div class="form-horizontal">
-    <hr />
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    @Html.HiddenFor(model => model.idDokumentu)
+    <div class="form-horizontal">
+        <hr />
+        <div class="col-lg-6 col-md-8 mx-auto jumbotron">
+            <div style="font-family: 'Arima Madurai', sans-serif; font-size:130%; margin-top: 5%;">
+                <div class="text-center" style="margin-bottom: 15px;">
+                    <i class="fas fa-pencil-alt fa-7x"></i>
+                </div>
+                <p class="text-center" style="font-weight: bold;">Edytuj wpis</p>
+                <p class="text-justify" style="font-size: 75% !important">
+                    <i class="fas fa-exclamation-circle"></i> By edytować wpis, kliknij w pole
+                </p>
+                <hr />
 
-    <div class="form-group">
-        @Html.Label("Podaj identyfikator projektu", htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.idProjektu, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.idProjektu, "", new { @class = "text-danger" })
-        </div>
-    </div>
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.idDokumentu)
 
-    <div class="form-group">
-        @Html.Label("Nazwa dokumentu", htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.nazwaDokumentu, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.nazwaDokumentu, "", new { @class = "text-danger" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.Label("Czy ukończony?", htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            <div class="checkbox">
-                @Html.EditorFor(model => model.czyUkonczony)
-                @Html.ValidationMessageFor(model => model.czyUkonczony, "", new { @class = "text-danger" })
+                <div class="form-group" style="font-size: 75% !important">
+                    @Html.Label("Podaj identyfikator projektu", htmlAttributes: new { @class = "control-label col-md-6" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.idProjektu, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.idProjektu, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group" style="font-size: 75% !important">
+                    @Html.Label("Nazwa dokumentu", htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.nazwaDokumentu, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.nazwaDokumentu, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group" style="font-size: 75% !important">
+                    @Html.Label("Czy ukończony?", htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-10">
+                        <div class="checkbox">
+                            @Html.EditorFor(model => model.czyUkonczony)
+                            @Html.ValidationMessageFor(model => model.czyUkonczony, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Zapisz" class="btn btn-success" />
+                        @Html.ActionLink("Wróć", "Dokumentacja", null, null, new { @class = "btn przyciskPowrot" })
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Zapisz" class="btn btn-success" />
-        </div>
-    </div>
-</div>
 }
-
-<div>
-    @Html.ActionLink("Wróć", "Dokumentacja", null, null, new { @class = "btn btn-primary btn-md przyciskPowrot" })
-</div>
-
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

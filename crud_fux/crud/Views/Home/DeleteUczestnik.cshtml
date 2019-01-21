@@ -14,43 +14,58 @@
     Usuwanie uczestnika
 </div>
 
-<h3>Czy na pewno chcesz usunąć tego uczestnika imprezy?</h3>
-<div>
+<div class="form-horizontal">
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            Imię i nazwisko
-        </dt>
+    <div class="col-lg-6 col-md-8 mx-auto jumbotron">
+        <div style="font-family: 'Arima Madurai', sans-serif; font-size:130%; margin-top: 5%;">
+            <div class="text-center" style="margin-bottom: 15px;">
+                <i class="fas fa-user-minus fa-7x"></i>
+            </div>
+            <p class="text-center" style="font-weight: bold;">Czy na pewno chcesz usunąć tego uczestnika imprezy?</p>
+            <p class="text-justify" style="font-size: 75% !important">
+                <i class="fas fa-exclamation-circle"></i> Jeżeli tak, kliknij przycisk "Usuń"
+            </p>
+            <hr />
 
-        <dd>
-            @Html.DisplayFor(model => model.imieNazwisko)
-        </dd>
+            <div>
+                <dl class="dl-horizontal" style="font-size: 75% !important">
+                    <dt style="font-weight: 100;">
+                        Imię i nazwisko
+                    </dt>
 
-        <dt>
-            Mail
-        </dt>
+                    <dd>
+                        @Html.EditorFor(model => model.imieNazwisko, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.email)
-        </dd>
+                    <dt style="font-weight: 100;">
+                        Mail
+                    </dt>
 
-        <dt>
-            Numer telefonu
-        </dt>
+                    <dd>
+                        @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.nrTelefonu)
-        </dd>
+                    <dt style="font-weight: 100;">
+                        Numer telefonu
+                    </dt>
 
-    </dl>
+                    <dd>
+                        @Html.EditorFor(model => model.nrTelefonu, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                    </dd>
 
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
+                </dl>
 
-    <div class="form-actions no-color">
-        @Html.ActionLink("Wróć", "Uczestnicy_Lista", null, null, new { @class = "btn btn-primary btn-md przyciskPowrot" })
-        <input type="submit" value="Usuń" class="btn btn-danger" />
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color">
+                        @Html.ActionLink("Wróć", "Uczestnicy_Lista", null, null, new { @class = "btn przyciskPowrot" })
+                        <input type="submit" value="Usuń" class="btn btn-danger" />
+                    </div>
+                }
+            </div>
+
+        </div>
     </div>
-    }
 </div>

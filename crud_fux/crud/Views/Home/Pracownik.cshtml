@@ -8,59 +8,63 @@
 <head>
     <!-- zalaczenie biblioteki globalnej style.css -->
     <link rel="Stylesheet" href="~/Content/style.css" type="text/css" />
+    <!-- czcionka do naglowkow tabeli -->
+    <link href='http://fonts.googleapis.com/css?family=Marmelad&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <!-- czcionka do zawartosci tabeli -->
+    <link href='http://fonts.googleapis.com/css?family=Maven+Pro&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 </head>
 
-<div class="naglowekStrony">
-    Projekty
-</div>
+    <div class="naglowekStrony">
+        Projekty
+    </div>
 
-<table class="table">
-    <tr class="text-justify">
-        <th>
-            Identyfikator projektu
-        </th>
-        <th>
-            Imie i nazwisko
-        </th>
-        <th>
-            Numer telefonu
-        </th>
-        <th>
-            Mail
-        </th>
-        <th>
-            Stan zgłoszenia
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
-        <tr class="parzysty nieparzysty">
-            <td class="text-center">
-                @Html.DisplayFor(modelItem => item.idOferty)
-            </td>
-            <td class="text-justify">
-                @Html.DisplayFor(modelItem => item.imie_nazwisko)
-            </td>
-            <td class="text-justify">
-                @Html.DisplayFor(modelItem => item.nr_telefonu)
-            </td>
-            <td class="text-justify">
-                @Html.DisplayFor(modelItem => item.mail)
-            </td>
-            <td class="text-justify">
-                @Html.DisplayFor(modelItem => item.stanZgloszenia)
-            </td>
-            <td>
-                @Html.ActionLink("Pozwolenia", "Pozwolenia", new { id = item.idOferty }, new { @class = "btn przyciskSterowania1" }) 
-                @Html.ActionLink("Personel", "Personel", new { id = item.idOferty }, new { @class = "btn przyciskSterowania1" }) 
-                @Html.ActionLink("Dokumentacja", "Dokumentacja", new { id = item.idOferty }, new { @class = "btn przyciskSterowania1" }) 
-                @Html.ActionLink("Szczegóły", "Details_Pracownik", new { id = item.idOferty }, new { @class = "btn przyciskSterowania2" })
-            </td>
+    <table class="table">
+        <tr class="text-center" style="font-family: 'Marmelad', sans-serif;">
+            <th>
+                Identyfikator projektu
+            </th>
+            <th>
+                Imie i nazwisko
+            </th>
+            <th>
+                Numer telefonu
+            </th>
+            <th>
+                Mail
+            </th>
+            <th>
+                Stan zgłoszenia
+            </th>
+            <th></th>
         </tr>
-    }
 
-</table>
+        @foreach (var item in Model)
+        {
+            <tr class="parzysty nieparzysty text-center" style="font-family: 'Maven Pro', sans-serif;">
+                <td>
+                    @Html.DisplayFor(modelItem => item.idOferty)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.imie_nazwisko)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nr_telefonu)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.mail)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.stanZgloszenia)
+                </td>
+                <td>
+                    @Html.ActionLink("Pozwolenia", "Pozwolenia", new { id = item.idOferty }, new { @class = "btn przyciskSterowania1" })
+                    @Html.ActionLink("Personel", "Personel", new { id = item.idOferty }, new { @class = "btn przyciskSterowania1" })
+                    @Html.ActionLink("Dokumentacja", "Dokumentacja", new { id = item.idOferty }, new { @class = "btn przyciskSterowania1" })
+                    @Html.ActionLink("Szczegóły", "Details_Pracownik", new { id = item.idOferty }, new { @class = "btn przyciskSterowania2" })
+                </td>
+            </tr>
+        }
 
-@Html.ActionLink("Wróć", "Index", null, null, new { @class = "btn btn-primary przyciskPowrot" })
+    </table>
+
+    @Html.ActionLink("Wróć", "Index", null, null, new { @class = "btn przyciskPowrot" })
