@@ -21,6 +21,9 @@
 <table class="table">
     <tr class="text-center" style="font-family: 'Marmelad', sans-serif;">
         <th>
+            Numer imprezy
+        </th>
+        <th>
             Nazwa imprezy
         </th>
         <th>
@@ -35,38 +38,35 @@
         <th>
             Ceny biletów
         </th>
-        <th>
-            Liczba uczestników
-        </th>
         <th></th>
     </tr>
 
     @foreach (var item in Model)
     {
-        <tr class="parzysty nieparzysty text-center" style="font-family: 'Maven Pro', sans-serif;">
-            <td>
-                @Html.DisplayFor(modelItem => item.nazwaImprezy)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.miejsce)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.czasTrwania)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.charakterUczestnictwa)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.cenaBiletu)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.liczbaUczestnikow)
-            </td>
-            <td>
-                @Html.ActionLink("Zapisz mnie!", "Uczestnik_imprezy_Create", new { id = item.idImpreza }, new { @class = "btn zapiszMnie" })
-                @Html.ActionLink("Szczegóły imprezy", "Imprezy_Details", new { id = item.idImpreza }, new { @class = "btn szczegolyImprezy" })
-            </td>
-        </tr>
+    <tr class="parzysty nieparzysty text-center" style="font-family: 'Maven Pro', sans-serif;">
+        <td>
+            @Html.DisplayFor(modelItem => item.idImpreza)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nazwaImprezy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.miejsce)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.czasTrwania)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.charakterUczestnictwa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cenaBiletu)
+        </td>
+        <td>
+            @Html.ActionLink("Zapisz mnie!", "Uczestnik_imprezy_Create", new { id = item.idImpreza }, new { @class = "btn zapiszMnie" })
+            @Html.ActionLink("Szczegóły imprezy", "Imprezy_Details", new { id = item.idImpreza }, new { @class = "btn szczegolyImprezy" })
+        </td>
+    </tr>
     }
 
 </table>

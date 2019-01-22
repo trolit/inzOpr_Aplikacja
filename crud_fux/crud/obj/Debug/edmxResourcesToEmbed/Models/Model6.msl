@@ -4,6 +4,7 @@
     <EntitySetMapping Name="Uczestnik">
       <EntityTypeMapping TypeName="PozwoleniaModel5.Uczestnik">
         <MappingFragment StoreEntitySet="Uczestnik">
+          <ScalarProperty Name="idPorownania" ColumnName="idPorownania" />
           <ScalarProperty Name="idUczestnika" ColumnName="idUczestnika" />
           <ScalarProperty Name="imieNazwisko" ColumnName="imieNazwisko" />
           <ScalarProperty Name="email" ColumnName="email" />

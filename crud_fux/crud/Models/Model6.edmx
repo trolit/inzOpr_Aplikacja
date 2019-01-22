@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="PozwoleniaModel5.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="PozwoleniaModel5.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Uczestnik">
           <Key>
             <PropertyRef Name="idUczestnika" />
@@ -13,12 +13,37 @@
           <Property Name="imieNazwisko" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="nrTelefonu" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="idPorownania" Type="int" />
+        </EntityType>
+        <EntityType Name="Zgloszenia">
+          <Key>
+            <PropertyRef Name="idOferty" />
+          </Key>
+          <Property Name="idOferty" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="imie_nazwisko" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="firma" Type="varchar" MaxLength="80" />
+          <Property Name="nr_telefonu" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="mail" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="m_zamieszkania" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="nazwa_imprezy" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="rodzaj_tresc" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="miejsce_realizacji" Type="varchar" MaxLength="50" />
+          <Property Name="czas_trwania" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="cyklicznosc" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="charakter_uczestnictwa" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="forma_organizacyjna" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="cele" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="termin_odbycia" Type="varchar" MaxLength="50" />
+          <Property Name="ceny_bilet" Type="varchar" MaxLength="50" />
+          <Property Name="dod_uslugi" Type="varchar" MaxLength="50" />
+          <Property Name="stanZgloszenia" Type="varchar" MaxLength="50" />
+          <Property Name="dataOtrzymaniaZgloszenia" Type="datetime" />
         </EntityType>
         <EntityContainer Name="PozwoleniaModel5StoreContainer">
           <EntitySet Name="Uczestnik" EntityType="Self.Uczestnik" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Zgloszenia" EntityType="Self.Zgloszenia" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="PozwoleniaModel5" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -30,11 +55,12 @@
           <Property Name="imieNazwisko" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="nrTelefonu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idPorownania" Type="Int32" />
         </EntityType>
         <EntityContainer Name="UczestnicyImprezEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Uczestnik" EntityType="Self.Uczestnik" />
-        </EntityContainer>
-      </Schema>
+          </EntityContainer>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -43,6 +69,7 @@
           <EntitySetMapping Name="Uczestnik">
             <EntityTypeMapping TypeName="PozwoleniaModel5.Uczestnik">
               <MappingFragment StoreEntitySet="Uczestnik">
+                <ScalarProperty Name="idPorownania" ColumnName="idPorownania" />
                 <ScalarProperty Name="idUczestnika" ColumnName="idUczestnika" />
                 <ScalarProperty Name="imieNazwisko" ColumnName="imieNazwisko" />
                 <ScalarProperty Name="email" ColumnName="email" />
@@ -50,7 +77,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-        </EntityContainerMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

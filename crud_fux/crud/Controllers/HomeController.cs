@@ -31,12 +31,22 @@ namespace crud.Controllers
         // widok główny pracownika a zarazem wyświetlenie listy zgłoszeń
         public ActionResult Pracownik()
         {
+            if ((!User.Identity.IsAuthenticated && !User.IsInRole("Administrator")) || (!User.Identity.IsAuthenticated && !User.IsInRole("Pracownik")))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             return View(_db_Zgloszenia.Zgloszenia.ToList());
         }
 
         // szczegóły projektu dla pracownika
         public ActionResult Details_Pracownik(int id)
         {
+            if ((!User.Identity.IsAuthenticated && !User.IsInRole("Administrator")) || (!User.Identity.IsAuthenticated && !User.IsInRole("Pracownik")))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             var zgloszenieToDetails = (from Zgloszenia in _db_Zgloszenia.Zgloszenia
                                        where Zgloszenia.idOferty == id
                                        select Zgloszenia).First();
@@ -97,26 +107,52 @@ namespace crud.Controllers
         // strona główna - przełożony
         public ActionResult Przelozony()
         {
+            if (!User.Identity.IsAuthenticated && !User.IsInRole("Administrator"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             return View();
         }
 
         // lista imprez - widok przełożonego
         public ActionResult Przelozony_Listaimprez()
         {
+            if ((!User.Identity.IsAuthenticated && !User.IsInRole("Administrator")) || (User.Identity.IsAuthenticated && User.IsInRole("Pracownik")))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             return View(_db_Imprezy.Imprezy.ToList());
         }
 
         // lista uczestników do ktorej wglad ma przelozony
-        public ActionResult Uczestnicy_Lista()
+        public ActionResult Uczestnicy_Lista(int id = 0)
         {
-            return View(_db_Uczestnicy.Uczestnik.ToList());
-        }
+            if ((!User.Identity.IsAuthenticated && !User.IsInRole("Administrator")) || (User.Identity.IsAuthenticated && User.IsInRole("Pracownik")))
+            {
+                return RedirectToAction("Index", "Home");
+            }
 
-        // widok pozwalający na edycję imprezy 
+            // jezeli id jest 0 to przypomnij sobie
+            if (id == 0)
+            {
+                id = Convert.ToInt32(Session["idUczestnika"]);
+            }
+
+            Session["idUczestnika"] = id;
+
+            return View(_db_Uczestnicy.Uczestnik.Where(x => x.idPorownania == id).ToList());
+        }
 
         // GET: /Home/Edit/5
         public ActionResult Imprezy_Edit(int id)
         {
+            if ((!User.Identity.IsAuthenticated && !User.IsInRole("Administrator")) || (User.Identity.IsAuthenticated && User.IsInRole("Pracownik")))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             var imprezaToEdit = (from Imprezy in _db_Imprezy.Imprezy
                                  where Imprezy.idImpreza == id
                                  select Imprezy).First();
@@ -126,6 +162,11 @@ namespace crud.Controllers
         [HttpPost]
         public ActionResult Imprezy_Edit(int id, Imprezy imprezaToEdit)
         {
+            if ((!User.Identity.IsAuthenticated && !User.IsInRole("Administrator")) || (User.Identity.IsAuthenticated && User.IsInRole("Pracownik")))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             if (ModelState.IsValid)
             {
                 _db_Imprezy.Entry(imprezaToEdit).State = System.Data.Entity.EntityState.Modified;
@@ -138,6 +179,11 @@ namespace crud.Controllers
         // widok z usunieciem imprezy (przelozony)
         public ActionResult Imprezy_Delete(int id)
         {
+            if ((!User.Identity.IsAuthenticated && !User.IsInRole("Administrator")) || (User.Identity.IsAuthenticated && User.IsInRole("Pracownik")))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             var imprezaToDelete = (from Imprezy in _db_Imprezy.Imprezy
                                    where Imprezy.idImpreza == id
                                    select Imprezy).First();
@@ -148,6 +194,11 @@ namespace crud.Controllers
         [HttpPost]
         public ActionResult Imprezy_Delete(int id, Models.Imprezy imprezaToDelete)
         {
+            if ((!User.Identity.IsAuthenticated && !User.IsInRole("Administrator")) || (User.Identity.IsAuthenticated && User.IsInRole("Pracownik")))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             var SelImpreza = (from Imprezy in _db_Imprezy.Imprezy
                               where Imprezy.idImpreza ==
                               id
@@ -162,6 +213,11 @@ namespace crud.Controllers
         // (widok) strona listy zgloszen dla przelozonego
         public ActionResult Zgloszenia_Przelozony()
         {
+            if ((!User.Identity.IsAuthenticated && !User.IsInRole("Administrator")) || (User.Identity.IsAuthenticated && User.IsInRole("Pracownik")))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             return View(_db_Zgloszenia.Zgloszenia.ToList());
         }
 
@@ -172,6 +228,11 @@ namespace crud.Controllers
         // GET: /Home/Edit/5
         public ActionResult Edit_Przelozony(int id)
         {
+            if ((!User.Identity.IsAuthenticated && !User.IsInRole("Administrator")) || (User.Identity.IsAuthenticated && User.IsInRole("Pracownik")))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             var zgloszenieToEdit = (from Zgloszenia in _db_Zgloszenia.Zgloszenia
                                  where Zgloszenia.idOferty == id
                                  select Zgloszenia).First();
@@ -182,6 +243,11 @@ namespace crud.Controllers
         [HttpPost]
         public ActionResult Edit_Przelozony(int id, Zgloszenia zgloszenieToEdit)
         {
+            if ((!User.Identity.IsAuthenticated && !User.IsInRole("Administrator")) || (User.Identity.IsAuthenticated && User.IsInRole("Pracownik")))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             if (ModelState.IsValid)
             {
                 _db_Zgloszenia.Entry(zgloszenieToEdit).State = System.Data.Entity.EntityState.Modified;
@@ -197,6 +263,11 @@ namespace crud.Controllers
 
         public ActionResult Delete_Przelozony(int id)
         {
+            if ((!User.Identity.IsAuthenticated && !User.IsInRole("Administrator")) || (User.Identity.IsAuthenticated && User.IsInRole("Pracownik")))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             var zgloszenieToDelete = (from Zgloszenia in _db_Zgloszenia.Zgloszenia
                                    where Zgloszenia.idOferty == id
                                    select Zgloszenia).First();
@@ -207,6 +278,11 @@ namespace crud.Controllers
         [HttpPost]
         public ActionResult Delete_Przelozony(int id, Models.Zgloszenia zgloszenieToDelete)
         {
+            if ((!User.Identity.IsAuthenticated && !User.IsInRole("Administrator")) || (User.Identity.IsAuthenticated && User.IsInRole("Pracownik")))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             var SelZgloszenie = (from Zgloszenia in _db_Zgloszenia.Zgloszenia
                               where Zgloszenia.idOferty ==
                               id
@@ -225,6 +301,11 @@ namespace crud.Controllers
 
         public ActionResult Details_Przelozony(int id)
         {
+            if ((!User.Identity.IsAuthenticated && !User.IsInRole("Administrator")) || (User.Identity.IsAuthenticated && User.IsInRole("Pracownik")))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             var zgloszenieToDetails = (from Zgloszenia in _db_Zgloszenia.Zgloszenia
                                        where Zgloszenia.idOferty == id
                                        select Zgloszenia).First();
@@ -234,6 +315,11 @@ namespace crud.Controllers
         // SZCZEGÓŁY IMPREZY(JAKO PRZELOZONY)
         public ActionResult Przelozony_Imprezy_Details(int id)
         {
+            if ((!User.Identity.IsAuthenticated && !User.IsInRole("Administrator")) || (User.Identity.IsAuthenticated && User.IsInRole("Pracownik")))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             var imprezaToDetails = (from Imprezy in _db_Imprezy.Imprezy
                                     where Imprezy.idImpreza == id
                                     select Imprezy).First();
@@ -248,6 +334,11 @@ namespace crud.Controllers
         // GET: /Home/Edit/5
         public ActionResult EditUczestnik(int id)
         {
+            if ((!User.Identity.IsAuthenticated && !User.IsInRole("Administrator")) || (User.Identity.IsAuthenticated && User.IsInRole("Pracownik")))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             var uczestnikToEdit = (from Uczestnik in _db_Uczestnicy.Uczestnik
                                  where Uczestnik.idUczestnika == id
                                  select Uczestnik).First();
@@ -257,6 +348,11 @@ namespace crud.Controllers
         [HttpPost]
         public ActionResult EditUczestnik(int id, Uczestnik uczestnikToEdit)
         {
+            if ((!User.Identity.IsAuthenticated && !User.IsInRole("Administrator")) || (User.Identity.IsAuthenticated && User.IsInRole("Pracownik")))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             if (ModelState.IsValid)
             {
                 _db_Uczestnicy.Entry(uczestnikToEdit).State = System.Data.Entity.EntityState.Modified;
@@ -269,6 +365,11 @@ namespace crud.Controllers
         // usuniecie
         public ActionResult DeleteUczestnik(int id)
         {
+            if ((!User.Identity.IsAuthenticated && !User.IsInRole("Administrator")) || (User.Identity.IsAuthenticated && User.IsInRole("Pracownik")))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             var uczestnikToDelete = (from Uczestnik in _db_Uczestnicy.Uczestnik
                                    where Uczestnik.idUczestnika == id
                                    select Uczestnik).First();
@@ -279,6 +380,11 @@ namespace crud.Controllers
         [HttpPost]
         public ActionResult DeleteUczestnik(int id, Models.Uczestnik uczestnikToDelete)
         {
+            if ((!User.Identity.IsAuthenticated && !User.IsInRole("Administrator")) || (User.Identity.IsAuthenticated && User.IsInRole("Pracownik")))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             var SelUczestnik = (from Uczestnik in _db_Uczestnicy.Uczestnik
                               where Uczestnik.idUczestnika ==
                               id
@@ -340,6 +446,11 @@ namespace crud.Controllers
         // (widok) strona pozwolenia(lista)
         public ActionResult Pozwolenia(int id = 0)
         {
+            if ((!User.Identity.IsAuthenticated && !User.IsInRole("Administrator")) || (!User.Identity.IsAuthenticated && !User.IsInRole("Pracownik")))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             // jezeli id jest 0 to przypomnij sobie
             if (id == 0)
             {
@@ -360,6 +471,11 @@ namespace crud.Controllers
 
         public ActionResult DetailsPozwolenia(int id)
         {
+            if ((!User.Identity.IsAuthenticated && !User.IsInRole("Administrator")) || (!User.Identity.IsAuthenticated && !User.IsInRole("Pracownik")))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             var ksiazkaToDetails = (from Pozwolenie in _db.Pozwolenia
                                     where Pozwolenie.idPozwolenia == id
                                     select Pozwolenie).First();
@@ -374,6 +490,11 @@ namespace crud.Controllers
         // GET: Home/Create
         public ActionResult CreatePozwolenie()
         {
+            if ((!User.Identity.IsAuthenticated && !User.IsInRole("Administrator")) || (!User.Identity.IsAuthenticated && !User.IsInRole("Pracownik")))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             return View();
         }
 
@@ -381,6 +502,11 @@ namespace crud.Controllers
         [HttpPost]
         public ActionResult CreatePozwolenie(Pozwolenie newPozwolenie)
         {
+            if ((!User.Identity.IsAuthenticated && !User.IsInRole("Administrator")) || (!User.Identity.IsAuthenticated && !User.IsInRole("Pracownik")))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             if (ModelState.IsValid && (newPozwolenie.idProjektu != null) && !String.IsNullOrEmpty(newPozwolenie.nazwa))
             {
                 _db.Pozwolenia.Add(newPozwolenie);
@@ -401,6 +527,11 @@ namespace crud.Controllers
         // GET: /Home/Edit/5
         public ActionResult EditPozwolenie(int id)
         {
+            if ((!User.Identity.IsAuthenticated && !User.IsInRole("Administrator")) || (!User.Identity.IsAuthenticated && !User.IsInRole("Pracownik")))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             var pozwolenieToEdit = (from Pozwolenie in _db.Pozwolenia
                                     where Pozwolenie.idPozwolenia == id
                                     select Pozwolenie).First();
@@ -411,6 +542,11 @@ namespace crud.Controllers
         [HttpPost]
         public ActionResult EditPozwolenie(int id, Pozwolenie pozwolenieToEdit)
         {
+            if ((!User.Identity.IsAuthenticated && !User.IsInRole("Administrator")) || (!User.Identity.IsAuthenticated && !User.IsInRole("Pracownik")))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             if (ModelState.IsValid)
             {
                 _db.Entry(pozwolenieToEdit).State = System.Data.Entity.EntityState.Modified;
@@ -427,6 +563,11 @@ namespace crud.Controllers
 
         public ActionResult DeletePozwolenie(int id)
         {
+            if ((!User.Identity.IsAuthenticated && !User.IsInRole("Administrator")) || (!User.Identity.IsAuthenticated && !User.IsInRole("Pracownik")))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             var ksiazkaToDelete = (from Pozwolenie in _db.Pozwolenia
                                    where Pozwolenie.idPozwolenia == id
                                    select Pozwolenie).First();
@@ -437,6 +578,11 @@ namespace crud.Controllers
         [HttpPost]
         public ActionResult DeletePozwolenie(int id, Models.Pozwolenie ksiazkaToDelete)
         {
+            if ((!User.Identity.IsAuthenticated && !User.IsInRole("Administrator")) || (!User.Identity.IsAuthenticated && !User.IsInRole("Pracownik")))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             var SelKsiazka = (from Pozwolenie in _db.Pozwolenia
                               where Pozwolenie.idPozwolenia ==
                               id
@@ -456,6 +602,11 @@ namespace crud.Controllers
 
         public ActionResult Personel(int id = 0)
         {
+            if ((!User.Identity.IsAuthenticated && !User.IsInRole("Administrator")) || (!User.Identity.IsAuthenticated && !User.IsInRole("Pracownik")))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             // jezeli id jest 0 to przypomnij sobie
             if (id == 0)
             {
@@ -474,6 +625,11 @@ namespace crud.Controllers
         // GET: Home/Create
         public ActionResult CreatePersonel()
         {
+            if ((!User.Identity.IsAuthenticated && !User.IsInRole("Administrator")) || (!User.Identity.IsAuthenticated && !User.IsInRole("Pracownik")))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             return View();
         }
 
@@ -481,6 +637,11 @@ namespace crud.Controllers
         [HttpPost]
         public ActionResult CreatePersonel(Personel newPersonel)
         {
+            if ((!User.Identity.IsAuthenticated && !User.IsInRole("Administrator")) || (!User.Identity.IsAuthenticated && !User.IsInRole("Pracownik")))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             if (ModelState.IsValid && (newPersonel.idProjektu != null) && !String.IsNullOrEmpty(newPersonel.nazwaPersonelu))
             {
                 _db_Personel.Personel.Add(newPersonel);
@@ -501,6 +662,11 @@ namespace crud.Controllers
         // GET: /Home/Edit/5
         public ActionResult EditPersonel(int id)
         {
+            if ((!User.Identity.IsAuthenticated && !User.IsInRole("Administrator")) || (!User.Identity.IsAuthenticated && !User.IsInRole("Pracownik")))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             var personelToEdit = (from Personel in _db_Personel.Personel
                                   where Personel.idPersonelu == id
                                   select Personel).First();
@@ -513,6 +679,11 @@ namespace crud.Controllers
         [HttpPost]
         public ActionResult EditPersonel(int id, Personel personelToEdit)
         {
+            if ((!User.Identity.IsAuthenticated && !User.IsInRole("Administrator")) || (!User.Identity.IsAuthenticated && !User.IsInRole("Pracownik")))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             if (ModelState.IsValid)
             {
                 _db_Personel.Entry(personelToEdit).State = System.Data.Entity.EntityState.Modified;
@@ -528,6 +699,11 @@ namespace crud.Controllers
 
         public ActionResult DeletePersonel(int id)
         {
+            if ((!User.Identity.IsAuthenticated && !User.IsInRole("Administrator")) || (!User.Identity.IsAuthenticated && !User.IsInRole("Pracownik")))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             var personelToDelete = (from Personel in _db_Personel.Personel
                                     where Personel.idPersonelu == id
                                     select Personel).First();
@@ -540,6 +716,11 @@ namespace crud.Controllers
         [HttpPost]
         public ActionResult DeletePersonel(int id, Models.Personel personelToDelete)
         {
+            if ((!User.Identity.IsAuthenticated && !User.IsInRole("Administrator")) || (!User.Identity.IsAuthenticated && !User.IsInRole("Pracownik")))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             var SelPersonel = (from Personel in _db_Personel.Personel
                                where Personel.idPersonelu ==
                                id
@@ -558,6 +739,11 @@ namespace crud.Controllers
 
         public ActionResult DetailsPersonel(int id)
         {
+            if ((!User.Identity.IsAuthenticated && !User.IsInRole("Administrator")) || (!User.Identity.IsAuthenticated && !User.IsInRole("Pracownik")))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             var personelToDetails = (from Personel in _db_Personel.Personel
                                      where Personel.idPersonelu == id
                                      select Personel).First();
@@ -570,8 +756,13 @@ namespace crud.Controllers
         // GET: /Home/
         public ActionResult Dokumentacja(int id = 0)
         {
+            if ((!User.Identity.IsAuthenticated && !User.IsInRole("Administrator")) || (!User.Identity.IsAuthenticated && !User.IsInRole("Pracownik")))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             // jezeli id jest 0 to przypomnij sobie
-            if(id == 0)
+            if (id == 0)
             {
                 id = Convert.ToInt32(Session["idOferty"]);
             }
@@ -587,6 +778,11 @@ namespace crud.Controllers
         // GET: Home/CreateDokumentacja
         public ActionResult CreateDokumentacja()
         {
+            if ((!User.Identity.IsAuthenticated && !User.IsInRole("Administrator")) || (!User.Identity.IsAuthenticated && !User.IsInRole("Pracownik")))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             return View();
         }
 
@@ -594,6 +790,11 @@ namespace crud.Controllers
         [HttpPost]
         public ActionResult CreateDokumentacja(Dokumentacja newDokumentacja)
         {
+            if ((!User.Identity.IsAuthenticated && !User.IsInRole("Administrator")) || (!User.Identity.IsAuthenticated && !User.IsInRole("Pracownik")))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             if (ModelState.IsValid && (newDokumentacja.idProjektu != null) && !String.IsNullOrEmpty(newDokumentacja.nazwaDokumentu))
             {
                 _db_Dokumentacja.Dokumentacja.Add(newDokumentacja);
@@ -615,6 +816,11 @@ namespace crud.Controllers
         // GET: /Home/Edit/5
         public ActionResult EditDokumentacja(int id)
         {
+            if ((!User.Identity.IsAuthenticated && !User.IsInRole("Administrator")) || (!User.Identity.IsAuthenticated && !User.IsInRole("Pracownik")))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             var dokumentacjaToEdit = (from Dokumentacja in _db_Dokumentacja.Dokumentacja
                                       where Dokumentacja.idDokumentu == id
                                       select Dokumentacja).First();
@@ -625,6 +831,11 @@ namespace crud.Controllers
         [HttpPost]
         public ActionResult EditDokumentacja(int id, Dokumentacja dokumentacjaToEdit)
         {
+            if ((!User.Identity.IsAuthenticated && !User.IsInRole("Administrator")) || (!User.Identity.IsAuthenticated && !User.IsInRole("Pracownik")))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             if (ModelState.IsValid)
             {
                 _db_Dokumentacja.Entry(dokumentacjaToEdit).State = System.Data.Entity.EntityState.Modified;
@@ -640,6 +851,11 @@ namespace crud.Controllers
         // *******************************
         public ActionResult DeleteDokumentacja(int id)
         {
+            if ((!User.Identity.IsAuthenticated && !User.IsInRole("Administrator")) || (!User.Identity.IsAuthenticated && !User.IsInRole("Pracownik")))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             var dokumentacjaToDelete = (from Dokumentacja in _db_Dokumentacja.Dokumentacja
                                         where Dokumentacja.idDokumentu == id
                                         select Dokumentacja).First();
@@ -650,6 +866,11 @@ namespace crud.Controllers
         [HttpPost]
         public ActionResult DeleteDokumentacja(int id, Models.Dokumentacja dokumentacjaToDelete)
         {
+            if ((!User.Identity.IsAuthenticated && !User.IsInRole("Administrator")) || (!User.Identity.IsAuthenticated && !User.IsInRole("Pracownik")))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             var SelDokumentacja = (from Dokumentacja in _db_Dokumentacja.Dokumentacja
                                    where Dokumentacja.idDokumentu ==
                                    id
@@ -668,6 +889,11 @@ namespace crud.Controllers
 
         public ActionResult DetailsDokumentacja(int id)
         {
+            if ((!User.Identity.IsAuthenticated && !User.IsInRole("Administrator")) || (!User.Identity.IsAuthenticated && !User.IsInRole("Pracownik")))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             var dokumentacjaToDetails = (from Dokumentacja in _db_Dokumentacja.Dokumentacja
                                     where Dokumentacja.idDokumentu == id
                                     select Dokumentacja).First();

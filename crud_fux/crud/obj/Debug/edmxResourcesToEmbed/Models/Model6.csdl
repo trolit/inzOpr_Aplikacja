@@ -8,6 +8,7 @@
     <Property Name="imieNazwisko" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="nrTelefonu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="idPorownania" Type="Int32" />
   </EntityType>
   <EntityContainer Name="UczestnicyImprezEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Uczestnik" EntityType="Self.Uczestnik" />
