@@ -36,7 +36,7 @@ namespace crud.Controllers
                 return RedirectToAction("Index", "Home");
             }
 
-            return View(_db_Zgloszenia.Zgloszenia.ToList());
+            return View(_db_Zgloszenia.Zgloszenia.Where(x => x.stanZgloszenia == "akceptowany").ToList());
         }
 
         // szczegóły projektu dla pracownika
