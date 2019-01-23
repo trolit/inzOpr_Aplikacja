@@ -16,11 +16,11 @@
 
 ## ZRZUTY EKRANU Z APLIKACJI 
 
-<p float="left">
-  <img src="https://github.com/trolit/inzOpr_Aplikacja/blob/master/images/client.PNG" width="250" />
-  <img src="https://github.com/trolit/inzOpr_Aplikacja/blob/master/images/main.PNG" width="250" /> 
-  <img src="https://github.com/trolit/inzOpr_Aplikacja/blob/master/images/worker1.PNG" width="250" />
-  <img src="https://github.com/trolit/inzOpr_Aplikacja/blob/master/images/worker2.PNG" width="250" />
+<p align="center">
+  <img src="https://github.com/trolit/inzOpr_Aplikacja/blob/master/images/client.PNG" height="350" /><br/>
+  <img src="https://github.com/trolit/inzOpr_Aplikacja/blob/master/images/main.PNG" height="350" /> <br/>
+  <img src="https://github.com/trolit/inzOpr_Aplikacja/blob/master/images/worker1.PNG" height="350" /> <br/>
+  <img src="https://github.com/trolit/inzOpr_Aplikacja/blob/master/images/worker2.PNG" height="350" />
 </p>
 
 ## PRZYDZIAŁ PLIKÓW I ZADAŃ
