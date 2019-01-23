@@ -1,6 +1,7 @@
 ###########################################################################
 
 # Aplikacja webowa - "Obsługa Imprez Masowych" 
+### aplikacja wykonana jako projekt na przedmiot Inżynieria Oprogramowania
 
 ###########################################################################
 
@@ -14,7 +15,13 @@
 **Wykonanie w** ASP.NET MVC4 (VS 2017 Community)
 
 ## ZRZUTY EKRANU Z APLIKACJI 
-<<TBA>>
+
+<p float="left">
+  <img src="./images/client.png" width="100" />
+  <img src="./images/main.png" width="100" /> 
+  <img src="./images/worker1.png" width="100" />
+  <img src="./images/worker2.png" width="100" />
+</p>
 
 ## PRZYDZIAŁ PLIKÓW I ZADAŃ
 
