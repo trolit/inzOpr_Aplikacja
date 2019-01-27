@@ -1,9 +1,5 @@
-###########################################################################
-
 # Aplikacja webowa - "Obsługa Imprez Masowych" 
-### aplikacja wykonana jako projekt na przedmiot Inżynieria Oprogramowania
-
-###########################################################################
+#### aplikacja wykonana jako projekt na przedmiot Inżynieria Oprogramowania
 
 :pushpin: **Wykonanie w** ASP.NET MVC4 (VS 2017 Community)
 
