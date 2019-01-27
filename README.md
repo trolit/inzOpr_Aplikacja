@@ -10,8 +10,7 @@
 </p>
 </details>
 
-### :information_source: Informacje o danych wersjach aplikacji
-<details><summary>Wersja 0.7 z dnia 22 stycznia 2019 roku</summary>
+<details><summary>:information_source: Wersja 0.7 z dnia 22 stycznia 2019 roku</summary>
 <p>
 	<h3>Autorzy i zasługi</h3>
 	<ul>
