@@ -1,18 +1,16 @@
 # Aplikacja webowa - "Obsługa Imprez Masowych" 
-#### aplikacja wykonana jako projekt na przedmiot Inżynieria Oprogramowania
+#### aplikacja wykonana jako projekt ASP.NET MVC4 w programie VS 2017 Community na przedmiot Inżynieria Oprogramowania
 
-:pushpin: **Wykonanie w** ASP.NET MVC4 (VS 2017 Community)
-
-## :movie_camera: Zrzuty ekranu z aplikacji (wersja 0.7)
-
+<details><summary>:movie_camera: Zrzuty ekranu z aplikacji (wersja 0.7)</summary>
 <p align="center">
   <img src="https://github.com/trolit/inzOpr_Aplikacja/blob/master/images/client.PNG" height="350" /><br/>
   <img src="https://github.com/trolit/inzOpr_Aplikacja/blob/master/images/main.PNG" height="350" /> <br/>
   <img src="https://github.com/trolit/inzOpr_Aplikacja/blob/master/images/worker1.PNG" height="350" /> <br/>
   <img src="https://github.com/trolit/inzOpr_Aplikacja/blob/master/images/worker2.PNG" height="350" />
 </p>
+</details>
 
-## :information_source: Więcej informacji
+### :information_source: Informacje o danych wersjach aplikacji
 <details><summary>Wersja 0.7 z dnia 22 stycznia 2019 roku</summary>
 <p>
 	<h3>Autorzy i zasługi</h3>
