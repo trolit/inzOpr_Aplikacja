@@ -12,65 +12,80 @@
     <link href='http://fonts.googleapis.com/css?family=Marmelad&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <!-- czcionka do zawartosci tabeli -->
     <link href='http://fonts.googleapis.com/css?family=Maven+Pro&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+    <!-- style dla tabeli umieszczonej w karcie -->
+    <style>
+
+        /* ustaw szerokość pola z ikonką i wycentruj */
+        tr td i {
+            text-align: center;
+            width: 25px;
+        }
+    </style>
 </head>
 
 <div class="naglowekStrony">
     Lista zgłoszeń
 </div>
 
-<table class="table">
-    <tr class="text-center" style="font-family: 'Marmelad', sans-serif;">
-        <th>
-            Imię i nazwisko
-        </th>
-        <th>
-            Numer telefonu
-        </th>
-        <th class="text-center">
-            Mail
-        </th>
-        <th>
-            Miejsce realizacji
-        </th>
-        <th>
-            Stan zgłoszenia
-        </th>
-        <th>
-            Zgłoszenie otrzymano
-        </th>
-        <th></th>
-    </tr>
+<!-- trzeba dać w kontener żeby nie przylegały do krawędzi ekranu -->
+<div class="container">
+    <!-- trzeba dać card-columns żeby były odstępy od siebie kart i div z klasą row aby było responsywne -->
+    <div class="row">
+        <!-- mx-auto centruje karty jak zmniejszysz ekran do sytuacji że będzie 1 karta w wierszu -->
+        <div class="card-columns text-center mx-auto">
+            @foreach (var item in Model)
+            {
+                <div class="card text-white bg-dark">
+                    <div class="card-header" style="font-size: 18px;">Zgłoszenie  <strong>@Html.DisplayFor(modelItem => item.idOferty)</strong></div>
+                    <div class="card-body">
+                        <h5 class="card-title">od @Html.DisplayFor(modelItem => item.imie_nazwisko)</h5>
+                        <p class="card-text">
+                            <table style="margin-left: auto; margin-right: auto;">
+                                <tr data-toggle="tooltip" data-placement="left" title="Numer telefonu">
+                                    <td><i class="fas fa-mobile fa-lg"></i></td>
+                                    <td>@Html.DisplayFor(modelItem => item.nr_telefonu)</td>
+                                </tr>
+                                <tr data-toggle="tooltip" data-placement="left" title="Adres email">
+                                    <td><i class="fas fa-envelope fa-lg"></i></td>
+                                    <td>@Html.DisplayFor(modelItem => item.mail)</td>
+                                </tr>
+                                <tr data-toggle="tooltip" data-placement="left" title="Miejsce realizacji">
+                                    <td><i class="fas fa-map-marker-alt fa-lg"></i></td>
+                                    <td>@Html.DisplayFor(modelItem => item.miejsce_realizacji)</td>
+                                </tr>
+                                <tr data-toggle="tooltip" data-placement="left" title="Stan zgłoszenia">
+                                    <td><i class="fab fa-jira fa-lg"></i></td>
+                                    <td>@Html.DisplayFor(modelItem => item.stanZgloszenia)</td>
+                                </tr>
+                                <tr data-toggle="tooltip" data-placement="left" title="Data otrzymania zgłoszenia">
+                                    <td><i class="fas fa-clock fa-lg"></i></td>
+                                    <td>@Html.DisplayFor(modelItem => item.dataOtrzymaniaZgloszenia)</td>
+                                </tr>
+                            </table>
 
-    @foreach (var item in Model)
-    {
-        <tr class="parzysty nieparzysty text-center" style="font-family: 'Maven Pro', sans-serif;">
-            <td>
-                @Html.DisplayFor(modelItem => item.imie_nazwisko)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.nr_telefonu)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.mail)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.miejsce_realizacji)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.stanZgloszenia)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.dataOtrzymaniaZgloszenia)
-            </td>
-            <td>
-                @Html.ActionLink("Edytuj", "Edit_Przelozony", null, new { id = item.idOferty }, new { @class = "btn przyciskSterowania3" })
-                @Html.ActionLink("Szczegóły", "Details_Przelozony", null, new { id = item.idOferty }, new { @class = "btn przyciskSterowania2" })
-                @Html.ActionLink("Odrzuć", "Delete_Przelozony", null, new { id = item.idOferty }, new { @class = "btn przyciskSterowania4" })
-            </td>
-        </tr>
-    }
+                        <p style="margin-top: 20px;">
+                            @{
+                                if (item.stanZgloszenia == "akceptowany")
+                                {
+                                    @Html.ActionLink(" ", "AkceptujZgloszenie", null, new { id = item.idOferty }, new { @class = "btn btn-success fas fa-check-circle fa-2x disabled" })
+                                }
+                                else
+                                {
+                                    @Html.ActionLink(" ", "AkceptujZgloszenie", null, new { id = item.idOferty }, new { @class = "btn btn-success fas fa-check-circle fa-2x", @data_toggle = "tooltip", @data_placement = "bottom", title = "Akceptuj projekt" })
+                                }
+                            }
+                            @Html.ActionLink(" ", "Edit_Przelozony", null, new { id = item.idOferty }, new { @class = "btn btn-warning fas fa-edit fa-2x", @data_toggle = "tooltip", @data_placement = "bottom", title = "Edytuj zgłoszenie" })
+                            @Html.ActionLink(" ", "Details_Przelozony", null, new { id = item.idOferty }, new { @class = "btn btn-primary fas fa-info-circle fa-2x", @data_toggle = "tooltip", @data_placement = "bottom", title = "Zobacz szczegóły zgłoszenia" })
+                            @Html.ActionLink(" ", "Delete_Przelozony", null, new { id = item.idOferty }, new { @class = "btn btn-danger fas fa-times-circle fa-2x", @data_toggle = "tooltip", @data_placement = "bottom", title = "Usuń(odrzuć) projekt" })
+                        </p>
+                        </p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
 
-</table>
-
-@Html.ActionLink("Wróć", "Przelozony", null, null, new { @class = "btn przyciskPowrot" })
+    @Html.ActionLink("Wróć", "Przelozony", null, null, new { @class = "btn przyciskPowrot" })
 

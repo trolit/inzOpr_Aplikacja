@@ -1,0 +1,19 @@
+﻿@{
+    <!-- tytul strony -->
+    ViewBag.Title = "Lista zgłoszeń";
+}
+
+<head>
+    <!-- zalaczenie biblioteki globalnej style.css -->
+    <link rel="Stylesheet" href="~/Content/style.css" type="text/css" />
+</head>
+
+<div class="naglowekStrony">
+    Gratulacje!
+</div>
+
+<div>
+    <h1>Zaakceptowano!</h1>
+</div>
+
+@Html.ActionLink("Wróć", "Zgloszenia_Przelozony", null, null, new { @class = "btn przyciskPowrot" })

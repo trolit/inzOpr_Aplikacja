@@ -115,6 +115,25 @@ namespace crud.Controllers
             return View();
         }
 
+        // strona akceptuj
+        public ActionResult AkceptujZgloszenie(int id)
+        {
+            if (!User.Identity.IsAuthenticated && !User.IsInRole("Administrator"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+            var Zgloszenie = (from Zgloszenia in _db_Zgloszenia.Zgloszenia
+                                 where Zgloszenia.idOferty ==
+                                 id
+                                 select Zgloszenia).First();
+
+            Zgloszenie.stanZgloszenia = "akceptowany";
+            _db_Zgloszenia.SaveChanges();
+
+            return View();
+        }
+
         // lista imprez - widok przełożonego
         public ActionResult Przelozony_Listaimprez()
         {
@@ -287,10 +306,42 @@ namespace crud.Controllers
                               where Zgloszenia.idOferty ==
                               id
                               select Zgloszenia).First();
+
+            // kasuj rekordy Pozwolenia projektu
+            foreach (var record in _db.Pozwolenia.Where(x => x.idProjektu == id))
+            {
+                _db.Pozwolenia.Remove(record);
+            }
+
+            // zapisz zmiany 
+            _db.SaveChanges();
+
+            // kasuj rekordy Dokumentacji projektu
+            foreach (var record in _db_Dokumentacja.Dokumentacja.Where(x => x.idProjektu == id))
+            {
+                _db_Dokumentacja.Dokumentacja.Remove(record);
+            }
+
+            // zapisz zmiany 
+            _db_Dokumentacja.SaveChanges();
+
+            // kasuj rekordy Personelu projektu
+            foreach (var record in _db_Personel.Personel.Where(x => x.idProjektu == id))
+            {
+                _db_Personel.Personel.Remove(record);
+            }
+
+            // zapisz zmiany 
+            _db_Personel.SaveChanges();
+
+
             if (!ModelState.IsValid)
                 return View(SelZgloszenie);
+
+
             _db_Zgloszenia.Zgloszenia.Remove(SelZgloszenie);
             _db_Zgloszenia.SaveChanges();
+
             return RedirectToAction("Zgloszenia_Przelozony");
         }
 
