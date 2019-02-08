@@ -20,178 +20,181 @@
     </ol>
 </div>
 
-<div class="form-horizontal">
-    <hr />
-    <div class="col-lg-6 col-md-8 mx-auto jumbotron">
-        <div style="font-family: 'Arima Madurai', sans-serif; font-size:130%; margin-top: 5%;">
-            <div class="text-center" style="margin-bottom: 15px;">
-                <i class="fas fa-trash-alt fa-7x"></i>
+<!-- trzeba dać w kontener żeby nie przylegały do krawędzi ekranu -->
+<div class="container">
+    <!-- trzeba dać card-columns żeby były odstępy od siebie kart i div z klasą row aby było responsywne -->
+    <div class="row">
+        <!-- mx-auto centruje karty jak zmniejszysz ekran do sytuacji że będzie 1 karta w wierszu -->
+        <div class="mx-auto col-md-6">
+            <div class="card text-white" style="background-color: #2b6198;">
+                <div class="card-body">
+                    <h5 class="card-title text-center"><i class="fas fa-trash-alt fa-7x"></i></h5>
+                    <p class="card-text">
+                        <div class="form-horizontal">
+                            <div style="font-family: 'Arima Madurai', sans-serif; font-size:90%;">
+                                <div>
+                                    <dl class="dl-horizontal col-md-12" style="font-size: 75% !important">
+                                        <dt style="font-weight: 100;">
+                                            Imię i nazwisko
+                                        </dt>
+
+                                        <dd>
+                                            @Html.EditorFor(model => model.imie_nazwisko, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                                        </dd>
+
+                                        <dt style="font-weight: 100;">
+                                            Firma
+                                        </dt>
+
+                                        <dd>
+                                            @Html.EditorFor(model => model.firma, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                                        </dd>
+
+                                        <dt style="font-weight: 100;">
+                                            Numer telefonu
+                                        </dt>
+
+                                        <dd>
+                                            @Html.EditorFor(model => model.nr_telefonu, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                                        </dd>
+
+                                        <dt style="font-weight: 100;">
+                                            Mail
+                                        </dt>
+
+                                        <dd>
+                                            @Html.EditorFor(model => model.mail, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                                        </dd>
+
+                                        <dt style="font-weight: 100;">
+                                            Aktualne miejsce zamieszkania
+                                        </dt>
+
+                                        <dd>
+                                            @Html.EditorFor(model => model.m_zamieszkania, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                                        </dd>
+
+                                        <dt style="font-weight: 100;">
+                                            Nazwa imprezy masowej
+                                        </dt>
+
+                                        <dd>
+                                            @Html.EditorFor(model => model.nazwa_imprezy, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                                        </dd>
+
+                                        <dt style="font-weight: 100;">
+                                            Rodzaj/treść
+                                        </dt>
+
+                                        <dd>
+                                            @Html.EditorFor(model => model.rodzaj_tresc, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                                        </dd>
+
+                                        <dt style="font-weight: 100;">
+                                            Proponowane miejsce realizacji
+                                        </dt>
+
+                                        <dd>
+                                            @Html.EditorFor(model => model.miejsce_realizacji, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                                        </dd>
+
+                                        <dt style="font-weight: 100;">
+                                            Czas trwania
+                                        </dt>
+
+                                        <dd>
+                                            @Html.EditorFor(model => model.czas_trwania, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                                        </dd>
+
+                                        <dt style="font-weight: 100;">
+                                            Cykliczność
+                                        </dt>
+
+                                        <dd>
+                                            @Html.EditorFor(model => model.cyklicznosc, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                                        </dd>
+
+                                        <dt style="font-weight: 100;">
+                                            Charakter uczestnictwa
+                                        </dt>
+
+                                        <dd>
+                                            @Html.EditorFor(model => model.charakter_uczestnictwa, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                                        </dd>
+
+                                        <dt style="font-weight: 100;">
+                                            Forma organizacyjna
+                                        </dt>
+
+                                        <dd>
+                                            @Html.EditorFor(model => model.forma_organizacyjna, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                                        </dd>
+
+                                        <dt style="font-weight: 100;">
+                                            Cele
+                                        </dt>
+
+                                        <dd>
+                                            @Html.EditorFor(model => model.cele, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                                        </dd>
+
+                                        <dt style="font-weight: 100;">
+                                            Proponowany termin odbycia imprezy
+                                        </dt>
+
+                                        <dd>
+                                            @Html.EditorFor(model => model.termin_odbycia, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                                        </dd>
+
+                                        <dt style="font-weight: 100;">
+                                            Ceny biletów
+                                        </dt>
+
+                                        <dd>
+                                            @Html.EditorFor(model => model.ceny_bilet, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                                        </dd>
+
+                                        <dt style="font-weight: 100;">
+                                            Dodatkowe usługi
+                                        </dt>
+
+                                        <dd>
+                                            @Html.EditorFor(model => model.dod_uslugi, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                                        </dd>
+
+                                        <dt style="font-weight: 100;">
+                                            Stan zgłoszenia
+                                        </dt>
+
+                                        <dd>
+                                            @Html.EditorFor(model => model.stanZgloszenia, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                                        </dd>
+
+                                        <dt style="font-weight: 100;">
+                                            Data otrzymania zgłoszenia
+                                        </dt>
+
+                                        <dd>
+                                            @Html.EditorFor(model => model.dataOtrzymaniaZgloszenia, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                                        </dd>
+
+                                    </dl>
+
+                                    @using (Html.BeginForm())
+                                    {
+                                        @Html.AntiForgeryToken()
+
+                                    <div class="form-actions no-color">
+                                        @Html.ActionLink(" ", "Zgloszenia_Przelozony", null, null, new { @class = "btn btn-dark fas fa-angle-double-left fa-2x", @data_toggle = "tooltip", @data_placement = "bottom", title = "Wróć" })
+                                        <button type="submit" style="background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden; outline:none;"><i data-toggle="tooltip" data-placement="bottom" title="Usuń imprezę" class="btn btn-danger fas fa-times-circle fa-2x"></i></button>
+                                    </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </p>
+                </div>
             </div>
-            <p class="text-center" style="font-weight: bold;">Jesteś pewien, że chcesz odrzucić to zgłoszenie?</p>
-            <p class="text-justify" style="font-size: 75% !important">
-                <i class="fas fa-exclamation-circle"></i> Jeżeli tak, kliknij przycisk "Usuń"
-            </p>
-            <hr />
-
-            <div>
-                <dl class="dl-horizontal col-md-12" style="font-size: 75% !important">
-                    <dt style="font-weight: 100;">
-                        Imię i nazwisko
-                    </dt>
-
-                    <dd>
-                        @Html.EditorFor(model => model.imie_nazwisko, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
-                    </dd>
-
-                    <dt style="font-weight: 100;">
-                        Firma
-                    </dt>
-
-                    <dd>
-                        @Html.EditorFor(model => model.firma, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
-                    </dd>
-
-                    <dt style="font-weight: 100;">
-                        Numer telefonu
-                    </dt>
-
-                    <dd>
-                        @Html.EditorFor(model => model.nr_telefonu, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
-                    </dd>
-
-                    <dt style="font-weight: 100;">
-                        Mail
-                    </dt>
-
-                    <dd>
-                        @Html.EditorFor(model => model.mail, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
-                    </dd>
-
-                    <dt style="font-weight: 100;">
-                        Aktualne miejsce zamieszkania
-                    </dt>
-
-                    <dd>
-                        @Html.EditorFor(model => model.m_zamieszkania, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
-                    </dd>
-
-                    <dt style="font-weight: 100;">
-                        Nazwa imprezy masowej
-                    </dt>
-
-                    <dd>
-                        @Html.EditorFor(model => model.nazwa_imprezy, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
-                    </dd>
-
-                    <dt style="font-weight: 100;">
-                        Rodzaj/treść
-                    </dt>
-
-                    <dd>
-                        @Html.EditorFor(model => model.rodzaj_tresc, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
-                    </dd>
-
-                    <dt style="font-weight: 100;">
-                        Proponowane miejsce realizacji
-                    </dt>
-
-                    <dd>
-                        @Html.EditorFor(model => model.miejsce_realizacji, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
-                    </dd>
-
-                    <dt style="font-weight: 100;">
-                        Czas trwania
-                    </dt>
-
-                    <dd>
-                        @Html.EditorFor(model => model.czas_trwania, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
-                    </dd>
-
-                    <dt style="font-weight: 100;">
-                        Cykliczność
-                    </dt>
-
-                    <dd>
-                        @Html.EditorFor(model => model.cyklicznosc, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
-                    </dd>
-
-                    <dt style="font-weight: 100;">
-                        Charakter uczestnictwa
-                    </dt>
-
-                    <dd>
-                        @Html.EditorFor(model => model.charakter_uczestnictwa, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
-                    </dd>
-
-                    <dt style="font-weight: 100;">
-                        Forma organizacyjna
-                    </dt>
-
-                    <dd>
-                        @Html.EditorFor(model => model.forma_organizacyjna, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
-                    </dd>
-
-                    <dt style="font-weight: 100;">
-                        Cele
-                    </dt>
-
-                    <dd>
-                        @Html.EditorFor(model => model.cele, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
-                    </dd>
-
-                    <dt style="font-weight: 100;">
-                        Proponowany termin odbycia imprezy
-                    </dt>
-
-                    <dd>
-                        @Html.EditorFor(model => model.termin_odbycia, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
-                    </dd>
-
-                    <dt style="font-weight: 100;">
-                        Ceny biletów
-                    </dt>
-
-                    <dd>
-                        @Html.EditorFor(model => model.ceny_bilet, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
-                    </dd>
-
-                    <dt style="font-weight: 100;">
-                        Dodatkowe usługi
-                    </dt>
-
-                    <dd>
-                        @Html.EditorFor(model => model.dod_uslugi, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
-                    </dd>
-
-                    <dt style="font-weight: 100;">
-                        Stan zgłoszenia
-                    </dt>
-
-                    <dd>
-                        @Html.EditorFor(model => model.stanZgloszenia, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
-                    </dd>
-
-                    <dt style="font-weight: 100;">
-                        Data otrzymania zgłoszenia
-                    </dt>
-
-                    <dd>
-                        @Html.EditorFor(model => model.dataOtrzymaniaZgloszenia, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
-                    </dd>
-
-                </dl>
-
-                @using (Html.BeginForm())
-                {
-                    @Html.AntiForgeryToken()
-
-                    <div class="form-actions no-color">
-                        @Html.ActionLink("Wróć", "Zgloszenia_Przelozony", null, null, new { @class = "btn przyciskPowrot" })
-                        <input type="submit" value="Usuń" class="btn btn-danger" />
-                    </div>
-                }
-            </div>
-
         </div>
     </div>
 </div>

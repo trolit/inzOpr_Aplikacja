@@ -12,7 +12,12 @@
 </head>
 
 <div class="naglowekStrony">
-    Usunięcie wpisu z dokumentacją
+    <ol class="breadcrumb tloOkruszka">
+        <li class="breadcrumb-item"><a href="@Url.Action("Index", "Home")">Strona główna</a></li>
+        <li class="breadcrumb-item"><a href="@Url.Action("Pracownik", "Home")">Pracownicy</a></li>
+        <li class="breadcrumb-item"><a href="@Url.Action("Dokumentacja", "Home")">Dokumentacja</a></li>
+        <li class="breadcrumb-item active">Usuń dokument</li>
+    </ol>
 </div>
 
 <div class="form-horizontal">

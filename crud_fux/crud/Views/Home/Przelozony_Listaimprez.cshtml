@@ -50,12 +50,12 @@
                                 </tr>
                             </table>
 
-                        <p style="margin-top: 20px;">
+                        <div style="margin-top: 20px;">
                             @Html.ActionLink(" ", "Imprezy_Edit", null, new { id = item.idImpreza }, new { @class = "btn btn-warning fas fa-edit fa-2x", @data_toggle = "tooltip", @data_placement = "bottom", title = "Edytuj dane imprezy" })
                             @Html.ActionLink(" ", "Przelozony_Imprezy_Details", null, new { id = item.idImpreza }, new { @class = "btn btn-primary fas fa-info-circle fa-2x", @data_toggle = "tooltip", @data_placement = "bottom", title = "Zobacz szczegóły imprezy" })
                             @Html.ActionLink(" ", "Uczestnicy_Lista", null, new { id = item.idImpreza }, new { @class = "btn btn-success fas fa-users fa-2x", @data_toggle = "tooltip", @data_placement = "bottom", title = "Zobacz listę zarejestrowanych uczestników" })
                             @Html.ActionLink(" ", "Imprezy_Delete", null, new { id = item.idImpreza }, new { @class = "btn btn-danger fas fa-times-circle fa-2x", @data_toggle = "tooltip", @data_placement = "bottom", title = "Usuń imprezę" })
-                        </p>
+                        </div>
                         </p>
                     </div>
                 </div>

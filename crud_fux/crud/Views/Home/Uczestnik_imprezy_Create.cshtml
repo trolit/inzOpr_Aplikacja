@@ -11,96 +11,99 @@
 </head>
 
 <div class="naglowekStrony">
-    Panel uczestnika - zapisywanie
+    <ol class="breadcrumb tloOkruszka">
+        <li class="breadcrumb-item"><a href="@Url.Action("Index", "Home")">Strona główna</a></li>
+        <li class="breadcrumb-item"><a href="@Url.Action("Klienci", "Home")">Klienci</a></li>
+        <li class="breadcrumb-item"><a href="@Url.Action("Imprezy_Dostepne", "Home")">Dostępne imprezy</a></li>
+        <li class="breadcrumb-item active">Zapisywanie na imprezę</li>
+    </ol>
 </div>
 
+<!-- trzeba dać w kontener żeby nie przylegały do krawędzi ekranu -->
+<div class="container">
+    <!-- trzeba dać card-columns żeby były odstępy od siebie kart i div z klasą row aby było responsywne -->
+    <div class="row">
+        <!-- mx-auto centruje karty jak zmniejszysz ekran do sytuacji że będzie 1 karta w wierszu -->
+        <div class="mx-auto col-md-6">
+            <div class="card text-white" style="background-color: #2b6198;">
+                <div class="card-body">
+                    <h5 class="card-title text-center"><i class="fas fa-id-card fa-7x"></i></h5>
+                    <p class="card-text">
+                        @using (Html.BeginForm())
+                         {
+                            @Html.AntiForgeryToken()
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
+                            <div style="font-family: 'Arima Madurai', sans-serif; font-size:90%;">
+                                <div>
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-    <div class="form-horizontal">
-        <hr />
-        <div class="col-lg-6 col-md-8 mx-auto jumbotron">
-            <div style="font-family: 'Arima Madurai', sans-serif; font-size:130%; margin-top: 5%;">
-                <div class="text-center" style="margin-bottom: 15px;">
-                    <i class="fas fa-id-card fa-7x"></i>
-                </div>
-                <p class="text-center" style="font-weight: bold;">Formularz uczestnika</p>
-                <p class="text-justify" style="font-size: 75% !important">
-                    <i class="fas fa-exclamation-circle"></i> Wypełnij wszystkie pola.
-                </p>
-                <hr />
-            </div>
-            <div>
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                    <div class="form-group">
+                                        @Html.Label("Podaj numer imprezy", htmlAttributes: new { @class = "control-label col-md-5" })
+                                        <div class="col-md-10">
+                                            <div class="input-group">
+                                                <div class="input-group-text" style="width: 40px; !important;">
+                                                    <i class="fas fa-sort-numeric-up"></i>
+                                                </div>
+                                                @Html.EditorFor(model => model.idPorownania, new { htmlAttributes = new { @class = "form-control" } })
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.idPorownania, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
 
-                <div class="form-group">
-                    @Html.Label("Podaj numer imprezy", htmlAttributes: new { @class = "control-label col-md-5" })
-                    <div class="col-md-10">
-                        <div class="input-group">
-                            <div class="input-group-text" style="width: 40px; !important;">
-                                <i class="fas fa-sort-numeric-up"></i>
+                                    <div class="form-group">
+                                        @Html.Label("Imię i nazwisko", htmlAttributes: new { @class = "control-label col-md-5" })
+                                        <div class="col-md-10">
+                                            <div class="input-group">
+                                                <div class="input-group-text" style="width: 40px; !important;">
+                                                    <i class="fas fa-user text-center"></i>
+                                                </div>
+                                                @Html.EditorFor(model => model.imieNazwisko, new { htmlAttributes = new { @class = "form-control" } })
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.imieNazwisko, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.Label("Mail", htmlAttributes: new { @class = "control-label col-md-5" })
+                                        <div class="col-md-10">
+                                            <div class="input-group">
+                                                <div class="input-group-text" style="width: 40px; !important;">
+                                                    <i class="fas fa-envelope text-center"></i>
+                                                </div>
+                                                @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.Label("Numer telefonu", htmlAttributes: new { @class = "control-label col-md-5" })
+                                        <div class="col-md-10">
+                                            <div class="input-group">
+                                                <div class="input-group-text" style="width: 40px; !important;">
+                                                    <i class="fas fa-phone-square text-center"></i>
+                                                </div>
+                                                @Html.EditorFor(model => model.nrTelefonu, new { htmlAttributes = new { @class = "form-control" } })
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.nrTelefonu, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group" style="margin-top: 30px;">
+                                        <div class="col-md-offset-2 col-md-10">
+                                            <button type="submit" style="background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden; outline:none;"><i data-toggle="tooltip" data-placement="bottom" title="Zapisz mnie!" class="btn btn-success fas fa-check-square fa-2x"></i></button>
+                                            @Html.ActionLink(" ", "Imprezy_Dostepne", null, null, new { @class = "btn btn-dark fas fa-angle-double-left fa-2x", @data_toggle = "tooltip", @data_placement = "bottom", title = "Wróć" })
+                                        </div>
+                                    </div>
+                                    @section Scripts {
+                                        @Scripts.Render("~/bundles/jqueryval")
+                                    }
+                                </div>
                             </div>
-                            @Html.EditorFor(model => model.idPorownania, new { htmlAttributes = new { @class = "form-control" } })
-                        </div>
-                        @Html.ValidationMessageFor(model => model.idPorownania, "", new { @class = "text-danger" })
-                    </div>
+                         }
+                    </p>
                 </div>
-
-                <div class="form-group">
-                    @Html.Label("Imię i nazwisko", htmlAttributes: new { @class = "control-label col-md-5" })
-                    <div class="col-md-10">
-                        <div class="input-group">
-                            <div class="input-group-text" style="width: 40px; !important;">
-                                <i class="fas fa-user text-center"></i>
-                            </div>
-                            @Html.EditorFor(model => model.imieNazwisko, new { htmlAttributes = new { @class = "form-control" } })
-                        </div>
-                        @Html.ValidationMessageFor(model => model.imieNazwisko, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    @Html.Label("Mail", htmlAttributes: new { @class = "control-label col-md-5" })
-                    <div class="col-md-10">
-                        <div class="input-group">
-                            <div class="input-group-text" style="width: 40px; !important;">
-                                <i class="fas fa-envelope text-center"></i>
-                            </div>
-                            @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
-                        </div>
-                        @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    @Html.Label("Numer telefonu", htmlAttributes: new { @class = "control-label col-md-5" })
-                    <div class="col-md-10">
-                        <div class="input-group">
-                            <div class="input-group-text" style="width: 40px; !important;">
-                                <i class="fas fa-phone-square text-center"></i>
-                            </div>
-                            @Html.EditorFor(model => model.nrTelefonu, new { htmlAttributes = new { @class = "form-control" } })
-                        </div>
-                        @Html.ValidationMessageFor(model => model.nrTelefonu, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="form-group" style="margin-top: 30px;">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Zapisz mnie!" class="btn btn-success btn-lg" />
-                        <input type="button" value="Wróć" class="btn przyciskPowrot" onclick="window.location='@Url.Action("Imprezy_Dostepne", "Home")'" />
-                    </div>
-                </div>
-                @section Scripts {
-                    @Scripts.Render("~/bundles/jqueryval")
-                }
             </div>
         </div>
     </div>
-}
-
-
-
-
+</div>

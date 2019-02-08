@@ -15,59 +15,62 @@
 </head>
 
 <div class="naglowekStrony">
-    Dostępne imprezy
+    <ol class="breadcrumb tloOkruszka">
+        <li class="breadcrumb-item"><a href="@Url.Action("Index", "Home")">Strona główna</a></li>
+        <li class="breadcrumb-item"><a href="@Url.Action("Klienci", "Home")">Klienci</a></li>
+        <li class="breadcrumb-item active">Dostępne imprezy</li>
+    </ol>
 </div>
 
-<table class="table">
-    <tr class="text-center" style="font-family: 'Marmelad', sans-serif;">
-        <th>
-            Numer imprezy
-        </th>
-        <th>
-            Nazwa imprezy
-        </th>
-        <th>
-            Miejsce
-        </th>
-        <th>
-            Czas trwania
-        </th>
-        <th>
-            Charakter uczestnictwa
-        </th>
-        <th>
-            Ceny biletów
-        </th>
-        <th></th>
-    </tr>
+<!-- trzeba dać w kontener żeby nie przylegały do krawędzi ekranu -->
+<div class="container">
+    <!-- trzeba dać card-columns żeby były odstępy od siebie kart i div z klasą row aby było responsywne -->
+    <div class="row" id="myItems">
+        <!-- mx-auto centruje karty jak zmniejszysz ekran do sytuacji że będzie 1 karta w wierszu -->
+        <div class="card-columns text-center mx-auto">
+            @foreach (var item in Model)
+            {
+                <div class="card text-white" style="background-color: #2b6198;">
+                    <div class="card-header" style="font-size: 18px;">Identyfikator imprezy <strong>@Html.DisplayFor(modelItem => item.idImpreza)</strong></div>
+                    <div class="card-body">
+                        <h5 class="card-title" data-toggle="tooltip" data-placement="bottom" title="Nazwa imprezy">@Html.DisplayFor(modelItem => item.nazwaImprezy)</h5>
+                        <p class="card-text">
+                            <table style="margin-left: auto; margin-right: auto;">
+                                <tr data-toggle="tooltip" data-placement="left" title="Miejsce w którym odbędzie się impreza">
+                                    <td><i class="fas fa-map-marker-alt fa-lg"></i></td>
+                                    <td>@Html.DisplayFor(modelItem => item.miejsce)</td>
+                                </tr>
+                                <tr data-toggle="tooltip" data-placement="left" title="Czas trwania imprezy">
+                                    <td><i class="fas fa-calendar-alt fa-lg"></i></td>
+                                    <td>@Html.DisplayFor(modelItem => item.czasTrwania)</td>
+                                </tr>
+                                <tr data-toggle="tooltip" data-placement="left" title="Charakter uczestnictwa np. otwarte/zamknięte">
+                                    <td><i class="fas fa-dice-one fa-lg"></i></td>
+                                    <td>@Html.DisplayFor(modelItem => item.charakterUczestnictwa)</td>
+                                </tr>
+                                <tr data-toggle="tooltip" data-placement="left" title="Cena jednego biletu">
+                                    <td><i class="fas fa-ticket-alt fa-lg"></i></td>
+                                    <td>@Html.DisplayFor(modelItem => item.cenaBiletu)</td>
+                                </tr>
+                            </table>
 
-    @foreach (var item in Model)
-    {
-    <tr class="parzysty nieparzysty text-center" style="font-family: 'Maven Pro', sans-serif;">
-        <td>
-            @Html.DisplayFor(modelItem => item.idImpreza)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.nazwaImprezy)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.miejsce)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.czasTrwania)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.charakterUczestnictwa)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.cenaBiletu)
-        </td>
-        <td>
-            @Html.ActionLink("Zapisz mnie!", "Uczestnik_imprezy_Create", new { id = item.idImpreza }, new { @class = "btn zapiszMnie" })
-            @Html.ActionLink("Szczegóły imprezy", "Imprezy_Details", new { id = item.idImpreza }, new { @class = "btn szczegolyImprezy" })
-        </td>
-    </tr>
-    }
-
-</table>
-<input type="button" value="Wróć" class="btn przyciskPowrot" onclick="window.location='@Url.Action("Klienci", "Home")'" />
+                        <p style="margin-top: 20px;">
+                            @{
+                                if (item.charakterUczestnictwa == "otwarte")
+                                {
+                                    @Html.ActionLink(" ", "Uczestnik_imprezy_Create", null, new { id = item.idImpreza }, new { @class = "btn btn-warning fas fa-save fa-2x", @data_toggle = "tooltip", @data_placement = "bottom", title = "Zapisz na imprezę" })
+                                }
+                                else
+                                {
+                                    <a href="#" class="btn btn-secondary fas fa-exclamation-circle fa-2x" data-toggle="tooltip" data-placement="bottom" title="Impreza ma charakter zamknięty(lub inny niż otwarty) dlatego też nie można się na nią zapisać"></a>
+                                }
+                            }
+                            @Html.ActionLink(" ", "Imprezy_Details", null, new { id = item.idImpreza }, new { @class = "btn btn-primary fas fa-info-circle fa-2x", @data_toggle = "tooltip", @data_placement = "bottom", title = "Zobacz więcej informacji o imprezie" })
+                        </p>
+                        </p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

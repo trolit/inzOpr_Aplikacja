@@ -6,9 +6,14 @@
     <!-- zalaczenie biblioteki globalnej style.css -->
     <link rel="Stylesheet" href="~/Content/style.css" type="text/css" />
 </head>
+
 <div class="naglowekStrony">
-    Panel klienta
+    <ol class="breadcrumb tloOkruszka">
+        <li class="breadcrumb-item"><a href="@Url.Action("Index", "Home")">Strona główna</a></li>
+        <li class="breadcrumb-item active">Klienci</li>
+    </ol>
 </div>
+
 <head>
     <!-- zalaczenie biblioteki globalnej style.css -
          UWAGA: zaimplementowana we wszystkich stronach!!!
@@ -18,8 +23,7 @@
          Pamietaj aby plik css znajdowal sie w katalogu ~/Content/ tak jak wyżej style.css -->
 </head>
 <div class="text-center">
-    <button type="button" class="btn btn-lg przyciskNawigacyjny" style="background-color: #5E243D; !important" onclick="window.location='@Url.Action("Create_Zgloszenie", "Home")'"><span><i class="fas fa-envelope fa-5x"></i><br />Wyślij ofertę</span></button>
-    <button type="button" class="btn btn-lg przyciskNawigacyjny" style="background-color: #5E243D; !important" onclick="window.location='@Url.Action("Imprezy_Dostepne", "Home")'"><span><i class="fab fa-itunes-note fa-5x"></i><br />Dostępne imprezy</span></button>
+    <button type="button" class="btn btn-lg przyciskNawigacyjny" style="background-color: #135589; !important" onclick="window.location='@Url.Action("Create_Zgloszenie", "Home")'"><span><i class="fas fa-envelope fa-5x"></i><br />Wyślij ofertę</span></button>
+    <button type="button" class="btn btn-lg przyciskNawigacyjny" style="background-color: #135589; !important" onclick="window.location='@Url.Action("Imprezy_Dostepne", "Home")'"><span><i class="fab fa-itunes-note fa-5x"></i><br />Dostępne imprezy</span></button>
 </div>
 
-<input type="button" value="Wróć" class="btn przyciskPowrot" onclick="window.location='@Url.Action("Index", "Home")'" />

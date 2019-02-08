@@ -12,7 +12,12 @@
 </head>
 
 <div class="naglowekStrony">
-    Utwórz wpis o pozwoleniu
+    <ol class="breadcrumb tloOkruszka">
+        <li class="breadcrumb-item"><a href="@Url.Action("Index", "Home")">Strona główna</a></li>
+        <li class="breadcrumb-item"><a href="@Url.Action("Pracownik", "Home")">Pracownicy</a></li>
+        <li class="breadcrumb-item"><a href="@Url.Action("Pozwolenia", "Home")">Pozwolenia</a></li>
+        <li class="breadcrumb-item active">Tworzenie wpisu</li>
+    </ol>
 </div>
 
 @using (Html.BeginForm())

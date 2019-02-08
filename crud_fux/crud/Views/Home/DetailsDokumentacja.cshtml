@@ -12,7 +12,12 @@
 </head>
 
 <div class="naglowekStrony">
-    Szczegóły wpisu
+    <ol class="breadcrumb tloOkruszka">
+        <li class="breadcrumb-item"><a href="@Url.Action("Index", "Home")">Strona główna</a></li>
+        <li class="breadcrumb-item"><a href="@Url.Action("Pracownik", "Home")">Pracownicy</a></li>
+        <li class="breadcrumb-item"><a href="@Url.Action("Dokumentacja", "Home")">Dokumentacja</a></li>
+        <li class="breadcrumb-item active">Szczegóły dokumentacji</li>
+    </ol>
 </div>
 
 <div class="form-horizontal">
