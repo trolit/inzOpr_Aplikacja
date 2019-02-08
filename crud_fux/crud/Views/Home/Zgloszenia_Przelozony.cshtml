@@ -7,7 +7,7 @@
 
 <head>
     <!-- zalaczenie biblioteki globalnej style.css -->
-    <link rel="Stylesheet" href="~/Content/style.css" type="text/css" />
+    <link href="~/Content/style.css" rel="stylesheet" />
     <!-- czcionka do naglowkow tabeli -->
     <link href='http://fonts.googleapis.com/css?family=Marmelad&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <!-- czcionka do zawartosci tabeli -->
@@ -25,7 +25,11 @@
 </head>
 
 <div class="naglowekStrony">
-    Lista zgłoszeń
+    <ol class="breadcrumb tloOkruszka">
+        <li class="breadcrumb-item"><a href="@Url.Action("Index", "Home")">Strona główna</a></li>
+        <li class="breadcrumb-item"><a href="@Url.Action("Przelozony", "Home")">Przełożony</a></li>
+        <li class="breadcrumb-item active">Zgłoszenia</li>
+    </ol>
 </div>
 
 <!-- trzeba dać w kontener żeby nie przylegały do krawędzi ekranu -->
@@ -36,10 +40,10 @@
         <div class="card-columns text-center mx-auto">
             @foreach (var item in Model)
             {
-                <div class="card text-white bg-dark">
+                <div class="card text-white" style="background-color: #2b6198;">
                     <div class="card-header" style="font-size: 18px;">Zgłoszenie  <strong>@Html.DisplayFor(modelItem => item.idOferty)</strong></div>
                     <div class="card-body">
-                        <h5 class="card-title">od @Html.DisplayFor(modelItem => item.imie_nazwisko)</h5>
+                        <h5 class="card-title" data-toggle="tooltip" data-placement="bottom" title="Nadawca zgłoszenia">od @Html.DisplayFor(modelItem => item.imie_nazwisko)</h5>
                         <p class="card-text">
                             <table style="margin-left: auto; margin-right: auto;">
                                 <tr data-toggle="tooltip" data-placement="left" title="Numer telefonu">
@@ -86,6 +90,3 @@
         </div>
     </div>
 </div>
-
-    @Html.ActionLink("Wróć", "Przelozony", null, null, new { @class = "btn przyciskPowrot" })
-

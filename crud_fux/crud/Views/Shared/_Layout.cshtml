@@ -10,25 +10,30 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     @Scripts.Render("~/bundles/bootstrap")
 
-    <!-- niestandardowe ikonki -->
+    <!-- UWAGA, w tym miejscu można ładować czcionki, inne biblioteki aby były widoczne we WSZYSTKICH WIDOKACH!!! -->
+
+    <!-- Ikonki Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <!-- niestandardowa czcionka -->
+    <!-- Animacje ikonek Font Awesome -->
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.2.1/font-awesome-animation.css' rel='stylesheet' type='text/css'>
+    <!-- Niestandardowe czcionki -->
     <link href='http://fonts.googleapis.com/css?family=Marcellus&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Arima+Madurai&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Comfortaa&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <!-- czcionka do naglowkow tabeli -->
     <link href='http://fonts.googleapis.com/css?family=Marmelad&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <!-- czcionka do zawartosci tabeli -->
     <link href='http://fonts.googleapis.com/css?family=Maven+Pro&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
     <script>
-                $(document).ready(function () {
-                    $('[data-toggle="tooltip"]').tooltip();
-                });
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
     </script>
 </head>
 <body>
     <!-- navbar starts here! -->
-    <nav class="navbar navbar-expand-sm navbar-dark fixed-top" style= "background-color: #734748; !important;">
+    <nav class="navbar navbar-expand-sm navbar-dark fixed-top" style= "background-color: #101072; !important;">
         <i class="fas fa-home" style="color: white; font-size: 25px; vertical-align: central;"></i> &nbsp; &nbsp; @Html.ActionLink("Obsługa Imprez Masowych - GGKI", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
         <div class="container">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

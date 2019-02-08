@@ -11,7 +11,12 @@
 </head>
 
 <div class="naglowekStrony">
-    Szczegóły projektu 
+    <ol class="breadcrumb tloOkruszka">
+        <li class="breadcrumb-item"><a href="@Url.Action("Index", "Home")">Strona główna</a></li>
+        <li class="breadcrumb-item"><a href="@Url.Action("Przelozony", "Home")">Przełożony</a></li>
+        <li class="breadcrumb-item"><a href="@Url.Action("Zgloszenia_Przelozony", "Home")">Zgłoszenia</a></li>
+        <li class="breadcrumb-item active">Szczegóły projektu @Html.DisplayFor(model => model.idOferty)</li>
+    </ol>
 </div>
 
 <div class="form-horizontal">

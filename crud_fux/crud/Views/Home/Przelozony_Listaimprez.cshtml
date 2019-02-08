@@ -1,7 +1,10 @@
 ﻿@model IEnumerable<crud.Models.Imprezy>
 
 @{
+    /**/
     <!-- tytul strony -->
+    /**/
+
     ViewBag.Title = "Lista imprez";
 }
 
@@ -11,49 +14,52 @@
 </head>
 
 <div class="naglowekStrony">
-    Lista dostępnych imprez
+    <ol class="breadcrumb tloOkruszka">
+        <li class="breadcrumb-item"><a href="@Url.Action("Index", "Home")">Strona główna</a></li>
+        <li class="breadcrumb-item"><a href="@Url.Action("Przelozony", "Home")">Przełożony</a></li>
+        <li class="breadcrumb-item active">Lista imprez</li>
+    </ol>
 </div>
 
-<table class="table">
-    <tr class="text-center">
-        <th>
-            Nazwa imprezy
-        </th>
-        <th>
-            Rodzaj/treść
-        </th>
-        <th>
-            Miejsce
-        </th>
-        <th>
-            Liczba uczestników
-        </th>
-        <th></th>
-    </tr>
+<!-- trzeba dać w kontener żeby nie przylegały do krawędzi ekranu -->
+<div class="container">
+    <!-- trzeba dać card-columns żeby były odstępy od siebie kart i div z klasą row aby było responsywne -->
+    <div class="row">
+        <!-- mx-auto centruje karty jak zmniejszysz ekran do sytuacji że będzie 1 karta w wierszu -->
+        <div class="card-columns text-center mx-auto">
+            @foreach (var item in Model)
+            {
+                <div class="card text-white" style="background-color: #2b6198;">
+                    <div class="card-header" style="font-size: 18px;">Impreza  <strong>@Html.DisplayFor(modelItem => item.idImpreza)</strong></div>
+                    <div class="card-body">
+                        <h5 class="card-title" data-toggle="tooltip" data-placement="bottom" title="Nazwa imprezy">@Html.DisplayFor(modelItem => item.nazwaImprezy)</h5>
+                        <p class="card-text">
+                            <table style="margin-left: auto; margin-right: auto;">
+                                <tr data-toggle="tooltip" data-placement="left" title="Rodzaj/treść imprezy">
+                                    <td><i class="fas fa-glass-martini fa-lg"></i></td>
+                                    <td>@Html.DisplayFor(modelItem => item.rodzaj)</td>
+                                </tr>
+                                <tr data-toggle="tooltip" data-placement="left" title="Miejsce odbycia się imprezy">
+                                    <td><i class="fas fa-map-marker-alt fa-lg"></i></td>
+                                    <td>@Html.DisplayFor(modelItem => item.miejsce)</td>
+                                </tr>
 
-    @foreach (var item in Model)
-    {
-        <tr class="parzysty nieparzysty text-center">
-            <td>
-                @Html.DisplayFor(modelItem => item.nazwaImprezy)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.rodzaj)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.miejsce)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.liczbaUczestnikow)
-            </td>
-            <td>
-                @Html.ActionLink("Edytuj", "Imprezy_Edit", new { id = item.idImpreza }, new { @class = "btn przyciskSterowania3" }) 
-                @Html.ActionLink("Szczegóły", "Przelozony_Imprezy_Details", new { id = item.idImpreza }, new { @class = "btn przyciskSterowania2" }) 
-                @Html.ActionLink("Uczestnicy", "Uczestnicy_Lista", new { id = item.idImpreza }, new { @class = "btn przyciskSterowania2" }) 
-                @Html.ActionLink("Usuń", "Imprezy_Delete", new { id = item.idImpreza }, new { @class = "btn przyciskSterowania4" })
-            </td>
-        </tr>
-    }
+                                <tr data-toggle="tooltip" data-placement="left" title="Liczba miejsc na imprezie">
+                                    <td><i class="fas fa-sort-numeric-up fa-lg"></i></td>
+                                    <td>@Html.DisplayFor(modelItem => item.liczbaUczestnikow)</td>
+                                </tr>
+                            </table>
 
-</table>
-@Html.ActionLink("Wróć", "Przelozony", null, null, new { @class = "btn przyciskPowrot" })
+                        <p style="margin-top: 20px;">
+                            @Html.ActionLink(" ", "Imprezy_Edit", null, new { id = item.idImpreza }, new { @class = "btn btn-warning fas fa-edit fa-2x", @data_toggle = "tooltip", @data_placement = "bottom", title = "Edytuj dane imprezy" })
+                            @Html.ActionLink(" ", "Przelozony_Imprezy_Details", null, new { id = item.idImpreza }, new { @class = "btn btn-primary fas fa-info-circle fa-2x", @data_toggle = "tooltip", @data_placement = "bottom", title = "Zobacz szczegóły imprezy" })
+                            @Html.ActionLink(" ", "Uczestnicy_Lista", null, new { id = item.idImpreza }, new { @class = "btn btn-success fas fa-users fa-2x", @data_toggle = "tooltip", @data_placement = "bottom", title = "Zobacz listę zarejestrowanych uczestników" })
+                            @Html.ActionLink(" ", "Imprezy_Delete", null, new { id = item.idImpreza }, new { @class = "btn btn-danger fas fa-times-circle fa-2x", @data_toggle = "tooltip", @data_placement = "bottom", title = "Usuń imprezę" })
+                        </p>
+                        </p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

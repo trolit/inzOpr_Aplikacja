@@ -9,17 +9,19 @@
 /* Pierwszy blok na każdej stronie będący tytułem strony - NIE USUWAC! */
 .naglowekStrony {
     width: 100%;
-    padding-top: 25px;
-    margin-bottom: 20px;
-    font-size: 48px;
+    height: auto;
+    font-size: 20px;
     font-weight: bold;
     color: black;
-    font-family: 'Marcellus', sans-serif;
-    margin-top: 10px;
-    text-transform: uppercase;
+    font-family: 'Comfortaa', sans-serif;
+    margin-top: 13px;
     text-align: center;
-    letter-spacing: 4px;
     text-decoration: wavy;
+}
+
+/* klasa dla okruszków */
+.tloOkruszka {
+    background-color: #C7E3F0;
 }
 
 /* Lacza do zarejestruj i zaloguj */
@@ -40,7 +42,7 @@
 }
 
 body {
-    background-color: #deafb2;
+    background-color: #e5f2e5;
     color: black;
 }
 

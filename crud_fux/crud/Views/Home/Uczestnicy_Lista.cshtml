@@ -11,42 +11,77 @@
 </head>
 
 <div class="naglowekStrony">
-    Lista uczestników
+    <ol class="breadcrumb tloOkruszka">
+        <li class="breadcrumb-item"><a href="@Url.Action("Index", "Home")">Strona główna</a></li>
+        <li class="breadcrumb-item"><a href="@Url.Action("Przelozony", "Home")">Przełożony</a></li>
+        <li class="breadcrumb-item"><a href="@Url.Action("Przelozony_Listaimprez", "Home")">Lista imprez</a></li>
+        <li class="breadcrumb-item active">Lista uczestników</li>
+    </ol>
 </div>
 
-<table class="table">
-    <tr class="text-center">
-        <th>
-            Imię i nazwisko
-        </th>
-        <th>
-            Mail
-        </th>
-        <th>
-            Numer telefonu
-        </th>
-        <th></th>
-    </tr>
+<div style="margin-left: 8%; margin-bottom: 1%;">
+    <div class="input-group">
+        <div class="input-group-text">
+            <i class="fas fa-search"></i>
+        </div>
+        <input class="form-control" id="myFilter" type="text" placeholder="imie i/lub nazwisko uczestnika.." onkeyup="myFunction()">
+        <div class="input-group-text">
+            <i class="fas fa-question"  data-toggle="tooltip" data-placement="bottom" title="Wyszukaj kartę uczestnika imprezy podając jego imię lub nazwisko"></i>
+        </div>
+    </div>
+</div>
 
-    @foreach (var item in Model)
-    { 
-        <tr class="parzysty nieparzysty text-center">
-            <td>
-                @Html.DisplayFor(modelItem => item.imieNazwisko)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.nrTelefonu)
-            </td>
-            <td>
-                @Html.ActionLink("Edytuj", "EditUczestnik", new { id = item.idUczestnika }, new { @class = "btn przyciskSterowania3" })
-                @Html.ActionLink("Usuń", "DeleteUczestnik", new { id = item.idUczestnika }, new { @class = "btn przyciskSterowania4" })
-            </td>
-        </tr>
+<!-- trzeba dać w kontener żeby nie przylegały do krawędzi ekranu -->
+<div class="container">
+    <!-- trzeba dać card-columns żeby były odstępy od siebie kart i div z klasą row aby było responsywne -->
+    <div class="row" id="myItems">
+        <!-- mx-auto centruje karty jak zmniejszysz ekran do sytuacji że będzie 1 karta w wierszu -->
+        <div class="card-columns text-center mx-auto">
+            @foreach (var item in Model)
+            {
+                <div class="card text-white" style="background-color: #2b6198;">
+                    <div class="card-header" style="font-size: 18px;">ID Uczestnika <strong>@Html.DisplayFor(modelItem => item.idUczestnika)</strong></div>
+                    <div class="card-body">
+                        <h5 class="card-title" data-toggle="tooltip" data-placement="bottom" title="Imie i nazwisko uczestnika imprezy">@Html.DisplayFor(modelItem => item.imieNazwisko)</h5>
+                        <p class="card-text">
+                            <table style="margin-left: auto; margin-right: auto;">
+                                <tr data-toggle="tooltip" data-placement="left" title="Adres email uczestnika">
+                                    <td><i class="fas fa-envelope fa-lg"></i></td>
+                                    <td>@Html.DisplayFor(modelItem => item.email)</td>
+                                </tr>
+                                <tr data-toggle="tooltip" data-placement="left" title="Numer telefonu uczestnika">
+                                    <td><i class="fas fa-phone-square fa-lg"></i></td>
+                                    <td>@Html.DisplayFor(modelItem => item.nrTelefonu)</td>
+                                </tr>
+                            </table>
+
+                        <p style="margin-top: 20px;">
+                            @Html.ActionLink(" ", "EditUczestnik", null, new { id = item.idUczestnika }, new { @class = "btn btn-warning fas fa-edit fa-2x", @data_toggle = "tooltip", @data_placement = "bottom", title = "Edytuj dane uczestnika" })
+                            @Html.ActionLink(" ", "DeleteUczestnik", null, new { id = item.idUczestnika }, new { @class = "btn btn-danger fas fa-times-circle fa-2x", @data_toggle = "tooltip", @data_placement = "bottom", title = "Usuń uczestnika z listy" })
+                        </p>
+                        </p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<!-- Funkcja do filtrowania kart -->
+<script>
+    function myFunction() {
+        var input, filter, cards, cardContainer, h5, title, i;
+        input = document.getElementById("myFilter");
+        filter = input.value.toUpperCase();
+        cardContainer = document.getElementById("myItems");
+        cards = cardContainer.getElementsByClassName("card");
+        for (i = 0; i < cards.length; i++) {
+            title = cards[i].querySelector(".card-body h5.card-title");
+            if (title.innerText.toUpperCase().indexOf(filter) > -1) {
+                cards[i].style.display = "";
+            } else {
+                cards[i].style.display = "none";
+            }
+        }
     }
-
-</table>
-
-@Html.ActionLink("Wróć", "Przelozony_Listaimprez", null, null, new { @class = "btn przyciskPowrot" })
+</script>
