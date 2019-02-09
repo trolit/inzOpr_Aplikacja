@@ -22,37 +22,43 @@
     </ol>
 </div>
 
-<p>
-    <button type="button" class="btn btn-lg przyciskNawigacyjnyMINI" onclick="window.location='@Url.Action("CreatePersonel", "Home")'"><span><i class="far fa-plus-square"></i> Utwórz nowy wpis</span></button>
+<p class="text-center">
+    <button type="button" data-toggle="tooltip" data-placement="left" title="Utwórz nowy wpis" style="background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden; outline:none;" onclick="window.location='@Url.Action("CreatePersonel", "Home")'"><i class="btn btn-primary fas fa-plus-square fa-5x"></i></button>
 </p>
-<table class="table text-center">
-    <tr style="font-family: 'Marmelad', sans-serif;">
-        <th>
-            Nazwa personelu
-        </th>
-        <th class="text-center">
-            Czy ustalony?
-        </th>
-        <th></th>
-    </tr>
 
-    @foreach (var item in Model)
-    {
-        <tr class="parzysty nieparzysty" style="font-family: 'Maven Pro', sans-serif;">
-            <td>
-                @Html.DisplayFor(modelItem => item.nazwaPersonelu)
-            </td>
-            <td class="text-center">
-                @Html.DisplayFor(modelItem => item.czyUstalony)
-            </td>
-            <td>
-                @Html.ActionLink("Edytuj", "EditPersonel", new { id = item.idPersonelu }, new { @class = "btn przyciskSterowania3" })
-                @Html.ActionLink("Szczegóły", "DetailsPersonel", new { id = item.idPersonelu }, new { @class = "btn przyciskSterowania2" })
-                @Html.ActionLink("Usuń", "DeletePersonel", new { id = item.idPersonelu }, new { @class = "btn przyciskSterowania4" })
-            </td>
-        </tr>
-    }
+<!-- trzeba dać w kontener żeby nie przylegały do krawędzi ekranu -->
+<div class="container">
+    <!-- trzeba dać card-columns żeby były odstępy od siebie kart i div z klasą row aby było responsywne -->
+    <div class="row">
+        <!-- mx-auto centruje karty jak zmniejszysz ekran do sytuacji że będzie 1 karta w wierszu -->
+        <div class="card-columns text-center mx-auto">
+            @foreach (var item in Model)
+            {
+                <div class="card text-white" style="background-color: #2b6198;">
+                    <div class="card-header" style="font-size: 18px;">Identyfikator wpisu: <strong>@Html.DisplayFor(modelItem => item.idPersonelu)</strong></div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            <table style="margin-left: auto; margin-right: auto;">
+                                <tr data-toggle="tooltip" data-placement="left" title="Nazwa wpisu">
+                                    <td><i class="fas fa-comment fa-lg"></i></td>
+                                    <td>@Html.DisplayFor(modelItem => item.nazwaPersonelu)</td>
+                                </tr>
+                                <tr data-toggle="tooltip" data-placement="left" title="Status wpisu">
+                                    <td><i class="fab fa-dev fa-lg"></i></td>
+                                    <td>@Html.DisplayFor(modelItem => item.czyUstalony)</td>
+                                </tr>
+                            </table>
 
-</table>
+                            <div style="margin-top: 20px;">
+                                @Html.ActionLink(" ", "EditPersonel", null, new { id = item.idPersonelu }, new { @class = "btn btn-warning fas fa-edit fa-2x", @data_toggle = "tooltip", @data_placement = "bottom", title = "Edytuj wpis" })
+                                @Html.ActionLink(" ", "DetailsPersonel", null, new { id = item.idPersonelu }, new { @class = "btn btn-primary fas fa-info-circle fa-2x", @data_toggle = "tooltip", @data_placement = "bottom", title = "Szczegóły wpisu" })
+                                @Html.ActionLink(" ", "DeletePersonel", null, new { id = item.idPersonelu }, new { @class = "btn btn-danger fas fa-times-circle fa-2x", @data_toggle = "tooltip", @data_placement = "bottom", title = "Usuń wpis" })
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
 
-@Html.ActionLink("Wróć", "Pracownik", null, null, new { @class = "btn przyciskPowrot" })

@@ -20,135 +20,138 @@
     </ol>
 </div>
 
-<div class="form-horizontal">
-    <hr />
-    <div class="col-lg-6 col-md-8 mx-auto jumbotron">
-        <div style="font-family: 'Arima Madurai', sans-serif; font-size:130%; margin-top: 5%;">
-            <div class="text-center" style="margin-bottom: 15px;">
-                <i class="fas fa-info-circle fa-7x"></i>
+<!-- trzeba dać w kontener żeby nie przylegały do krawędzi ekranu -->
+<div class="container">
+    <!-- trzeba dać card-columns żeby były odstępy od siebie kart i div z klasą row aby było responsywne -->
+    <div class="row">
+        <!-- mx-auto centruje karty jak zmniejszysz ekran do sytuacji że będzie 1 karta w wierszu -->
+        <div class="mx-auto col-md-6">
+            <div class="card text-white" style="background-color: #2b6198;">
+                <div class="card-body">
+                    <h5 class="card-title text-center"><i class="fas fa-info-circle fa-7x"></i></h5>
+                    <p class="card-text">
+                        <div class="form-horizontal">
+                            <div style="font-family: 'Arima Madurai', sans-serif; font-size:90%;">
+                                <div>
+                                    <dl class="dl-horizontal">
+                                        <i class="fas fa-arrow-alt-circle-right"></i>
+                                        <span class="etykietaJumbo">Imię i nazwisko</span>
+                                        <dd>
+                                            @Html.EditorFor(model => model.imie_nazwisko, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                                        </dd>
+                                        <i class="fas fa-arrow-alt-circle-right"></i>
+                                        <span class="etykietaJumbo">Firma</span>
+
+                                        <dd>
+                                            @Html.EditorFor(model => model.firma, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                                        </dd>
+
+                                        <i class="fas fa-arrow-alt-circle-right"></i>
+                                        <span class="etykietaJumbo">Numer telefonu</span>
+                                        <dd>
+                                            @Html.EditorFor(model => model.nr_telefonu, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                                        </dd>
+
+                                        <i class="fas fa-arrow-alt-circle-right"></i>
+                                        <span class="etykietaJumbo">Mail</span>
+                                        <dd>
+                                            @Html.EditorFor(model => model.mail, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                                        </dd>
+
+                                        <i class="fas fa-arrow-alt-circle-right"></i>
+                                        <span class="etykietaJumbo">Miejsce zamieszkania</span>
+                                        <dd>
+                                            @Html.EditorFor(model => model.m_zamieszkania, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                                        </dd>
+
+                                        <i class="fas fa-arrow-alt-circle-right"></i>
+                                        <span class="etykietaJumbo">Nazwa imprezy masowej</span>
+                                        <dd>
+                                            @Html.EditorFor(model => model.nazwa_imprezy, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                                        </dd>
+
+                                        <i class="fas fa-arrow-alt-circle-right"></i>
+                                        <span class="etykietaJumbo">Rodzaj/treść</span>
+                                        <dd>
+                                            @Html.EditorFor(model => model.rodzaj_tresc, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                                        </dd>
+
+                                        <i class="fas fa-arrow-alt-circle-right"></i>
+                                        <span class="etykietaJumbo">Proponowane miejsce realizacji</span>
+                                        <dd>
+                                            @Html.EditorFor(model => model.miejsce_realizacji, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                                        </dd>
+
+                                        <i class="fas fa-arrow-alt-circle-right"></i>
+                                        <span class="etykietaJumbo">Czas trwania</span>
+                                        <dd>
+                                            @Html.EditorFor(model => model.czas_trwania, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                                        </dd>
+
+                                        <i class="fas fa-arrow-alt-circle-right"></i>
+                                        <span class="etykietaJumbo">Cykliczność</span>
+                                        <dd>
+                                            @Html.EditorFor(model => model.cyklicznosc, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                                        </dd>
+
+                                        <i class="fas fa-arrow-alt-circle-right"></i>
+                                        <span class="etykietaJumbo">Charakter uczestnictwa</span>
+                                        <dd>
+                                            @Html.EditorFor(model => model.charakter_uczestnictwa, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                                        </dd>
+
+                                        <i class="fas fa-arrow-alt-circle-right"></i>
+                                        <span class="etykietaJumbo">Forma organizacyjna</span>
+                                        <dd>
+                                            @Html.EditorFor(model => model.forma_organizacyjna, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                                        </dd>
+
+                                        <i class="fas fa-arrow-alt-circle-right"></i>
+                                        <span class="etykietaJumbo">Cele</span>
+                                        <dd>
+                                            @Html.EditorFor(model => model.cele, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                                        </dd>
+
+                                        <i class="fas fa-arrow-alt-circle-right"></i>
+                                        <span class="etykietaJumbo">Proponowany termin odbycia imprezy</span>
+                                        <dd>
+                                            @Html.EditorFor(model => model.termin_odbycia, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                                        </dd>
+
+                                        <i class="fas fa-arrow-alt-circle-right"></i>
+                                        <span class="etykietaJumbo">Ceny biletów</span>
+                                        <dd>
+                                            @Html.EditorFor(model => model.ceny_bilet, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                                        </dd>
+
+                                        <i class="fas fa-arrow-alt-circle-right"></i>
+                                        <span class="etykietaJumbo">Dodatkowe usługi</span>
+                                        <dd>
+                                            @Html.EditorFor(model => model.dod_uslugi, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                                        </dd>
+
+                                        <i class="fas fa-arrow-alt-circle-right"></i>
+                                        <span class="etykietaJumbo">Stan zgłoszenia</span>
+                                        <dd>
+                                            @Html.EditorFor(model => model.stanZgloszenia, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                                        </dd>
+
+                                        <i class="fas fa-arrow-alt-circle-right"></i>
+                                        <span class="etykietaJumbo">Data otrzymania zgłoszenia</span>
+                                        <dd>
+                                            @Html.EditorFor(model => model.dataOtrzymaniaZgloszenia, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                                        </dd>
+
+                                        <div class="form-group" style="margin-top: 30px;">
+                                            @Html.ActionLink(" ", "Pracownik", null, null, new { @class = "btn btn-dark fas fa-angle-double-left fa-2x", @data_toggle = "tooltip", @data_placement = "bottom", title = "Wróć" })
+                                        </div>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                    </p>
+                </div>
             </div>
-            <p class="text-center" style="font-weight: bold;">Szczegóły</p>
-            <p class="text-justify" style="font-size: 75% !important">
-                <i class="fas fa-exclamation-circle"></i> Przycisk powrotu ekranu znajduje się poniżej.
-            </p>
-            <hr />
-        </div>
-        <div>
-            <dl class="dl-horizontal">
-                <i class="fas fa-arrow-alt-circle-right"></i>
-                <span class="etykietaJumbo">Imię i nazwisko</span>
-    <dd>
-        @Html.EditorFor(model => model.imie_nazwisko, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
-    </dd>
-                <i class="fas fa-arrow-alt-circle-right"></i>
-                <span class="etykietaJumbo">Firma</span>
-    
-    <dd>
-        @Html.EditorFor(model => model.firma, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
-    </dd>
-
-                <i class="fas fa-arrow-alt-circle-right"></i>
-                <span class="etykietaJumbo">Numer telefonu</span>
-    <dd>
-        @Html.EditorFor(model => model.nr_telefonu, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
-    </dd>
-
-                <i class="fas fa-arrow-alt-circle-right"></i>
-                <span class="etykietaJumbo">Mail</span>
-    <dd>
-        @Html.EditorFor(model => model.mail, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
-    </dd>
-
-                <i class="fas fa-arrow-alt-circle-right"></i>
-                <span class="etykietaJumbo">Miejsce zamieszkania</span>
-    <dd>
-        @Html.EditorFor(model => model.m_zamieszkania, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
-    </dd>
-
-                <i class="fas fa-arrow-alt-circle-right"></i>
-                <span class="etykietaJumbo">Nazwa imprezy masowej</span>
-    <dd>
-        @Html.EditorFor(model => model.nazwa_imprezy, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
-    </dd>
-
-                <i class="fas fa-arrow-alt-circle-right"></i>
-                <span class="etykietaJumbo">Rodzaj/treść</span>
-    <dd>
-        @Html.EditorFor(model => model.rodzaj_tresc, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
-    </dd>
-
-                <i class="fas fa-arrow-alt-circle-right"></i>
-                <span class="etykietaJumbo">Proponowane miejsce realizacji</span>
-    <dd>
-        @Html.EditorFor(model => model.miejsce_realizacji, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
-    </dd>
-
-                <i class="fas fa-arrow-alt-circle-right"></i>
-                <span class="etykietaJumbo">Czas trwania</span>
-    <dd>
-        @Html.EditorFor(model => model.czas_trwania, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
-    </dd>
-
-                <i class="fas fa-arrow-alt-circle-right"></i>
-                <span class="etykietaJumbo">Cykliczność</span>
-    <dd>
-        @Html.EditorFor(model => model.cyklicznosc, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
-    </dd>
-
-                <i class="fas fa-arrow-alt-circle-right"></i>
-                <span class="etykietaJumbo">Charakter uczestnictwa</span>
-    <dd>
-        @Html.EditorFor(model => model.charakter_uczestnictwa, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
-    </dd>
-
-                <i class="fas fa-arrow-alt-circle-right"></i>
-                <span class="etykietaJumbo">Forma organizacyjna</span>
-    <dd>
-        @Html.EditorFor(model => model.forma_organizacyjna, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
-    </dd>
-
-                <i class="fas fa-arrow-alt-circle-right"></i>
-                <span class="etykietaJumbo">Cele</span>
-    <dd>
-        @Html.EditorFor(model => model.cele, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
-    </dd>
-
-                <i class="fas fa-arrow-alt-circle-right"></i>
-                <span class="etykietaJumbo">Proponowany termin odbycia imprezy</span>
-    <dd>
-        @Html.EditorFor(model => model.termin_odbycia, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
-    </dd>
-
-                <i class="fas fa-arrow-alt-circle-right"></i>
-                <span class="etykietaJumbo">Ceny biletów</span>
-    <dd>
-        @Html.EditorFor(model => model.ceny_bilet, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
-    </dd>
-
-                <i class="fas fa-arrow-alt-circle-right"></i>
-                <span class="etykietaJumbo">Dodatkowe usługi</span>
-    <dd>
-        @Html.EditorFor(model => model.dod_uslugi, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
-    </dd>
-
-                <i class="fas fa-arrow-alt-circle-right"></i>
-                <span class="etykietaJumbo">Stan zgłoszenia</span>
-    <dd>
-        @Html.EditorFor(model => model.stanZgloszenia, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
-    </dd>
-
-                <i class="fas fa-arrow-alt-circle-right"></i>
-                <span class="etykietaJumbo">Data otrzymania zgłoszenia</span>
-    <dd>
-        @Html.EditorFor(model => model.dataOtrzymaniaZgloszenia, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
-    </dd>
-
-    <div class="form-group" style="margin-top: 30px;">
-        @Html.ActionLink("Wróć", "Pracownik", null, null, new { @class = "btn przyciskPowrot" })
-    </div>
-</dl>
         </div>
     </div>
 </div>
-
-

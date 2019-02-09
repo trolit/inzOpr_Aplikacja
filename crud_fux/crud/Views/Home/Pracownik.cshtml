@@ -21,53 +21,40 @@
     </ol>
 </div>
 
-    <table class="table">
-        <tr class="text-center" style="font-family: 'Marmelad', sans-serif;">
-            <th>
-                Identyfikator projektu
-            </th>
-            <th>
-                Imie i nazwisko
-            </th>
-            <th>
-                Numer telefonu
-            </th>
-            <th>
-                Mail
-            </th>
-            <th>
-                Stan zgłoszenia
-            </th>
-            <th></th>
-        </tr>
+<!-- trzeba dać w kontener żeby nie przylegały do krawędzi ekranu -->
+<div class="container">
+    <!-- trzeba dać card-columns żeby były odstępy od siebie kart i div z klasą row aby było responsywne -->
+    <div class="row">
+        <!-- mx-auto centruje karty jak zmniejszysz ekran do sytuacji że będzie 1 karta w wierszu -->
+        <div class="card-columns text-center mx-auto">
+            @foreach (var item in Model)
+            {
+                <div class="card text-white" style="background-color: #2b6198;">
+                    <div class="card-header" data-toggle="tooltip" data-placement="left" title="Identyfikator projektu" style="font-size: 18px;">ID projektu: <strong>@Html.DisplayFor(modelItem => item.idOferty)</strong></div>
+                    <div class="card-body">
+                        <h5 class="card-title" data-toggle="tooltip" data-placement="bottom" title="Zleceniodawca">@Html.DisplayFor(modelItem => item.imie_nazwisko)</h5>
+                        <p class="card-text">
+                            <table style="margin-left: auto; margin-right: auto;">
+                                <tr data-toggle="tooltip" data-placement="left" title="Numer telefonu do zleceniodawcy">
+                                    <td><i class="fas fa-phone-square fa-lg"></i></td>
+                                    <td>@Html.DisplayFor(modelItem => item.nr_telefonu)</td>
+                                </tr>
+                                <tr data-toggle="tooltip" data-placement="left" title="Adres email do zleceniodawcy">
+                                    <td><i class="fas fa-at fa-lg"></i></td>
+                                    <td>@Html.DisplayFor(modelItem => item.mail)</td>
+                                </tr>
+                            </table>
 
-        @foreach (var item in Model)
-        {
-            <tr class="parzysty nieparzysty text-center" style="font-family: 'Maven Pro', sans-serif;">
-                <td>
-                    @Html.DisplayFor(modelItem => item.idOferty)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.imie_nazwisko)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.nr_telefonu)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.mail)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.stanZgloszenia)
-                </td>
-                <td>
-                    @Html.ActionLink("Pozwolenia", "Pozwolenia", new { id = item.idOferty }, new { @class = "btn przyciskSterowania1" })
-                    @Html.ActionLink("Personel", "Personel", new { id = item.idOferty }, new { @class = "btn przyciskSterowania1" }) <br/>
-                    @Html.ActionLink("Dokumentacja", "Dokumentacja", new { id = item.idOferty }, new { @class = "btn przyciskSterowania1" })
-                    @Html.ActionLink("Szczegóły", "Details_Pracownik", new { id = item.idOferty }, new { @class = "btn przyciskSterowania2" })
-                </td>
-            </tr>
-        }
-
-    </table>
-
-    @Html.ActionLink("Wróć", "Index", null, null, new { @class = "btn przyciskPowrot" })
+                            <div style="margin-top: 20px;">
+                                @Html.ActionLink(" ", "Pozwolenia", null, new { id = item.idOferty }, new { @class = "btn btn-dark fas fa-crow fa-2x", @data_toggle = "tooltip", @data_placement = "bottom", title = "Pozwolenia imprezy" })
+                                @Html.ActionLink(" ", "Personel", null, new { id = item.idOferty }, new { @class = "btn btn-dark fas fa-cat fa-2x", @data_toggle = "tooltip", @data_placement = "bottom", title = "Personel imprezy" })
+                                @Html.ActionLink(" ", "Dokumentacja", null, new { id = item.idOferty }, new { @class = "btn btn-dark fas fa-frog fa-2x", @data_toggle = "tooltip", @data_placement = "bottom", title = "Dokumentacja imprezy" })
+                                @Html.ActionLink(" ", "Details_Pracownik", null, new { id = item.idOferty }, new { @class = "btn btn-primary fas fa-info-circle fa-2x", @data_toggle = "tooltip", @data_placement = "bottom", title = "Szczegóły imprezy" })
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

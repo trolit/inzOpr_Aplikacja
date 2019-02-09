@@ -1,8 +1,11 @@
 ﻿@model crud.Models.Pozwolenie
 
 @{
+                /**/
     <!-- tytul strony -->
-    ViewBag.Title = "Edycja pozwolenia";
+                /**/
+
+                ViewBag.Title = "Edycja pozwolenia";
 }
 
 <head>
@@ -20,60 +23,69 @@
     </ol>
 </div>
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    @Html.HiddenFor(model => model.idPozwolenia)
+<!-- trzeba dać w kontener żeby nie przylegały do krawędzi ekranu -->
+<div class="container">
+    <!-- trzeba dać card-columns żeby były odstępy od siebie kart i div z klasą row aby było responsywne -->
+    <div class="row">
+        <!-- mx-auto centruje karty jak zmniejszysz ekran do sytuacji że będzie 1 karta w wierszu -->
+        <div class="mx-auto col-md-6">
+            <div class="card text-white" style="background-color: #2b6198;">
+                <div class="card-body">
+                    <h5 class="card-title text-center"><i class="fas fa-pencil-alt fa-7x"></i></h5>
+                    <p class="card-text">
+                        @using (Html.BeginForm())
+                        {
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.HiddenFor(model => model.idPozwolenia)
 
-    <div class="form-horizontal">
-    <hr />
-    <div class="col-lg-6 col-md-8 mx-auto jumbotron">
-        <div style="font-family: 'Arima Madurai', sans-serif; font-size:130%; margin-top: 5%;">
-            <div class="text-center" style="margin-bottom: 15px;">
-                <i class="fas fa-pencil-alt fa-7x"></i>
-            </div>
-            <p class="text-center" style="font-weight: bold;">Edytuj wpis</p>
-            <p class="text-justify" style="font-size: 75% !important">
-                <i class="fas fa-exclamation-circle"></i> By edytować kliknij w pole
-            </p>
-            <hr />
-            <div class="form-group" style="font-size: 75% !important">
-                @Html.Label("Podaj identyfikator projektu", htmlAttributes: new { @class = "control-label col-md-6" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.idProjektu, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.idProjektu, "", new { @class = "text-danger" })
-                </div>
-            </div>
+                            <div class="form-horizontal">
+                                <div style="font-family: 'Arima Madurai', sans-serif; font-size:90%;">
+                                    <div class="form-group" style="font-size: 75% !important">
+                                        @Html.Label("Podaj identyfikator projektu", htmlAttributes: new { @class = "control-label col-md-6" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.idProjektu, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.idProjektu, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
 
-            <div class="form-group" style="font-size: 75% !important">
-                @Html.Label(" Nazwa", htmlAttributes: new { @class = "control-label col-md-3" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.nazwa, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.nazwa, "", new { @class = "text-danger" })
-                </div>
-            </div>
-            <div class="form-group" style="font-size: 75% !important">
-                @Html.Label("Czy zdobyte?", htmlAttributes: new { @class = "control-label col-md-4" })
-                <div class="col-md-10">
-                    <div class="checkbox">
-                        @Html.EditorFor(model => model.czyZdobyte)
-                        @Html.ValidationMessageFor(model => model.czyZdobyte, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Zapisz" class="btn btn-success" />
-                    @Html.ActionLink("Wróć", "Pozwolenia", null, null, new { @class = "btn przyciskPowrot" })
+                                    <div class="form-group" style="font-size: 75% !important">
+                                        @Html.Label(" Nazwa", htmlAttributes: new { @class = "control-label col-md-3" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.nazwa, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.nazwa, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group" style="font-size: 75% !important">
+                                        @Html.Label("Czy zdobyte?", htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-10">
+                                            <div class="checkbox">
+                                                @Html.EditorFor(model => model.czyZdobyte)
+                                                @Html.ValidationMessageFor(model => model.czyZdobyte, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-offset-2 col-md-10">
+                                            <button type="submit" style="background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden; outline:none;"><i data-toggle="tooltip" data-placement="bottom" title="Wprowadź zmiany" class="btn btn-success fas fa-check-square fa-2x"></i></button>
+                                            @Html.ActionLink(" ", "Pozwolenia", null, null, new { @class = "btn btn-dark fas fa-angle-double-left fa-2x", @data_toggle = "tooltip", @data_placement = "bottom", title = "Wróć" })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </p>
                 </div>
             </div>
         </div>
     </div>
 </div>
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+
+
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
 }
 
 
