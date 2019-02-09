@@ -1,0 +1,127 @@
+﻿@{
+    <!-- tytul strony -->
+    ViewBag.Title = "Wiadomości";
+}
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+    <!-- zalaczenie biblioteki globalnej style.css -->
+    <link rel="Stylesheet" href="~/Content/style.css" type="text/css" />
+
+    <!-- style dla strony Wiadomosci -->
+    <link href="~/Wiadomosci_pliki/styleWiadomosci.css" rel="stylesheet" />
+
+    <!-- skrypty dla strony Wiadomosci -->
+    <script src="~/Wiadomosci_pliki/skryptyWiadomosci.js"></script>
+</head>
+
+<body>
+    <div class="naglowekStrony">
+        <ol class="breadcrumb tloOkruszka">
+            <li class="breadcrumb-item"><a href="@Url.Action("Index", "Home")">Strona główna</a></li>
+            <li class="breadcrumb-item active">Wiadomości</li>
+        </ol>
+    </div>
+
+    <section class="banner-sec">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card">
+                        <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/politics.jpg" alt="">
+                        <div class="card-img-overlay"> <span class="badge badge-pill badge-danger">Impreza</span> </div>
+                        <div class="card-body">
+                            <div class="news-title">
+                                <h2 class=" title-small"><a href="#">Dorota organizatorem imprezy TVP!</a></h2>
+                            </div>
+                            <p class="card-text"><small class="text-time"><em>12.02.2019</em></small></p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/travel.jpg" alt="">
+                        <div class="card-img-overlay"> <span class="badge badge-pill badge-danger">Politics</span> </div>
+                        <div class="card-body">
+                            <div class="news-title">
+                                <h2 class=" title-small"><a href="#">Key Republicans sign letter warning against</a></h2>
+                            </div>
+                            <p class="card-text"><small class="text-time"><em>06.01.2019</em></small></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/business1.jpg" alt="">
+                        <div class="card-img-overlay"> <span class="badge badge-pill badge-danger">Travel</span> </div>
+                        <div class="card-body">
+                            <div class="news-title">
+                                <h2 class=" title-small"><a href="#">Obamacare Appears to Be Making People Healthier</a></h2>
+                            </div>
+                            <p class="card-text"><small class="text-time"><em>05.12.2018</em></small></p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/food.jpg" alt="">
+                        <div class="card-img-overlay"> <span class="badge badge-pill badge-danger">News</span> </div>
+                        <div class="card-body">
+                            <div class="news-title">
+                                <h2 class=" title-small"><a href="#">‘S.N.L.’ to Lose Two Longtime Cast Members</a></h2>
+                            </div>
+                            <p class="card-text"><small class="text-time"><em>09.02.2018</em></small></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 top-slider">
+                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                        </ol>
+
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active">
+                                <div class="news-block">
+                                    <div class="news-media"><img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/politics1.jpg" alt=""></div>
+                                    <div class="news-title">
+                                        <h2 class=" title-large"><a href="#">Ray madison may struggle to get best from Paul in a 4-2-3-1 formation</a></h2>
+                                    </div>
+                                    <div class="news-des">Condimentum ultrices mi est a arcu at cum a elementum per cum turpis dui vulputate vestibulum in vehicula montes vel. Mauris nam suspendisse consectetur mus...</div>
+                                    <div class="time-text"><strong>04.05.2018</strong></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="news-block">
+                                    <div class="news-media"><img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/sport1.jpg" alt=""></div>
+                                    <div class="news-title">
+                                        <h2 class=" title-large"><a href="#">An Alternative Form of Mental Health Care Gains a Foothold</a></h2>
+                                    </div>
+                                    <div class="news-des">Condimentum ultrices mi est a arcu at cum a elementum per cum turpis dui vulputate vestibulum in vehicula montes vel. Mauris nam suspendisse consectetur mus...</div>
+                                    <div class="time-text"><strong>19.08.2017</strong></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="news-block">
+                                    <div class="news-media"><img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/health.jpg" alt=""></div>
+                                    <div class="news-title">
+                                        <h2 class=" title-large"><a href="#">Key Republican Senator Says She Will Not Vote for former president!</a></h2>
+                                    </div>
+                                    <div class="news-des">Condimentum ultrices mi est a arcu at cum a elementum per cum turpis dui vulputate vestibulum in vehicula montes vel. Mauris nam suspendisse consectetur mus...</div>
+                                    <div class="time-text"><strong>05.02.2017</strong></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

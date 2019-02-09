@@ -26,7 +26,7 @@
         </div>
         <input class="form-control" id="myFilter" type="text" placeholder="imie i/lub nazwisko uczestnika.." onkeyup="myFunction()">
         <div class="input-group-text">
-            <i class="fas fa-question"  data-toggle="tooltip" data-placement="bottom" title="Wyszukaj kartę uczestnika imprezy podając jego imię lub nazwisko"></i>
+            <i class="fas fa-question" data-toggle="tooltip" data-placement="bottom" title="Wyszukaj kartę uczestnika imprezy podając jego imię lub nazwisko"></i>
         </div>
     </div>
 </div>
@@ -55,10 +55,10 @@
                                 </tr>
                             </table>
 
-                        <p style="margin-top: 20px;">
+                        <div style="margin-top: 20px;">
                             @Html.ActionLink(" ", "EditUczestnik", null, new { id = item.idUczestnika }, new { @class = "btn btn-warning fas fa-edit fa-2x", @data_toggle = "tooltip", @data_placement = "bottom", title = "Edytuj dane uczestnika" })
                             @Html.ActionLink(" ", "DeleteUczestnik", null, new { id = item.idUczestnika }, new { @class = "btn btn-danger fas fa-times-circle fa-2x", @data_toggle = "tooltip", @data_placement = "bottom", title = "Usuń uczestnika z listy" })
-                        </p>
+                        </div>
                         </p>
                     </div>
                 </div>

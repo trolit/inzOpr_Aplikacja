@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PozwoleniaModel6StoreContainer" CdmEntityContainer="WiadomosciEntities">
+    <EntitySetMapping Name="Wiadomosci">
+      <EntityTypeMapping TypeName="PozwoleniaModel6.Wiadomosci">
+        <MappingFragment StoreEntitySet="Wiadomosci">
+          <ScalarProperty Name="idWiadomosci" ColumnName="idWiadomosci" />
+          <ScalarProperty Name="imieNazwisko" ColumnName="imieNazwisko" />
+          <ScalarProperty Name="adresEmail" ColumnName="adresEmail" />
+          <ScalarProperty Name="dataOdebrania" ColumnName="dataOdebrania" />
+          <ScalarProperty Name="tekstWiadomosci" ColumnName="tekstWiadomosci" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

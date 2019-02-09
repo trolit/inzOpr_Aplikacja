@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PozwoleniaModel6" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Wiadomosci">
+    <Key>
+      <PropertyRef Name="idWiadomosci" />
+    </Key>
+    <Property Name="idWiadomosci" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="imieNazwisko" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="adresEmail" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="dataOdebrania" Type="DateTime" Precision="3" />
+    <Property Name="tekstWiadomosci" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="WiadomosciEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Wiadomosci" EntityType="Self.Wiadomosci" />
+  </EntityContainer>
+</Schema>

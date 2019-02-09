@@ -11,16 +11,20 @@
     <div class="container-fluid">
         <div class="row">
 
-            <div class="text-center" style="margin-top: 65px;">
+            <div class="text-center" style="width: 100%; margin: auto; margin-top: 2%;">
+                <button type="button" data-toggle="tooltip" data-placement="left" title="Zgłoś swoją propozycję imprezy masowej lub zapisz się na jedną z dostępnych imprez!" class="btn btn-lg przyciskNawigacyjny" style="background-color: #3B5998;" onclick="window.location='@Url.Action("Klienci", "Home")'"><span><i class="fas fa-child fa-5x"></i><br />Klienci</span></button>
+                <button type="button" data-toggle="tooltip" data-placement="left" title="Sprawdź wiadomości i nowinki na temat nadchodzących wydarzeń!" class="btn btn-lg przyciskNawigacyjny" style="background-color: #272d70;" onclick="window.location='@Url.Action("Wiadomosci", "Home")'"><span><i class="fas fa-newspaper fa-5x"></i><br />Wiadomości</span></button>
+                <button type="button" data-toggle="tooltip" data-placement="left" title="Strefa zawodnika - zapisz się na imprezę na której przewidziano turniej jako zawodnik" class="btn btn-lg przyciskNawigacyjny" style="background-color: #3B5998;" onclick="window.location='@Url.Action("Zawodnicy", "Home")'"><span><i class="fas fa-snowboarding fa-5x"></i><br />Zawodnicy</span></button>
+
                 @{
                     <!-- jezeli zalogowany jako pracownik lub administrator -->
                     if ((User.Identity.IsAuthenticated && User.IsInRole("Pracownik")) || (User.Identity.IsAuthenticated && User.IsInRole("Administrator")))
                     {
-                        <button type="button" class="btn btn-lg przyciskNawigacyjny" style="background-color: #093BB9;" onclick="window.location='@Url.Action("Pracownik", "Home")'"><span><i class="fas fa-briefcase fa-5x"></i><br />Pracownicy</span></button>
+                        <button type="button" class="btn btn-lg przyciskNawigacyjny" style="background-color: #3a5976;" onclick="window.location='@Url.Action("Pracownik", "Home")'"><span><i class="fas fa-user-secret fa-5x"></i><br />Pracownicy</span></button>
                     }
                     else
                     {
-                        <button type="button" disabled class="btn btn-lg przyciskNawigacyjny" style="background-color: #093BB9;" onclick="window.location='@Url.Action("Pracownik", "Home")'"><span><i class="fas fa-briefcase fa-5x"></i><br />Pracownicy<p style="font-size: 13px;">(Wymagana autoryzacja!)</p></span></button>
+                        <button type="button" disabled class="btn btn-lg przyciskNawigacyjny" style="background-color: #3a5976;" onclick="window.location='@Url.Action("Pracownik", "Home")'"><span><i class="fas fa-user-secret fa-5x"></i><br />Pracownicy<p style="font-size: 13px;">(Wymagana autoryzacja!)</p></span></button>
                     }
                 }
 
@@ -28,15 +32,15 @@
                     <!-- jezeli zalogowany jako administrator -->
                     if (User.Identity.IsAuthenticated && User.IsInRole("Administrator"))
                     {
-                        <button type="button" class="btn btn-lg przyciskNawigacyjny" style="background-color: #1441D4;" onclick="window.location='@Url.Action("Przelozony", "Home")'"><span><i class="fas fa-star-half-alt fa-5x"></i><br />Przełożony</span></button>
+                        <button type="button" class="btn btn-lg przyciskNawigacyjny" style="background-color: #003366;" onclick="window.location='@Url.Action("Przelozony", "Home")'"><span><i class="fas fa-user-cog fa-5x"></i><br />Przełożony</span></button>
                     }
                     else
                     {
-                        <button type="button" disabled class="btn btn-lg przyciskNawigacyjny" style="background-color: #1441D4;" onclick="window.location='@Url.Action("Przelozony", "Home")'"><span><i class="fas fa-star-half-alt fa-5x"></i><br />Przełożony<p style="font-size: 13px;">(Wymagana autoryzacja!)</p></span></button>
+                        <button type="button" disabled class="btn btn-lg przyciskNawigacyjny" style="background-color: #003366;" onclick="window.location='@Url.Action("Przelozony", "Home")'"><span><i class="fas fa-user-cog fa-5x"></i><br />Przełożony<p style="font-size: 13px;">(Wymagana autoryzacja!)</p></span></button>
                     }
                 }
 
-                <button type="button" class="btn btn-lg przyciskNawigacyjny" style="background-color: #2546CC;" onclick="window.location='@Url.Action("Klienci", "Home")'"><span><i class="fas fa-mug-hot fa-5x"></i><br />Klienci</span></button>
+                <button type="button" data-toggle="tooltip" data-placement="left" title="Jeżeli masz jakieś pytania albo wątpliwości - przejdź tutaj aby się z nami skontaktować!" class="btn btn-lg przyciskNawigacyjny" style="background-color: #272d70;" onclick="window.location='@Url.Action("WiadomoscSend", "Home")'"><span><i class="fas fa-comment fa-5x"></i><br />Kontakt</span></button>
             </div>
         </div>
     </div>

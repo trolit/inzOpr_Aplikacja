@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PozwoleniaModel6.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Wiadomosci">
+          <Key>
+            <PropertyRef Name="idWiadomosci" />
+          </Key>
+          <Property Name="idWiadomosci" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="imieNazwisko" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="adresEmail" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="dataOdebrania" Type="datetime" />
+          <Property Name="tekstWiadomosci" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="PozwoleniaModel6StoreContainer">
+          <EntitySet Name="Wiadomosci" EntityType="Self.Wiadomosci" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PozwoleniaModel6" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Wiadomosci">
+          <Key>
+            <PropertyRef Name="idWiadomosci" />
+          </Key>
+          <Property Name="idWiadomosci" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="imieNazwisko" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="adresEmail" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="dataOdebrania" Type="DateTime" Precision="3" />
+          <Property Name="tekstWiadomosci" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="WiadomosciEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Wiadomosci" EntityType="Self.Wiadomosci" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PozwoleniaModel6StoreContainer" CdmEntityContainer="WiadomosciEntities">
+          <EntitySetMapping Name="Wiadomosci">
+            <EntityTypeMapping TypeName="PozwoleniaModel6.Wiadomosci">
+              <MappingFragment StoreEntitySet="Wiadomosci">
+                <ScalarProperty Name="idWiadomosci" ColumnName="idWiadomosci" />
+                <ScalarProperty Name="imieNazwisko" ColumnName="imieNazwisko" />
+                <ScalarProperty Name="adresEmail" ColumnName="adresEmail" />
+                <ScalarProperty Name="dataOdebrania" ColumnName="dataOdebrania" />
+                <ScalarProperty Name="tekstWiadomosci" ColumnName="tekstWiadomosci" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

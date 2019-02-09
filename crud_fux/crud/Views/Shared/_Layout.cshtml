@@ -34,19 +34,22 @@
 <body>
     <!-- navbar starts here! -->
     <nav class="navbar navbar-expand-sm navbar-dark fixed-top" style= "background-color: #101072; !important;">
-        @Html.ActionLink("Obsługa Imprez Masowych - GGKI", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
         <div class="container">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <i class="fas fa-terminal fa-2x" style="color: white;"></i>
+            @Html.ActionLink("Obsługa Imprez Masowych", "Index", "Home", new { area = "" }, new { @class = "navbar-brand", @data_toggle = "tooltip", @data_placement = "bottom", title = "Kliknij aby wrócić na stronę główną" })
+
             <div class="navbar-collapse collapse" id="navbarSupportedContent">
                 <ul class="nav navbar-nav mr-auto">
                     <!--
                     <li class="nav-item">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })</li>
                     <li class="nav-item">@Html.ActionLink("About", "About", "Home", null, new { @class = "nav-link" })</li>
                     <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })</li>
-                        -->
+            -->
                 </ul>
+
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
@@ -55,7 +58,7 @@
     <div>
         @RenderBody()
         <hr />
-        <footer>
+        <footer style="margin-bottom: 0;">
             <div class="text-center">
                 <a href="https://github.com/Dorota1997" class="stopkaIkona" target="_blank" data-toggle="tooltip" data-placement="top" title="Profil współautorki: Dorota Gil"><i class="fab fa-github-alt"></i></a>
                 <a href="https://github.com/damianggg" class="stopkaIkona" style="margin-left: 14px;" target="_blank" data-toggle="tooltip" data-placement="top" title="Profil współautora: Damian Gnatkowski"><i class="fab fa-github-alt"></i></a>
@@ -63,7 +66,6 @@
                 <a href="https://github.com/maciejkozikowski" class="stopkaIkona" style="margin-left: 14px;" target="_blank" data-toggle="tooltip" data-placement="top" title="Profil współautora: Maciej Kozikowski"><i class="fab fa-github-alt"></i></a>
                 <a href="https://github.com/trolit" class="stopkaIkona" style="margin-left: 14px;" target="_blank" data-toggle="tooltip" data-placement="top" title="Profil współautora: Paweł Idzikowski"><i class="fab fa-github-alt"></i></a>
             </div>
-            <br/>
         </footer>
     </div>
     

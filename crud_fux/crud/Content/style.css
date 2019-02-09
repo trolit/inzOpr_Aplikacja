@@ -9,15 +9,13 @@
 /* Pierwszy blok na każdej stronie będący tytułem strony - NIE USUWAC! */
 .naglowekStrony {
     width: 100%;
-    height: auto;
     font-size: 19px;
     font-weight: bold;
+    padding-top: 5px;
     color: black;
-    font-family: 'Sriracha', sans-serif;
+    font-family: 'Comfortaa', sans-serif;
     /* tlo nad okruszkiem */
     background-color: #C7E3F0;
-    padding-top: 10px;
-    vertical-align: top;
     text-decoration: wavy;
 }
 
@@ -59,8 +57,8 @@ body {
     text-align: center;
     font-size: 40px; /* TO DO// zmniejszyć czcionke! */
     padding: 20px;
-    width: 436px;
-    height: 400px;
+    width: 350px;
+    height: 360px;
     transition: all 0.5s;
     cursor: pointer;
     margin: 5px;
@@ -138,137 +136,6 @@ tr th {
 /*czcionka w jumbotronie*/
 .etykietaJumbo {
     font-family: 'Alegreya Sans', sans-serif;
-}
-
-
-/* ************************************************ */
-/* stylowanie przyciskow Utworzenia!  */
-.przyciskNawigacyjnyMINI {
-    border-radius: 4px;
-    /* Kolor przycisku */
-    background-color: #571f2a;
-    border: none;
-    color: #FFFFFF;
-    text-align: center;
-    font-size: 16px;
-    width: 220px;
-    height: 45px;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin: 5px;
-}
-
-.przyciskNawigacyjnyMINI span {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
-}
-
-.przyciskNawigacyjnyMINI span:after {
-    content: '\00bb';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -20px;
-    transition: 0.5s;
-}
-
-.przyciskNawigacyjnyMINI:hover span {
-    padding-right: 25px;
-}
-
-.przyciskNawigacyjnyMINI:hover span:after {
-    opacity: 1;
-    right: 0;
-}
-
-/* ************************************************ */
-/* stylowanie przyciskow Personel,Dokumentacja,Pozwolenia!  */
-.przyciskSterowania1 {
-    border-radius: 4px;
-    /* Kolor przycisku */
-    background-color: #672E3B;
-    border: none;
-    color: #FFFFFF;
-    text-align: center;
-    font-size: 16px;
-    width: 120px;
-    height: 35px;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin: 5px;
-}
-
-/* ************************************************ */
-/* stylowanie przycisku Powrotu!  */
-.przyciskPowrot {
-    border-radius: 4px;
-    /* Kolor przycisku */
-    background-color: #5c2d33;
-    border: none;
-    color: #FFFFFF;
-    text-align: center;
-    font-size: 16px;
-    width: 120px;
-    height: 35px;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin: 5px;
-}
-
-/* ************************************************ */
-/* stylowanie przyciskow Szczegóły!  */
-/* DODAC NIESTANDARDOWA CZCIONKE DO NAGLOWKA i EW DO WIERSZY */
-.przyciskSterowania2 {
-    border-radius: 4px;
-    /* Kolor przycisku */
-    background-color: #944743;
-    border: none;
-    color: #FFFFFF;
-    text-align: center;
-    font-size: 16px;
-    width: 120px;
-    height: 35px;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin: 5px;
-}
-
-
-/* ************************************************ */
-/* PRZYCISK EDYTUJ */
-.przyciskSterowania3 {
-    border-radius: 4px;
-    /* Kolor przycisku */
-    background-color: #4d1e23;
-    border: none;
-    color: #FFFFFF;
-    text-align: center;
-    font-size: 16px;
-    width: 100px;
-    height: 35px;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin: 5px;
-}
-
-
-/* ************************************************ */
-/* PRZYCISK USUŃ */
-.przyciskSterowania4 {
-    border-radius: 4px;
-    /* Kolor przycisku */
-    background-color: #DC4C46;
-    border: none;
-    color: #FFFFFF;
-    text-align: center;
-    font-size: 16px;
-    width: 100px;
-    height: 35px;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin: 5px;
 }
 
 /* ************************************************ */

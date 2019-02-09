@@ -38,3 +38,7 @@ UCZESTNIK IMPREZY
 KsiazkiEntities1=UczestnicyImprezEntities
 Ksiazki/Ksiazka=Zgloszenia
 
+
+
+WiadomosciEntities
+

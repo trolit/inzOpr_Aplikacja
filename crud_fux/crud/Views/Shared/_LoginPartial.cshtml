@@ -7,7 +7,7 @@
 
     <ul class="nav navbar-nav navbar-right">
         <li>
-            @Html.ActionLink("Witaj, " + User.Identity.GetUserName() + "! ", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @style= "color: white; vertical-align: middle; display: block;" })
+            @Html.ActionLink("Witaj, " + User.Identity.GetUserName() + " ! ", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @style= "color: white; vertical-align: middle; display: block;" })
         </li>
         <li>&nbsp; &nbsp; &nbsp; <a href="javascript:document.getElementById('logoutForm').submit()" style="color: white; vertical-align: top;" class="faa-parent animated-hover"><i class="fas fa-sign-out-alt faa-passing faa-fast"></i> Wyloguj mnie</a></li>
     </ul>
@@ -16,7 +16,7 @@
 else
 {
     <ul class="nav navbar-nav navbar-right" style="color: white; !important">
-        <li><button type="button" class="btn" style="background-color: #633838; color: white;" onclick="window.location='@Url.Action("Register", "Account")'"><i class="fas fa-user-plus" style="font-size: 15px; vertical-align: central;"></i> Zarejestruj się</button></li> &nbsp; &nbsp;
-        <li><button type="button" class="btn" style="background-color: #633838; color: white;" onclick="window.location='@Url.Action("Login", "Account")'"><i class="fas fa-sign-in-alt" style="font-size: 15px; vertical-align: central;"></i> Logowanie</button></li>
+        <li><button type="button" data-toggle="tooltip" data-placement="bottom" title="Uwaga! Rejestracja sama w sobie nie daje żadnych przywilejów. Po weryfikacji Twojej osoby jako pracownika lub przełożonego, administrator przyzna Ci odpowiednią rolę." class="btn" style="background-color: #4099ff; color: white;" onclick="window.location='@Url.Action("Register", "Account")'"><i class="fas fa-user-plus" style="font-size: 15px; vertical-align: central;"></i> Zarejestruj się</button></li> &nbsp; &nbsp;
+        <li><button type="button" class="btn" style="background-color: #4099ff; color: white;" onclick="window.location='@Url.Action("Login", "Account")'"><i class="fas fa-sign-in-alt" style="font-size: 15px; vertical-align: central;"></i> Logowanie</button></li>
     </ul>
 }

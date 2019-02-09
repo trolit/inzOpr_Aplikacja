@@ -1,8 +1,11 @@
 ﻿@model crud.Models.Personel
 
 @{
+                /**/
     <!-- tytul strony -->
-    ViewBag.Title = "Szczegóły - personel";
+                /**/
+
+                ViewBag.Title = "Szczegóły - personel";
 }
 
 <head>
@@ -20,47 +23,45 @@
     </ol>
 </div>
 
-<div class="form-horizontal">
-    <hr />
-    <div class="col-lg-6 col-md-8 mx-auto jumbotron">
-        <div style="font-family: 'Arima Madurai', sans-serif; font-size:130%; margin-top: 5%;">
-            <div class="text-center" style="margin-bottom: 15px;">
-                <i class="fas fa-info-circle fa-7x"></i>
+<!-- trzeba dać w kontener żeby nie przylegały do krawędzi ekranu -->
+<div class="container">
+    <!-- trzeba dać card-columns żeby były odstępy od siebie kart i div z klasą row aby było responsywne -->
+    <div class="row">
+        <!-- mx-auto centruje karty jak zmniejszysz ekran do sytuacji że będzie 1 karta w wierszu -->
+        <div class="mx-auto col-md-6">
+            <div class="card text-white" style="background-color: #2b6198;">
+                <div class="card-body">
+                    <h5 class="card-title text-center"><i class="fas fa-info-circle fa-7x"></i></h5>
+                    <p class="card-text">
+                        <div style="font-family: 'Arima Madurai', sans-serif; font-size:90%;">
+                            <div>
+                                <dl class="dl-horizontal" style="font-size: 75% !important">
+                                    <dt style="font-weight: 100">
+                                        Nazwa personelu
+                                    </dt>
+
+                                    <dd>
+                                        @Html.EditorFor(model => model.nazwaPersonelu, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                                    </dd>
+
+                                    <dt style="font-weight: 100">
+                                        Czy ustalony?
+                                    </dt>
+
+                                    <dd>
+                                        @Html.EditorFor(model => model.czyUstalony, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                                    </dd>
+
+                                    <div>
+                                        @Html.ActionLink(" ", "EditPersonel", null, new { id = Model.idPersonelu }, new { @class = "btn btn-warning fas fa-edit fa-2x", @data_toggle = "tooltip", @data_placement = "bottom", title = "Edytuj wpis" })
+                                        @Html.ActionLink(" ", "Personel", null, null, new { @class = "btn btn-dark fas fa-angle-double-left fa-2x", @data_toggle = "tooltip", @data_placement = "bottom", title = "Wróć" })
+                                    </div>
+                                </dl>
+                            </div>
+                        </div>
+                    </p>
+                </div>
             </div>
-            <p class="text-center" style="font-weight: bold;">Szczegóły</p>
-            <p class="text-justify" style="font-size: 75% !important">
-                <i class="fas fa-exclamation-circle"></i> Szczegóły wpisu, by edytować kliknij przycisk "Edytuj"
-            </p>
-            <hr />
-
-            <div>
-                <dl class="dl-horizontal" style="font-size: 75% !important">
-                    <dt style="font-weight: 100">
-                        Nazwa personelu
-                    </dt>
-
-                    <dd>
-                        @Html.EditorFor(model => model.nazwaPersonelu, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
-                    </dd>
-
-                    <dt style="font-weight: 100">
-                        Czy ustalony?
-                    </dt>
-
-                    <dd>
-                        @Html.EditorFor(model => model.czyUstalony, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
-                    </dd>
-
-                </dl>
-            </div>
-            <p>
-                @Html.ActionLink("Wróć", "Personel", null, null, new { @class = "btn przyciskPowrot" })
-                @Html.ActionLink("Edytuj", "EditPersonel", null, new { id = Model.idPersonelu }, new { @class = "btn przyciskSterowania3" })
-            </p>
-
         </div>
     </div>
 </div>
-
-
-

@@ -1,0 +1,91 @@
+﻿@model crud.Models.Wiadomosci
+
+@{
+    <!-- tytul strony -->
+    ViewBag.Title = "Usuwanie wiadomości";
+}
+
+<head>
+    <!-- zalaczenie biblioteki globalnej style.css -->
+    <link rel="Stylesheet" href="~/Content/style.css" type="text/css" />
+</head>
+
+<div class="naglowekStrony">
+    <ol class="breadcrumb tloOkruszka">
+        <li class="breadcrumb-item"><a href="@Url.Action("Index", "Home")">Strona główna</a></li>
+        <li class="breadcrumb-item"><a href="@Url.Action("Przelozony", "Home")">Przełożony</a></li>
+        <li class="breadcrumb-item"><a href="@Url.Action("WiadomoscView", "Home")">Wiadomości</a></li>
+        <li class="breadcrumb-item active">Usuwanie wiadomości</li>
+    </ol>
+</div>
+
+<!-- trzeba dać w kontener żeby nie przylegały do krawędzi ekranu -->
+<div class="container">
+    <!-- trzeba dać card-columns żeby były odstępy od siebie kart i div z klasą row aby było responsywne -->
+    <div class="row">
+        <!-- mx-auto centruje karty jak zmniejszysz ekran do sytuacji że będzie 1 karta w wierszu -->
+        <div class="mx-auto col-md-6">
+            <div class="card text-white" style="background-color: #2b6198;">
+                <div class="card-body">
+                    <h5 class="card-title text-center"><i class="fas fa-user-minus fa-7x"></i></h5>
+                    <p class="card-text">
+                        <div style="font-family: 'Arima Madurai', sans-serif; font-size:90%;">
+                            <dl class="dl-horizontal">
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.idWiadomosci)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.idWiadomosci)
+                                </dd>
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.imieNazwisko)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.imieNazwisko)
+                                </dd>
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.adresEmail)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.adresEmail)
+                                </dd>
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.dataOdebrania)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.dataOdebrania)
+                                </dd>
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.tekstWiadomosci)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.tekstWiadomosci)
+                                </dd>
+
+                            </dl>
+
+                                @using (Html.BeginForm())
+                                {
+                                    @Html.AntiForgeryToken()
+
+                                    <div class="form-actions no-color">
+                                        @Html.ActionLink(" ", "WiadomoscView", null, null, new { @class = "btn btn-dark fas fa-angle-double-left fa-2x", @data_toggle = "tooltip", @data_placement = "bottom", title = "Wróć" })
+                                        <button type="submit" style="background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden; outline:none;"><i data-toggle="tooltip" data-placement="bottom" title="Usuń wiadomość" class="btn btn-danger fas fa-times-circle fa-2x"></i></button>
+                                    </div>
+                                }
+                        </div>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

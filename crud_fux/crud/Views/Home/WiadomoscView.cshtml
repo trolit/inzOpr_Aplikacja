@@ -1,0 +1,54 @@
+﻿@model IEnumerable<crud.Models.Wiadomosci>
+
+@{
+    <!-- tytul strony -->
+    ViewBag.Title = "Panel przełożonego";
+}
+
+<head>
+    <!-- zalaczenie biblioteki globalnej style.css -->
+    <link rel="Stylesheet" href="~/Content/style.css" type="text/css" />
+</head>
+
+<div class="naglowekStrony">
+    <ol class="breadcrumb tloOkruszka">
+        <li class="breadcrumb-item"><a href="@Url.Action("Index", "Home")">Strona główna</a></li>
+        <li class="breadcrumb-item"><a href="@Url.Action("Przelozony", "Home")">Przełożony</a></li>
+        <li class="breadcrumb-item active">Wiadomości</li>
+    </ol>
+</div>
+
+<!-- trzeba dać w kontener żeby nie przylegały do krawędzi ekranu -->
+<div class="container">
+    <!-- trzeba dać card-columns żeby były odstępy od siebie kart i div z klasą row aby było responsywne -->
+    <div class="row" id="myItems">
+        <!-- mx-auto centruje karty jak zmniejszysz ekran do sytuacji że będzie 1 karta w wierszu -->
+        <div class="card-columns text-center mx-auto">
+            @foreach (var item in Model)
+            {
+                <div class="card text-white" style="background-color: #2b6198;">
+                    <div class="card-header" style="font-size: 18px;">Wiadomość od <strong>@Html.DisplayFor(modelItem => item.imieNazwisko)</strong></div>
+                    <div class="card-body">
+                        <h5 class="card-title" data-toggle="tooltip" data-placement="bottom" title="Data wpłynięcia wiadomości do BD">@Html.DisplayFor(modelItem => item.dataOdebrania)</h5>
+                        <p class="card-text">
+                            <table style="margin-left: auto; margin-right: auto;">
+                                <tr data-toggle="tooltip" data-placement="left" title="Adres email uczestnika">
+                                    <td><i class="fas fa-envelope fa-lg"></i></td>
+                                    <td>@Html.DisplayFor(modelItem => item.adresEmail)</td>
+                                </tr>
+                                <tr data-toggle="tooltip" data-placement="left" title="Treść wiadomości">
+                                    <td><i class="fas fa-phone-square fa-lg"></i></td>
+                                    <td>@Html.DisplayFor(modelItem => item.tekstWiadomosci)</td>
+                                </tr>
+                            </table>
+
+                        <div style="margin-top: 20px;">
+                            @Html.ActionLink(" ", "DeleteWiadomosc", null, new { id = item.idWiadomosci }, new { @class = "btn btn-danger fas fa-times-circle fa-2x", @data_toggle = "tooltip", @data_placement = "bottom", title = "Usuń wiadomość z bazy" })
+                        </div>
+                        </p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

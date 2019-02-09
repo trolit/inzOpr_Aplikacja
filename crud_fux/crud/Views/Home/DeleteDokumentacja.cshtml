@@ -20,52 +20,54 @@
     </ol>
 </div>
 
-<div class="form-horizontal">
-    <hr />
-    <div class="col-lg-6 col-md-8 mx-auto jumbotron">
-        <div style="font-family: 'Arima Madurai', sans-serif; font-size:130%; margin-top: 5%;">
-            <div class="text-center" style="margin-bottom: 15px;">
-                <i class="fas fa-trash-alt fa-7x"></i>
+<!-- trzeba dać w kontener żeby nie przylegały do krawędzi ekranu -->
+<div class="container">
+    <!-- trzeba dać card-columns żeby były odstępy od siebie kart i div z klasą row aby było responsywne -->
+    <div class="row">
+        <!-- mx-auto centruje karty jak zmniejszysz ekran do sytuacji że będzie 1 karta w wierszu -->
+        <div class="mx-auto col-md-6">
+            <div class="card text-white" style="background-color: #2b6198;">
+                <div class="card-body">
+                    <h5 class="card-title text-center"><i class="fas fa-trash-alt fa-7x"></i></h5>
+                    <p class="card-text">
+                        <div class="form-horizontal">
+                            <div style="font-family: 'Arima Madurai', sans-serif; font-size:90%;">
+
+                                <div>
+                                    <dl class="dl-horizontal col-md-12" style="font-size: 75% !important">
+                                        <dt style="font-weight: 100;">
+                                            Nazwa dokumentu
+                                        </dt>
+
+                                        <dd>
+                                            @Html.EditorFor(model => model.nazwaDokumentu, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                                        </dd>
+
+                                        <dt style="font-weight: 100;">
+                                            Czy ukończony?
+                                        </dt>
+
+                                        <dd>
+                                            @Html.EditorFor(model => model.czyUkonczony, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                                        </dd>
+
+                                    </dl>
+
+                                    @using (Html.BeginForm())
+                                    {
+                                        @Html.AntiForgeryToken()
+
+                                        <div class="form-actions no-color">
+                                            @Html.ActionLink(" ", "Dokumentacja", null, null, new { @class = "btn btn-dark fas fa-angle-double-left fa-2x", @data_toggle = "tooltip", @data_placement = "bottom", title = "Wróć" })
+                                            <button type="submit" style="background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden; outline:none;"><i data-toggle="tooltip" data-placement="bottom" title="Usuń imprezę" class="btn btn-danger fas fa-times-circle fa-2x"></i></button>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </p>
+                </div>
             </div>
-            <p class="text-center" style="font-weight: bold;">Jesteś pewien czy chcesz usunąć tę dokumentację?</p>
-            <p class="text-justify" style="font-size: 75% !important">
-                <i class="fas fa-exclamation-circle"></i> Jeżeli tak, kliknij przycisk "Usuń"
-            </p>
-            <hr />
-
-            <div>
-                <dl class="dl-horizontal col-md-12" style="font-size: 75% !important">
-                    <dt style="font-weight: 100;">
-                        Nazwa dokumentu
-                    </dt>
-
-                    <dd>
-                        @Html.EditorFor(model => model.nazwaDokumentu, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
-                    </dd>
-
-                    <dt style="font-weight: 100;">
-                        Czy ukończony?
-                    </dt>
-
-                    <dd>
-                        @Html.EditorFor(model => model.czyUkonczony, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
-                    </dd>
-
-                </dl>
-
-                @using (Html.BeginForm())
-                {
-                    @Html.AntiForgeryToken()
-
-                    <div class="form-actions no-color">
-                        @Html.ActionLink("Wróć", "Dokumentacja", null, null, new { @class = "btn przyciskPowrot" })
-                        <input type="submit" value="Usuń" class="btn btn-danger" />
-                    </div>
-                }
-            </div>
-
         </div>
     </div>
 </div>
-
-

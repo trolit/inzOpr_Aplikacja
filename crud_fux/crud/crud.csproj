@@ -325,6 +325,21 @@
       <DependentUpon>Model6.edmx</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="Models\Model7.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model7.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model7.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model7.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model7.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\Personel.cs">
       <DependentUpon>Model2.tt</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -336,6 +351,9 @@
     <Compile Include="Models\Uczestnik.cs">
       <DependentUpon>Model6.tt</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Models\Wiadomosci.cs">
+      <DependentUpon>Model7.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Zgloszenia.cs">
       <DependentUpon>Model4.tt</DependentUpon>
@@ -356,6 +374,17 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\style.css" />
+    <Content Include="Models\Model7.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model7.edmx</DependentUpon>
+      <LastGenOutput>Model7.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model7.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model7.edmx</DependentUpon>
+      <LastGenOutput>Model7.cs</LastGenOutput>
+    </Content>
+    <Content Include="Wiadomosci_pliki\styleWiadomosci.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -434,6 +463,8 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="ZawodnicyPliki\zaw_skrypty.js" />
+    <Content Include="ZawodnicyPliki\zaw_style.css" />
     <EntityDeploy Include="Models\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
@@ -494,6 +525,13 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <EntityDeploy Include="Models\Model7.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model7.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model7.edmx.diagram">
+      <DependentUpon>Model7.edmx</DependentUpon>
+    </Content>
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -530,6 +568,7 @@
     <Content Include="Scripts\popper.min.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Wiadomosci_pliki\skryptyWiadomosci.js" />
     <Content Include="Scripts\umd\popper-utils.js" />
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
@@ -614,6 +653,12 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Home\AkceptujZgloszenie.cshtml" />
+    <Content Include="Views\Home\Wiadomosci.cshtml" />
+    <Content Include="Views\Home\Zawodnicy.cshtml" />
+    <Content Include="Views\Home\WiadomoscSend_Sukces.cshtml" />
+    <Content Include="Views\Home\WiadomoscSend.cshtml" />
+    <Content Include="Views\Home\WiadomoscView.cshtml" />
+    <Content Include="Views\Home\DeleteWiadomosc.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

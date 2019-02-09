@@ -20,11 +20,102 @@ namespace crud.Controllers
         private ZgloszeniaEntities _db_Zgloszenia = new ZgloszeniaEntities();
         private ImprezyEntities _db_Imprezy = new ImprezyEntities();
         private DokumentacjaEntities _db_Dokumentacja = new DokumentacjaEntities();
+        private WiadomosciEntities _db_Wiadomosci = new WiadomosciEntities();
 
         public ActionResult Index()
         {
             return View();
         }
+
+        // dla strony wiadomosci
+        public ActionResult Wiadomosci()
+        {
+            return View();
+        }
+
+        public ActionResult Zawodnicy()
+        {
+            return View();
+        }
+
+        #region  Wysłanie wiadomości do firmy
+        // GET: Home/Create
+        public ActionResult WiadomoscSend()
+        {
+            return View();
+        }
+
+        // POST: /Home/Create
+        [HttpPost]
+        public ActionResult WiadomoscSend(Wiadomosci newWiadomosc)
+        {
+            if (ModelState.IsValid)
+            {
+                _db_Wiadomosci.Wiadomosci.Add(newWiadomosc);
+                _db_Wiadomosci.SaveChanges();
+                return RedirectToAction("WiadomoscSend_Sukces");
+            }
+            else
+            {
+                return View(newWiadomosc);
+            }
+        }
+
+        // widok informujący o tym, że wiadomość została wysłana
+        public ActionResult WiadomoscSend_Sukces()
+        {
+            return View();
+        }
+        #endregion
+
+        #region Lista wiadomości - wgląd dla przełożonego
+
+        public ActionResult WiadomoscView()
+        {
+            if (!User.Identity.IsAuthenticated && !User.IsInRole("Administrator"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+            return View(_db_Wiadomosci.Wiadomosci.ToList());
+        }
+
+        #endregion
+
+        #region Wiadomość - usuń
+        public ActionResult DeleteWiadomosc(int id)
+        {
+            if (!User.Identity.IsAuthenticated && !User.IsInRole("Administrator"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+            var wiadomoscToDelete = (from Wiadomosci in _db_Wiadomosci.Wiadomosci
+                                   where Wiadomosci.idWiadomosci == id
+                                   select Wiadomosci).First();
+            return View(wiadomoscToDelete);
+        }
+
+        [HttpPost]
+        public ActionResult DeleteWiadomosc(int id, Models.Pozwolenie wiadomoscToDelete)
+        {
+            if (!User.Identity.IsAuthenticated && !User.IsInRole("Administrator"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+            var SelWiadomosc = (from Wiadomosci in _db_Wiadomosci.Wiadomosci
+                                where Wiadomosci.idWiadomosci == id
+                                select Wiadomosci).First();
+
+            if (!ModelState.IsValid)
+                return View(SelWiadomosc);
+
+            _db_Wiadomosci.Wiadomosci.Remove(SelWiadomosc);
+            _db_Wiadomosci.SaveChanges();
+            return RedirectToAction("WiadomoscView");
+        }
+        #endregion
 
         #region Pracownik
 
