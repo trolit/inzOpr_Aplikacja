@@ -49,3 +49,34 @@
 
 </p>
 </details>
+
+
+
+<details><summary>:information_source: Wersja 0.8 z dnia 09 luty 2019 roku</summary>
+<p>
+	<h3>Autorzy i zasługi</h3>
+	<ul>
+		1. Paweł Idzikowski
+		<ul>
+				<li>backend</li>
+		</ul>	
+	<ul>
+
+<br/>
+<br/>
+
+<details><summary>Zaimplementowane funkcjonalności</summary>
+:heavy_check_mark: usunięcie zgłoszenia powoduje usunięcie elementów powiązanych w Pozwolenia/Dokumentacja/Personel <br/>
+:heavy_check_mark: wyświetlanie danych z bazy w postaci kart Boostrapa 4 <br/>
+:heavy_check_mark: wprowadzenie trybu wyszukiwania w liście uczestników (widok - Uczestnicy_Lista) <br/>
+:heavy_check_mark: wprowadzenie okruszków z Bootstrapa 4 <br/>
+:heavy_check_mark: akceptacja projeku wymaga teraz tylko kliknięcia przycisku(a nie jak poprzednio edycji projektu i wpisania odpowiedniej nazwy) <br/>
+:heavy_check_mark: dodanie panelu wiadomości i zaproponowanie szablonu w jaki mogłyby być wyświetlane "newsy" <br/>
+:heavy_check_mark: dodanie panelu kontaktu - możliwość wysłania wiadomości do firmy. Przełożony może te wiadomości odczytać <br/>
+
+Uwaga. W trakcie testowania napotkano usterke - przy tworzeniu zgłoszenia czy wiadomości data wysłania nie jest generowana. (do poprawienia)
+
+</details>
+
+</p>
+</details>
