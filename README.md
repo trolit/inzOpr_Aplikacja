@@ -76,7 +76,7 @@
 
 Łatka: 16.02.2019 - data generowana jest już poprawnie. Dodany również został licznik znaków do pisanej wiadomości informujący osobę o tym ile 
 pozostało znaków do wykorzystania. Uzupełniony został także design w postaci kart w widokach CreatePozwolenie, CreateDokumentacja i CreatePersonel.
-Usunięto ograniczenie szerokości dla "inputów".
+Usunięto ograniczenie szerokości dla "inputów". Dodana została informacja o tym ile miejsc jest już zajętych na daną imprezę(w szczegółach imprezy).
 
 </details>
 
