@@ -33,9 +33,6 @@
 		</ul>
 	<ul>
 
-<br/>
-<br/>
-
 <details><summary>Zaimplementowane funkcjonalności</summary>
 :heavy_check_mark: zapisywanie się na imprezę jako "Uczestnik imprezy" <br/>
 :heavy_check_mark: wysyłanie zgłoszenia o organizację imprezy z panelu "Klienta" <br/>
@@ -62,9 +59,6 @@
 		</ul>	
 	<ul>
 
-<br/>
-<br/>
-
 <details><summary>Zaimplementowane funkcjonalności</summary>
 :heavy_check_mark: usunięcie zgłoszenia powoduje usunięcie elementów powiązanych w Pozwolenia/Dokumentacja/Personel <br/>
 :heavy_check_mark: wyświetlanie danych z bazy w postaci kart Boostrapa 4 <br/>
@@ -74,7 +68,11 @@
 :heavy_check_mark: dodanie panelu wiadomości i zaproponowanie szablonu w jaki mogłyby być wyświetlane "newsy" <br/>
 :heavy_check_mark: dodanie panelu kontaktu - możliwość wysłania wiadomości do firmy. Przełożony może te wiadomości odczytać <br/>
 
-Uwaga. W trakcie testowania napotkano usterke - przy tworzeniu zgłoszenia czy wiadomości data wysłania nie jest generowana. (do poprawienia)
+~~Uwaga. W trakcie testowania napotkano usterke - przy tworzeniu zgłoszenia czy wiadomości data wysłania nie jest generowana. (do poprawienia)~~
+
+Łatka: 16.02.2019 - data generowana jest już poprawnie. Dodany również został licznik znaków do pisanej wiadomości informujący osobę o tym ile 
+pozostało znaków do wykorzystania. Uzupełniony został także design w postaci kart w widokach CreatePozwolenie, CreateDokumentacja i CreatePersonel.
+Usunięto ograniczenie szerokości dla "inputów".
 
 </details>
 

@@ -51,6 +51,9 @@ namespace crud.Controllers
         {
             if (ModelState.IsValid)
             {
+                // wygeneruj i przypisz datę
+                newWiadomosc.dataOdebrania = DateTime.Now;
+
                 _db_Wiadomosci.Wiadomosci.Add(newWiadomosc);
                 _db_Wiadomosci.SaveChanges();
                 return RedirectToAction("WiadomoscSend_Sukces");
@@ -571,6 +574,9 @@ namespace crud.Controllers
                 && !String.IsNullOrEmpty(newZgloszenie.charakter_uczestnictwa) && !String.IsNullOrEmpty(newZgloszenie.forma_organizacyjna)
                 && !String.IsNullOrEmpty(newZgloszenie.cele))
             {
+                // wygeneruj datę dla pola dataOtrzymania zgłoszenia
+                newZgloszenie.dataOtrzymaniaZgloszenia = DateTime.Now;
+
                 _db_Zgloszenia.Zgloszenia.Add(newZgloszenie);
                 _db_Zgloszenia.SaveChanges();
                 return RedirectToAction("Klient_Sukces");

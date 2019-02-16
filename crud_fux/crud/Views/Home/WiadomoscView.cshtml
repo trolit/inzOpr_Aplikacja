@@ -32,19 +32,19 @@
                         <h5 class="card-title" data-toggle="tooltip" data-placement="bottom" title="Data wpłynięcia wiadomości do BD">@Html.DisplayFor(modelItem => item.dataOdebrania)</h5>
                         <p class="card-text">
                             <table style="margin-left: auto; margin-right: auto;">
-                                <tr data-toggle="tooltip" data-placement="left" title="Adres email uczestnika">
+                                <tr data-toggle="tooltip" data-placement="left" title="Adres email osoby wysyłającej wiadomość">
                                     <td><i class="fas fa-envelope fa-lg"></i></td>
                                     <td>@Html.DisplayFor(modelItem => item.adresEmail)</td>
                                 </tr>
-                                <tr data-toggle="tooltip" data-placement="left" title="Treść wiadomości">
-                                    <td><i class="fas fa-phone-square fa-lg"></i></td>
-                                    <td>@Html.DisplayFor(modelItem => item.tekstWiadomosci)</td>
-                                </tr>
                             </table>
 
-                        <div style="margin-top: 20px;">
-                            @Html.ActionLink(" ", "DeleteWiadomosc", null, new { id = item.idWiadomosci }, new { @class = "btn btn-danger fas fa-times-circle fa-2x", @data_toggle = "tooltip", @data_placement = "bottom", title = "Usuń wiadomość z bazy" })
-                        </div>
+                            <div style="margin-top: 20px;" class="text-justify" data-toggle="tooltip" data-placement="left" title="Treść wiadomości">
+                                @Html.DisplayFor(modelItem => item.tekstWiadomosci)
+                            </div>
+
+                            <div style="margin-top: 20px;">
+                                @Html.ActionLink(" ", "DeleteWiadomosc", null, new { id = item.idWiadomosci }, new { @class = "btn btn-danger fas fa-times-circle fa-2x", @data_toggle = "tooltip", @data_placement = "bottom", title = "Usuń wiadomość z bazy" })
+                            </div>
                         </p>
                     </div>
                 </div>
