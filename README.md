@@ -33,7 +33,9 @@
 		</ul>
 	<ul>
 
-<details><summary>Zaimplementowane funkcjonalności</summary>
+<br/>
+
+<details><summary>Wprowadzone funkcjonalności</summary>
 :heavy_check_mark: zapisywanie się na imprezę jako "Uczestnik imprezy" <br/>
 :heavy_check_mark: wysyłanie zgłoszenia o organizację imprezy z panelu "Klienta" <br/>
 :heavy_check_mark: dodawanie do projektów informacji o Personel/Dokumentacja/Personel <br/>
@@ -59,7 +61,9 @@
 		</ul>	
 	<ul>
 
-<details><summary>Zaimplementowane funkcjonalności</summary>
+<br/>
+
+<details><summary>Wprowadzone funkcjonalności</summary>
 :heavy_check_mark: usunięcie zgłoszenia powoduje usunięcie elementów powiązanych w Pozwolenia/Dokumentacja/Personel <br/>
 :heavy_check_mark: wyświetlanie danych z bazy w postaci kart Boostrapa 4 <br/>
 :heavy_check_mark: wprowadzenie trybu wyszukiwania w liście uczestników (widok - Uczestnicy_Lista) <br/>
