@@ -6,8 +6,7 @@ using System.Web.Mvc;
 using crud.Models;
 
 /* 
-    Kontroler obsługujący aplikację dla firmy GGKI
-    ZMIANA KODU NA WLASNA ODPOWIEDZIALNOSC!
+    Kontroler obsługujący aplikację
 */
 
 namespace crud.Controllers
@@ -27,7 +26,6 @@ namespace crud.Controllers
             return View();
         }
 
-        // dla strony wiadomosci
         public ActionResult Wiadomosci()
         {
             return View();
@@ -70,8 +68,7 @@ namespace crud.Controllers
             return View();
         }
         #endregion
-
-        #region Lista wiadomości - wgląd dla przełożonego
+        #region Przełożony - lista wiadomości
 
         public ActionResult WiadomoscView()
         {
@@ -84,7 +81,6 @@ namespace crud.Controllers
         }
 
         #endregion
-
         #region Wiadomość - usuń
         public ActionResult DeleteWiadomosc(int id)
         {
@@ -168,6 +164,16 @@ namespace crud.Controllers
             var imprezaToDetails = (from Imprezy in _db_Imprezy.Imprezy
                                     where Imprezy.idImpreza == id
                                     select Imprezy).First();
+
+            var zlicz = 0;
+
+            foreach (var record in _db_Uczestnicy.Uczestnik.Where(x => x.idPorownania == id))
+            {
+                zlicz += 1;
+            }
+
+            ViewBag.liczba_uczestnikow = zlicz;
+
             return View(imprezaToDetails);
         }
 

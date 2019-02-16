@@ -5,6 +5,10 @@
     ViewBag.Title = "Szczegóły imprezy";
 }
 
+@{
+    var zarejestrowani = ViewBag.liczba_uczestnikow;
+}
+
 <head>
     <!-- zalaczenie biblioteki globalnej style.css -->
     <link rel="Stylesheet" href="~/Content/style.css" type="text/css" />
@@ -81,14 +85,12 @@
 
                                         <i class="fas fa-arrow-alt-circle-right"></i>
                                         <span class="etykietaJumbo">Ceny biletów</span>
-                                        <dd>
+                                        <dd style="padding-bottom: 15px;">
                                             @Html.EditorFor(model => model.cenaBiletu, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
                                         </dd>
 
-                                        <i class="fas fa-arrow-alt-circle-right"></i>
-                                        <span class="etykietaJumbo">Liczba uczestników</span>
-                                        <dd>
-                                            @Html.EditorFor(model => model.liczbaUczestnikow, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
+                                        <dd>                                          
+                                            <div class="alert alert-primary" role="alert"><strong>Stan rezerwacji miejsc</strong><br />(z @DateTime.Now)<br /><span class="badge badge-dark" style="font-size: 16px;">@zarejestrowani / @Html.DisplayFor(model => model.liczbaUczestnikow)</span></div>
                                         </dd>
 
                                         <div class="form-group" style="margin-top: 30px;">
