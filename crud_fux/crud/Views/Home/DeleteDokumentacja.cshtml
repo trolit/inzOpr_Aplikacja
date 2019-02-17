@@ -57,10 +57,10 @@
                                     {
                                         @Html.AntiForgeryToken()
 
-                                        <div class="form-actions no-color">
-                                            @Html.ActionLink(" ", "Dokumentacja", null, null, new { @class = "btn btn-dark fas fa-angle-double-left fa-2x", @data_toggle = "tooltip", @data_placement = "bottom", title = "Wróć" })
-                                            <button type="submit" style="background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden; outline:none;"><i data-toggle="tooltip" data-placement="bottom" title="Usuń imprezę" class="btn btn-danger fas fa-times-circle fa-2x"></i></button>
-                                        </div>
+                                    <div class="form-actions no-color d-flex justify-content-center">
+                                        @Html.ActionLink(" ", "Dokumentacja", null, null, new { @class = "btn btn-dark fas fa-angle-double-left fa-2x col-md-6", @data_toggle = "tooltip", @data_placement = "bottom", title = "Wróć", @style = "float: left;" })
+                                        <button type="submit" style="width: 40%; float: left; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden; outline:none;"><i data-toggle="tooltip" data-placement="bottom" title="Usuń wpis" class="btn btn-danger fas fa-times-circle col-md-12 fa-2x"></i></button>
+                                    </div>
                                     }
                                 </div>
                             </div>

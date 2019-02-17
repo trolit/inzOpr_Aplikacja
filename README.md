@@ -57,7 +57,7 @@
 	<ul>
 		1. Paweł Idzikowski
 		<ul>
-				<li>backend</li>
+				<li>frontend, backend</li>
 		</ul>	
 	<ul>
 
@@ -78,6 +78,7 @@
 pozostało znaków do wykorzystania. Uzupełniony został także design w postaci kart w widokach CreatePozwolenie, CreateDokumentacja i CreatePersonel.
 Usunięto ograniczenie szerokości dla "inputów". Dodana została informacja o tym ile miejsc jest już zajętych na daną imprezę(w szczegółach imprezy).
 
+Łatka: 17.02.2019 - poprawienie wyglądu przycisków, przerobienie wyglądu inputów przy Edycji/Tworzeniu.
 </details>
 
 </p>

@@ -39,12 +39,12 @@
 
                                     <div class="form-group">
                                         @Html.Label("Podaj numer imprezy", htmlAttributes: new { @class = "control-label col-md-5" })
-                                        <div class="col-md-10">
+                                        <div class="col-md-12">
                                             <div class="input-group">
                                                 <div class="input-group-text" style="width: 40px; !important;">
                                                     <i class="fas fa-sort-numeric-up"></i>
                                                 </div>
-                                                @Html.EditorFor(model => model.idPorownania, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.EditorFor(model => model.idPorownania, new { htmlAttributes = new { @class = "form-control inputField" } })
                                             </div>
                                             @Html.ValidationMessageFor(model => model.idPorownania, "", new { @class = "text-danger" })
                                         </div>
@@ -52,12 +52,12 @@
 
                                     <div class="form-group">
                                         @Html.Label("Imię i nazwisko", htmlAttributes: new { @class = "control-label col-md-5" })
-                                        <div class="col-md-10">
+                                        <div class="col-md-12">
                                             <div class="input-group">
                                                 <div class="input-group-text" style="width: 40px; !important;">
                                                     <i class="fas fa-user text-center"></i>
-                                                </div>
-                                                @Html.EditorFor(model => model.imieNazwisko, new { htmlAttributes = new { @class = "form-control" } })
+                                                </div> 
+                                                @Html.EditorFor(model => model.imieNazwisko, new { htmlAttributes = new { @class = "form-control inputField" } })
                                             </div>
                                             @Html.ValidationMessageFor(model => model.imieNazwisko, "", new { @class = "text-danger" })
                                         </div>
@@ -65,12 +65,12 @@
 
                                     <div class="form-group">
                                         @Html.Label("Mail", htmlAttributes: new { @class = "control-label col-md-5" })
-                                        <div class="col-md-10">
+                                        <div class="col-md-12">
                                             <div class="input-group">
                                                 <div class="input-group-text" style="width: 40px; !important;">
                                                     <i class="fas fa-envelope text-center"></i>
                                                 </div>
-                                                @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control inputField" } })
                                             </div>
                                             @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
                                         </div>
@@ -78,21 +78,21 @@
 
                                     <div class="form-group">
                                         @Html.Label("Numer telefonu", htmlAttributes: new { @class = "control-label col-md-5" })
-                                        <div class="col-md-10">
+                                        <div class="col-md-12">
                                             <div class="input-group">
                                                 <div class="input-group-text" style="width: 40px; !important;">
                                                     <i class="fas fa-phone-square text-center"></i>
                                                 </div>
-                                                @Html.EditorFor(model => model.nrTelefonu, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.EditorFor(model => model.nrTelefonu, new { htmlAttributes = new { @class = "form-control inputField" } })
                                             </div>
                                             @Html.ValidationMessageFor(model => model.nrTelefonu, "", new { @class = "text-danger" })
                                         </div>
                                     </div>
 
                                     <div class="form-group" style="margin-top: 30px;">
-                                        <div class="col-md-offset-2 col-md-10">
-                                            <button type="submit" style="background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden; outline:none;"><i data-toggle="tooltip" data-placement="bottom" title="Zapisz mnie!" class="btn btn-success fas fa-check-square fa-2x"></i></button>
-                                            @Html.ActionLink(" ", "Imprezy_Dostepne", null, null, new { @class = "btn btn-dark fas fa-angle-double-left fa-2x", @data_toggle = "tooltip", @data_placement = "bottom", title = "Wróć" })
+                                        <div class="col-md-12 d-flex justify-content-center">
+                                            <button type="submit" style="width: 60%; float: left; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden; outline:none;"><i data-toggle="tooltip" data-placement="bottom" title="Zapisz mnie!" class="btn btn-success fas fa-check-square fa-2x col-md-12"></i></button>
+                                            @Html.ActionLink(" ", "Imprezy_Dostepne", null, null, new { @class = "btn btn-dark fas fa-angle-double-left fa-2x col-md-4", @data_toggle = "tooltip", @data_placement = "bottom", title = "Wróć" })
                                         </div>
                                     </div>
                                     @section Scripts {

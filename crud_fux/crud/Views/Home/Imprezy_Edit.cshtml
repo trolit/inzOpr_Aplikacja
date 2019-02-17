@@ -40,88 +40,88 @@
 
                                     <div class="form-group">
                                         @Html.Label("Nazwa imprezy", htmlAttributes: new { @class = "control-label col-md-4" })
-                                        <div class="col-md-10">
-                                            @Html.EditorFor(model => model.nazwaImprezy, new { htmlAttributes = new { @class = "form-control" } })
+                                        <div class="col-md-12">
+                                            @Html.EditorFor(model => model.nazwaImprezy, new { htmlAttributes = new { @class = "form-control inputField" } })
                                             @Html.ValidationMessageFor(model => model.nazwaImprezy, "", new { @class = "text-danger" })
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         @Html.Label("Rodzaj/treść", htmlAttributes: new { @class = "control-label col-md-4" })
-                                        <div class="col-md-10">
-                                            @Html.EditorFor(model => model.rodzaj, new { htmlAttributes = new { @class = "form-control" } })
+                                        <div class="col-md-12">
+                                            @Html.EditorFor(model => model.rodzaj, new { htmlAttributes = new { @class = "form-control inputField" } })
                                             @Html.ValidationMessageFor(model => model.rodzaj, "", new { @class = "text-danger" })
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         @Html.Label("Proponowane miejsce realizacji", htmlAttributes: new { @class = "control-label col-md-6" })
-                                        <div class="col-md-10">
-                                            @Html.EditorFor(model => model.miejsce, new { htmlAttributes = new { @class = "form-control" } })
+                                        <div class="col-md-12">
+                                            @Html.EditorFor(model => model.miejsce, new { htmlAttributes = new { @class = "form-control inputField" } })
                                             @Html.ValidationMessageFor(model => model.miejsce, "", new { @class = "text-danger" })
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         @Html.Label("Czas trwania", htmlAttributes: new { @class = "control-label col-md-4" })
-                                        <div class="col-md-10">
-                                            @Html.EditorFor(model => model.czasTrwania, new { htmlAttributes = new { @class = "form-control" } })
+                                        <div class="col-md-12">
+                                            @Html.EditorFor(model => model.czasTrwania, new { htmlAttributes = new { @class = "form-control inputField" } })
                                             @Html.ValidationMessageFor(model => model.czasTrwania, "", new { @class = "text-danger" })
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         @Html.Label("Cykliczność", htmlAttributes: new { @class = "control-label col-md-4" })
-                                        <div class="col-md-10">
-                                            @Html.EditorFor(model => model.cyklicznosc, new { htmlAttributes = new { @class = "form-control" } })
+                                        <div class="col-md-12">
+                                            @Html.EditorFor(model => model.cyklicznosc, new { htmlAttributes = new { @class = "form-control inputField" } })
                                             @Html.ValidationMessageFor(model => model.cyklicznosc, "", new { @class = "text-danger" })
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         @Html.Label("Charakter uczestnictwa", htmlAttributes: new { @class = "control-label col-md-4" })
-                                        <div class="col-md-10">
-                                            @Html.EditorFor(model => model.charakterUczestnictwa, new { htmlAttributes = new { @class = "form-control" } })
+                                        <div class="col-md-12">
+                                            @Html.EditorFor(model => model.charakterUczestnictwa, new { htmlAttributes = new { @class = "form-control inputField" } })
                                             @Html.ValidationMessageFor(model => model.charakterUczestnictwa, "", new { @class = "text-danger" })
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         @Html.Label("Forma organizacyjna", htmlAttributes: new { @class = "control-label col-md-4" })
-                                        <div class="col-md-10">
-                                            @Html.EditorFor(model => model.formaOrganizacyjna, new { htmlAttributes = new { @class = "form-control" } })
+                                        <div class="col-md-12">
+                                            @Html.EditorFor(model => model.formaOrganizacyjna, new { htmlAttributes = new { @class = "form-control inputField" } })
                                             @Html.ValidationMessageFor(model => model.formaOrganizacyjna, "", new { @class = "text-danger" })
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         @Html.Label("Cena biletów", htmlAttributes: new { @class = "control-label col-md-4" })
-                                        <div class="col-md-10">
-                                            @Html.EditorFor(model => model.cenaBiletu, new { htmlAttributes = new { @class = "form-control" } })
+                                        <div class="col-md-12">
+                                            @Html.EditorFor(model => model.cenaBiletu, new { htmlAttributes = new { @class = "form-control inputField" } })
                                             @Html.ValidationMessageFor(model => model.cenaBiletu, "", new { @class = "text-danger" })
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         @Html.Label("Liczba uczestników", htmlAttributes: new { @class = "control-label col-md-4" })
-                                        <div class="col-md-10">
-                                            @Html.EditorFor(model => model.liczbaUczestnikow, new { htmlAttributes = new { @class = "form-control" } })
+                                        <div class="col-md-12">
+                                            @Html.EditorFor(model => model.liczbaUczestnikow, new { htmlAttributes = new { @class = "form-control inputField" } })
                                             @Html.ValidationMessageFor(model => model.liczbaUczestnikow, "", new { @class = "text-danger" })
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         @Html.Label("Identyfikator porównania", htmlAttributes: new { @class = "control-label col-md-6" })
-                                        <div class="col-md-10">
-                                            @Html.EditorFor(model => model.identyfikatorPorownania, new { htmlAttributes = new { @class = "form-control" } })
+                                        <div class="col-md-12">
+                                            @Html.EditorFor(model => model.identyfikatorPorownania, new { htmlAttributes = new { @class = "form-control inputField" } })
                                             @Html.ValidationMessageFor(model => model.identyfikatorPorownania, "", new { @class = "text-danger" })
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <div class="col-md-offset-2 col-md-10">
-                                            <button type="submit" style="background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden; outline:none;"><i data-toggle="tooltip" data-placement="bottom" title="Wprowadź zmiany" class="btn btn-success fas fa-check-square fa-2x"></i></button>
-                                            @Html.ActionLink(" ", "Przelozony_Listaimprez", null, null, new { @class = "btn btn-dark fas fa-angle-double-left fa-2x", @data_toggle = "tooltip", @data_placement = "bottom", title = "Wróć" })
+                                        <div class="col-md-12 d-flex justify-content-center">
+                                            <button type="submit" style="width: 60%; float: left; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden; outline:none;"><i data-toggle="tooltip" data-placement="bottom" title="Wprowadź zmiany" class="btn btn-success col-md-12 fas fa-check-square fa-2x"></i></button>
+                                            @Html.ActionLink(" ", "Przelozony_Listaimprez", null, null, new { @class = "btn btn-dark fas fa-angle-double-left fa-2x col-md-4", @data_toggle = "tooltip", @data_placement = "bottom", title = "Wróć", @style="float: left;" })
                                         </div>
                                     </div>
                                 </div>

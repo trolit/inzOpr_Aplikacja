@@ -25,7 +25,7 @@
         <div class="mx-auto col-md-6">
             <div class="card text-white" style="background-color: #2b6198;">
                 <div class="card-body">
-                    <h5 class="card-title text-center"><i class="fas fa-file-alt fa-7x"></i></h5>
+                    <h5 class="card-title text-center"><i class="fab fa-connectdevelop fa-7x"></i></h5>
                     <p class="card-text">
                         @using (Html.BeginForm())
                         {
@@ -39,7 +39,7 @@
                                     <div class="form-group">
                                         @Html.Label("Imie i nazwisko", htmlAttributes: new { @class = "control-label col-md-5" })
                                         <div class="col-md-12">
-                                            @Html.EditorFor(model => model.imieNazwisko, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.EditorFor(model => model.imieNazwisko, new { htmlAttributes = new { @class = "form-control inputField" } })
                                             @Html.ValidationMessageFor(model => model.imieNazwisko, "", new { @class = "text-danger" })
                                         </div>
                                     </div>
@@ -47,7 +47,7 @@
                                     <div class="form-group">
                                         @Html.Label("Adres email", htmlAttributes: new { @class = "control-label col-md-5" })
                                         <div class="col-md-12">
-                                            @Html.EditorFor(model => model.adresEmail, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.EditorFor(model => model.adresEmail, new { htmlAttributes = new { @class = "form-control inputField" } })
                                             @Html.ValidationMessageFor(model => model.adresEmail, "", new { @class = "text-danger" })
                                         </div>
                                     </div>
@@ -67,9 +67,9 @@
                                     <div class="form-group">
                                         @Html.Label("Tekst wiadomości", htmlAttributes: new { @class = "control-label col-md-5" })
                                         <div class="col-md-12">
-                                            @Html.TextAreaFor(model => model.tekstWiadomosci, new { @rows = 8, maxlength = "1000", id = "textarea", style= "font-family: 'Comfortaa', sans-serif;" })
+                                            @Html.TextAreaFor(model => model.tekstWiadomosci, new { @rows = 8, maxlength = "1000", id = "textarea", style= "font-family: 'Comfortaa', sans-serif;", @class="inputField" })
                                             <!-- blok div dla tekstu informującego o liczbie pozostałych znaków -->
-                                            <div id="textarea_feedback" style="font-size: 10px;"></div>
+                                            <div id="textarea_feedback" style="font-size: 12px;"></div>
                                             @Html.ValidationMessageFor(model => model.tekstWiadomosci, "", new { @class = "text-danger" })
                                         </div>
                                     </div>
@@ -90,9 +90,13 @@
                                     </script>
 
                                     <div class="form-group" style="margin-top: 30px;">
-                                        <div class="col-md-offset-2 col-md-10">
-                                            <button type="submit" style="background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden; outline:none;"><i data-toggle="tooltip" data-placement="bottom" title="Wyślij wiadomość" class="btn btn-success fas fa-share-square fa-2x"></i></button>
-                                            @Html.ActionLink(" ", "Index", null, null, new { @class = "btn btn-dark fas fa-angle-double-left fa-2x", @data_toggle = "tooltip", @data_placement = "bottom", title = "Wróć" })
+                                        <!-- Użycie: 
+                                                    d-flex justify-content-center
+                                             centruje niniejszy blok div
+                                        -->
+                                        <div class="col-md-12 d-flex justify-content-center">
+                                            <button type="submit" style="width: 60%; float: left; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden; outline:none;"><i data-toggle="tooltip" data-placement="bottom" title="Wyślij wiadomość" class="btn btn-success col-md-12 fas fa-envelope fa-2x"></i></button>
+                                            @Html.ActionLink(" ", "Index", null, null, new { @class = "btn btn-dark fas fa-angle-double-left fa-2x col-md-4", @data_toggle = "tooltip", @data_placement = "bottom", title = "Wróć", @style = "float: left;" })
                                         </div>
                                     </div>
 

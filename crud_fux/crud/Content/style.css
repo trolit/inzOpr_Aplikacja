@@ -19,6 +19,28 @@
     text-decoration: wavy;
 }
 
+/* klasa dla inputów */
+.inputField {
+    background-color: #000000;
+    color: white;
+
+    /* Ustawienie w taki sposób przezroczystości powoduje, że nie wpływa ona na tekst 
+       dzięki czemu jest on nadal biały co jest zamierzonym efektem */
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 0;
+}
+
+.inputField:focus {
+    background-color: #000000;
+    color: white;
+
+    /* Ustawienie w taki sposób przezroczystości powoduje, że nie wpływa ona na tekst 
+    dzięki czemu jest on nadal biały co jest zamierzonym efektem */
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 0;
+    transition: 0.9s;
+}
+
 /* klasa dla okruszków */
 .tloOkruszka {
     background-color: #C7E3F0;

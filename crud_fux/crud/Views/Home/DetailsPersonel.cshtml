@@ -35,8 +35,8 @@
                     <p class="card-text">
                         <div style="font-family: 'Arima Madurai', sans-serif; font-size:90%;">
                             <div>
-                                <dl class="dl-horizontal" style="font-size: 75% !important">
-                                    <dt style="font-weight: 100">
+                                <dl class="dl-horizontal">
+                                    <dt>
                                         Nazwa personelu
                                     </dt>
 
@@ -44,7 +44,7 @@
                                         @Html.EditorFor(model => model.nazwaPersonelu, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
                                     </dd>
 
-                                    <dt style="font-weight: 100">
+                                    <dt>
                                         Czy ustalony?
                                     </dt>
 
@@ -52,9 +52,9 @@
                                         @Html.EditorFor(model => model.czyUstalony, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
                                     </dd>
 
-                                    <div>
-                                        @Html.ActionLink(" ", "EditPersonel", null, new { id = Model.idPersonelu }, new { @class = "btn btn-warning fas fa-edit fa-2x", @data_toggle = "tooltip", @data_placement = "bottom", title = "Edytuj wpis" })
-                                        @Html.ActionLink(" ", "Personel", null, null, new { @class = "btn btn-dark fas fa-angle-double-left fa-2x", @data_toggle = "tooltip", @data_placement = "bottom", title = "Wróć" })
+                                    <div class="col-md-12 d-flex justify-content-center">
+                                        @Html.ActionLink(" ", "EditPersonel", null, new { id = Model.idPersonelu }, new { @class = "btn btn-warning fas fa-edit fa-2x col-md-5", @data_toggle = "tooltip", @data_placement = "bottom", title = "Edytuj wpis" })
+                                        @Html.ActionLink(" ", "Personel", null, null, new { @class = "btn btn-dark fas fa-angle-double-left fa-2x col-md-5", @data_toggle = "tooltip", @data_placement = "bottom", title = "Wróć" })
                                     </div>
                                 </dl>
                             </div>

@@ -51,9 +51,9 @@
                                     </dd>
                                 </dl>
                                     
-                                <div>
-                                    @Html.ActionLink(" ", "EditPozwolenie", null, new { id = Model.idPozwolenia }, new { @class = "btn btn-warning fas fa-edit fa-2x", @data_toggle = "tooltip", @data_placement = "bottom", title = "Edytuj wpis" })
-                                    @Html.ActionLink(" ", "Pozwolenia", null, null, new { @class = "btn btn-dark fas fa-angle-double-left fa-2x", @data_toggle = "tooltip", @data_placement = "bottom", title = "Wróć" })
+                                <div class="col-md-12 d-flex justify-content-center">
+                                    @Html.ActionLink(" ", "EditPozwolenie", null, new { id = Model.idPozwolenia }, new { @class = "btn btn-warning fas fa-edit fa-2x col-md-5", @data_toggle = "tooltip", @data_placement = "bottom", title = "Edytuj wpis" })
+                                    @Html.ActionLink(" ", "Pozwolenia", null, null, new { @class = "btn btn-dark fas fa-angle-double-left fa-2x col-md-5", @data_toggle = "tooltip", @data_placement = "bottom", title = "Wróć" })
                                 </div>
                             </div>
                         </div>

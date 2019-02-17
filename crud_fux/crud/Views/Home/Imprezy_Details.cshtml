@@ -89,12 +89,13 @@
                                             @Html.EditorFor(model => model.cenaBiletu, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @disabled = "true" } })
                                         </dd>
 
+                                        <!-- Informacja o tym ile miejsc już jest zajętych -->
                                         <dd>                                          
                                             <div class="alert alert-primary" role="alert"><strong>Stan rezerwacji miejsc</strong><br />(z @DateTime.Now)<br /><span class="badge badge-dark" style="font-size: 16px;">@zarejestrowani / @Html.DisplayFor(model => model.liczbaUczestnikow)</span></div>
                                         </dd>
 
                                         <div class="form-group" style="margin-top: 30px;">
-                                            @Html.ActionLink(" ", "Imprezy_Dostepne", null, null, new { @class = "btn btn-dark fas fa-angle-double-left fa-2x", @data_toggle = "tooltip", @data_placement = "bottom", title = "Wróć" })
+                                            @Html.ActionLink(" ", "Imprezy_Dostepne", null, null, new { @class = "btn btn-dark fas fa-angle-double-left fa-2x col-md-12", @data_toggle = "tooltip", @data_placement = "bottom", title = "Wróć" })
                                         </div>
                                     </dl>
                                 </div>

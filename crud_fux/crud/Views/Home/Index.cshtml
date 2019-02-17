@@ -14,7 +14,8 @@
             <div class="text-center" style="width: 100%; margin: auto; margin-top: 2%;">
                 <button type="button" data-toggle="tooltip" data-placement="left" title="Zgłoś swoją propozycję imprezy masowej lub zapisz się na jedną z dostępnych imprez!" class="btn btn-lg przyciskNawigacyjny" style="background-color: #3B5998;" onclick="window.location='@Url.Action("Klienci", "Home")'"><span><i class="fas fa-child fa-5x"></i><br />Klienci</span></button>
                 <button type="button" data-toggle="tooltip" data-placement="left" title="Sprawdź wiadomości i nowinki na temat nadchodzących wydarzeń!" class="btn btn-lg przyciskNawigacyjny" style="background-color: #272d70;" onclick="window.location='@Url.Action("Wiadomosci", "Home")'"><span><i class="fas fa-newspaper fa-5x"></i><br />Wiadomości</span></button>
-                <button type="button" data-toggle="tooltip" data-placement="left" title="Strefa zawodnika - zapisz się na imprezę na której przewidziano turniej jako zawodnik" class="btn btn-lg przyciskNawigacyjny" style="background-color: #3B5998;" onclick="window.location='@Url.Action("Zawodnicy", "Home")'"><span><i class="fas fa-snowboarding fa-5x"></i><br />Zawodnicy</span></button>
+                <!-- Przycisk przenoszący do panelu Zawodnika ma atrybut disabled! -->
+                <button type="button" disabled data-toggle="tooltip" data-placement="left" title="Strefa zawodnika - zapisz się na imprezę na której przewidziano turniej jako zawodnik" class="btn btn-lg przyciskNawigacyjny" style="background-color: #3B5998;" onclick="window.location='@Url.Action("Zawodnicy", "Home")'"><span><i class="fas fa-snowboarding fa-5x"></i><br />Zawodnicy</span></button>
 
                 @{
                     <!-- jezeli zalogowany jako pracownik lub administrator -->

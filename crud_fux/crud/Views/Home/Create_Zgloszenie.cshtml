@@ -49,7 +49,7 @@
                                                 <div class="input-group-text " style="width: 40px; !important;">
                                                     <i class="fas fa-user-tie text-center"></i>
                                                 </div>
-                                                @Html.EditorFor(model => model.imie_nazwisko, new { htmlAttributes = new { @class = "form-control", @required = "required" } })
+                                                @Html.EditorFor(model => model.imie_nazwisko, new { htmlAttributes = new { @class = "form-control inputField", @required = "required" } })
                                             </div>
                                             @Html.ValidationMessageFor(model => model.imie_nazwisko, "", new { @class = "text-danger" })
                                         </div>
@@ -62,7 +62,7 @@
                                                 <div class="input-group-text" style="width: 40px; !important;">
                                                     <i class="fas fa-briefcase"></i>
                                                 </div>
-                                                @Html.EditorFor(model => model.firma, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.EditorFor(model => model.firma, new { htmlAttributes = new { @class = "form-control inputField" } })
                                                 <div class="input-group-text" style="width: auto; !important;">
                                                     <a data-toggle="tooltip" data-placement="right" title="Podaj tutaj nazwę własną firmy - jeżeli jesteś osobą prywatną pozostaw pole puste."><i class="fas fa-question text-center"></i></a>
                                                 </div>
@@ -78,7 +78,7 @@
                                                 <div class="input-group-text" style="width: 40px; !important;">
                                                     <i class="fas fa-phone text-center"></i>
                                                 </div>
-                                                @Html.EditorFor(model => model.nr_telefonu, new { htmlAttributes = new { @class = "form-control" }, @required = "required" })
+                                                @Html.EditorFor(model => model.nr_telefonu, new { htmlAttributes = new { @class = "form-control inputField" }, @required = "required" })
                                                 <div class="input-group-text" style="width: auto; !important;">
                                                     <a data-toggle="tooltip" data-placement="right" title="Podaj numer telefonu wg. szablonu AAA-AAA-AAA lub +AA AAA-AAA-AAA"><i class="fas fa-question text-center"></i></a>
                                                 </div>
@@ -94,7 +94,7 @@
                                                 <div class="input-group-text" style="width: 40px; !important;">
                                                     <i class="fas fa-envelope text-center"></i>
                                                 </div>
-                                                @Html.EditorFor(model => model.mail, new { htmlAttributes = new { @class = "form-control" }, @required = "required" })
+                                                @Html.EditorFor(model => model.mail, new { htmlAttributes = new { @class = "form-control inputField" }, @required = "required" })
                                                 <div class="input-group-text" style="width: auto; !important;">
                                                     <a data-toggle="tooltip" data-placement="right" title="Podaj swój adres email w schemacie nazwa@poczta.domena"><i class="fas fa-question text-center"></i></a>
                                                 </div>
@@ -110,7 +110,7 @@
                                                 <div class="input-group-text" style="width: 40px; !important;">
                                                     <i class="fas fa-home text-center"></i>
                                                 </div>
-                                                @Html.EditorFor(model => model.m_zamieszkania, new { htmlAttributes = new { @class = "form-control" }, @required = "required" })
+                                                @Html.EditorFor(model => model.m_zamieszkania, new { htmlAttributes = new { @class = "form-control inputField" }, @required = "required" })
                                                 <div class="input-group-text" style="width: auto; !important;">
                                                     <a data-toggle="tooltip" data-placement="right" title="Podaj adres aktualnego zamieszkania, miasto, kod pocztowy, ulica i nr. mieszkania/domu"><i class="fas fa-question text-center"></i></a>
                                                 </div>
@@ -126,7 +126,7 @@
                                                 <div class="input-group-text" style="width: 40px; !important;">
                                                     <i class="fas fa-glass-cheers text-center"></i>
                                                 </div>
-                                                @Html.EditorFor(model => model.nazwa_imprezy, new { htmlAttributes = new { @class = "form-control" }, @required = "required" })
+                                                @Html.EditorFor(model => model.nazwa_imprezy, new { htmlAttributes = new { @class = "form-control inputField" }, @required = "required" })
                                                 <div class="input-group-text" style="width: auto; !important;">
                                                     <a data-toggle="tooltip" data-placement="right" title="Podaj nazwę jaką ma mieć Twoja impreza masowa"><i class="fas fa-question text-center"></i></a>
                                                 </div>
@@ -142,7 +142,7 @@
                                                 <div class="input-group-text" style="width: 40px; !important;">
                                                     <i class="fas fa-archive text-center"></i>
                                                 </div>
-                                                @Html.EditorFor(model => model.rodzaj_tresc, new { htmlAttributes = new { @class = "form-control", placeholder = "np. występy" }, @required = "required" })
+                                                @Html.EditorFor(model => model.rodzaj_tresc, new { htmlAttributes = new { @class = "form-control inputField", placeholder = "np. występy" }, @required = "required" })
                                                 <div class="input-group-text" style="width: auto; !important;">
                                                     <a data-toggle="tooltip" data-placement="right" title="Podaj rodzaj/treść imprezy np. wydarzenie sportowe, występy, inne"><i class="fas fa-question text-center"></i></a>
                                                 </div>
@@ -158,7 +158,7 @@
                                                 <div class="input-group-text" style="width: 40px; !important;">
                                                     <i class="fas fa-map-marker-alt text-center"></i>
                                                 </div>
-                                                @Html.EditorFor(model => model.miejsce_realizacji, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.EditorFor(model => model.miejsce_realizacji, new { htmlAttributes = new { @class = "form-control inputField" } })
                                                 <div class="input-group-text" style="width: auto; !important;">
                                                     <a data-toggle="tooltip" data-placement="right" title="Podaj sugestię gdzie chcesz aby odbyła się Twoja impreza"><i class="fas fa-question text-center"></i></a>
                                                 </div>
@@ -174,7 +174,7 @@
                                                 <div class="input-group-text" style="width: 40px; !important;">
                                                     <i class="fas fa-clock text-center"></i>
                                                 </div>
-                                                @Html.EditorFor(model => model.czas_trwania, new { htmlAttributes = new { @class = "form-control" }, @required = "required" })
+                                                @Html.EditorFor(model => model.czas_trwania, new { htmlAttributes = new { @class = "form-control inputField" }, @required = "required" })
                                                 <div class="input-group-text" style="width: auto; !important;">
                                                     <a data-toggle="tooltip" data-placement="right" title="jednodniowe, wielodniowe - ile? - podawaj np: 2 dni, 1 dzień"><i class="fas fa-question text-center"></i></a>
                                                 </div>
@@ -190,7 +190,7 @@
                                                 <div class="input-group-text" style="width: 40px; !important;">
                                                     <i class="fas fa-calendar-day text-center"></i>
                                                 </div>
-                                                @Html.EditorFor(model => model.cyklicznosc, new { htmlAttributes = new { @class = "form-control" }, @required = "required" })
+                                                @Html.EditorFor(model => model.cyklicznosc, new { htmlAttributes = new { @class = "form-control inputField" }, @required = "required" })
                                                 <div class="input-group-text" style="width: auto; !important;">
                                                     <a data-toggle="tooltip" data-placement="right" title="jednorazowe, okazjonalne, powtarzalne - ile? np. 2 razy w roku"><i class="fas fa-question text-center"></i></a>
                                                 </div>
@@ -206,7 +206,7 @@
                                                 <div class="input-group-text" style="width: 40px; !important;">
                                                     <i class="fas fa-lock-open text-center"></i>
                                                 </div>
-                                                @Html.EditorFor(model => model.charakter_uczestnictwa, new { htmlAttributes = new { @class = "form-control", placeholder = "otwarte/zamknięte", @required = "required" } })
+                                                @Html.EditorFor(model => model.charakter_uczestnictwa, new { htmlAttributes = new { @class = "form-control inputField", placeholder = "otwarte/zamknięte", @required = "required" } })
                                                 <div class="input-group-text" style="width: auto; !important;">
                                                     <a data-toggle="tooltip" data-placement="right" title="otwarte/zamknięte, inne?"><i class="fas fa-question text-center"></i></a>
                                                 </div>
@@ -222,7 +222,7 @@
                                                 <div class="input-group-text" style="width: 40px; !important;">
                                                     <i class="fab fa-wpforms text-center"></i>
                                                 </div>
-                                                @Html.EditorFor(model => model.forma_organizacyjna, new { htmlAttributes = new { @class = "form-control" }, @required = "required" })
+                                                @Html.EditorFor(model => model.forma_organizacyjna, new { htmlAttributes = new { @class = "form-control inputField" }, @required = "required" })
                                                 <div class="input-group-text" style="width: auto; !important;">
                                                     <a data-toggle="tooltip" data-placement="right" title="festyn/turniej/liga/konkurs/koncert/wystawa, inne - jakie?"><i class="fas fa-question text-center"></i></a>
                                                 </div>
@@ -238,7 +238,7 @@
                                                 <div class="input-group-text" style="width: 40px; !important;">
                                                     <i class="fas fa-tasks text-center"></i>
                                                 </div>
-                                                @Html.EditorFor(model => model.cele, new { htmlAttributes = new { @class = "form-control" }, @required = "required" })
+                                                @Html.EditorFor(model => model.cele, new { htmlAttributes = new { @class = "form-control inputField" }, @required = "required" })
                                                 <div class="input-group-text" style="width: auto; !important;">
                                                     <a data-toggle="tooltip" data-placement="right" title="Na przykład: popularyzatorskie, wychowawcze, poznawcze, zabawowe, wypoczynkowe, zdrowotne, inne - jakie?"><i class="fas fa-question text-center"></i></a>
                                                 </div>
@@ -255,7 +255,7 @@
                                                     <a data-toggle="tooltip" data-placement="right" title="w formacie dzień/miesiąc/rok, jeżeli wielodniowa to podać ręcznie od kiedy do kiedy miałaby się odbyć impreza"><i class="fas fa-question text-center"></i></a>
                                                 </div>
                                                 <div>
-                                                    @Html.EditorFor(model => model.termin_odbycia, new { htmlAttributes = new { @class = "form-control", id = "datepicker" } })
+                                                    @Html.EditorFor(model => model.termin_odbycia, new { htmlAttributes = new { @class = "form-control inputField", id = "datepicker" } })
                                                 </div>
                                             </div>
                                             @Html.ValidationMessageFor(model => model.termin_odbycia, "", new { @class = "text-danger" })
@@ -275,7 +275,7 @@
                                                 <div class="input-group-text" style="width: 40px; !important;">
                                                     <i class="fas fa-ticket-alt text-center"></i>
                                                 </div>
-                                                @Html.EditorFor(model => model.ceny_bilet, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.EditorFor(model => model.ceny_bilet, new { htmlAttributes = new { @class = "form-control inputField" } })
                                                 <div class="input-group-text" style="width: auto; !important;">
                                                     <a data-toggle="tooltip" data-placement="right" title="Proszę podać w formie cena waluta np. 150zł - jeżeli impreza otwarta to proszę wpisać liczbę 0"><i class="fas fa-question text-center"></i></a>
                                                 </div>
@@ -291,7 +291,7 @@
                                                 <div class="input-group-text" style="width: 40px; !important;">
                                                     <i class="fas fa-plus-square text-center"></i>
                                                 </div>
-                                                @Html.EditorFor(model => model.dod_uslugi, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.EditorFor(model => model.dod_uslugi, new { htmlAttributes = new { @class = "form-control inputField" } })
                                                 <div class="input-group-text" style="width: auto; !important;">
                                                     <a data-toggle="tooltip" data-placement="right" title="Proszę wymienić dodatkowe usługi(odpłatne) np. - reklama wydarzenia w ŚMP(Środek Masowego Przekazu), szukanie sponsorów, stworzenie tematycznej strony imprezy, przeprowadzenie zapisów na imprezę masową"><i class="fas fa-question text-center"></i></a>
                                                 </div>
@@ -305,7 +305,7 @@
                                         @Html.Label("Stan zgłoszenia", htmlAttributes: new { @class = "control-label col-md-2" })
                                         <div class="col-md-10">
                                             <div class="input-group">
-                                                @Html.EditorFor(model => model.stanZgloszenia, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.EditorFor(model => model.stanZgloszenia, new { htmlAttributes = new { @class = "form-control inputField" } })
                                             </div>
                                             @Html.ValidationMessageFor(model => model.stanZgloszenia, "", new { @class = "text-danger" })
                                         </div>
@@ -318,15 +318,15 @@
                                     <div class="form-group" style="display: none;">
                                         @Html.LabelFor(model => model.dataOtrzymaniaZgloszenia, htmlAttributes: new { @class = "control-label col-md-2" })
                                         <div class="col-md-10">
-                                            @Html.EditorFor(model => model.dataOtrzymaniaZgloszenia, new { htmlAttributes = new { @class = "form-control", @value = DateTime.Now } })
+                                            @Html.EditorFor(model => model.dataOtrzymaniaZgloszenia, new { htmlAttributes = new { @class = "form-control inputField", @value = DateTime.Now } })
                                             @Html.ValidationMessageFor(model => model.dataOtrzymaniaZgloszenia, "", new { @class = "text-danger" })
                                         </div>
                                     </div>
 
                                     <div class="form-group" style="margin-top: 30px;">
-                                        <div class="col-md-offset-2 col-md-10">
-                                            <button type="submit" style="background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden; outline:none;"><i data-toggle="tooltip" data-placement="bottom" title="Wyślij zgłoszenie" class="btn btn-success fas fa-share-square fa-2x"></i></button>
-                                            @Html.ActionLink(" ", "Klienci", null, null, new { @class = "btn btn-dark fas fa-angle-double-left fa-2x", @data_toggle = "tooltip", @data_placement = "bottom", title = "Wróć" })
+                                        <div class="col-md-12 d-flex justify-content-center">
+                                            <button type="submit" style="width: 60%; float: left; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden; outline:none;"><i data-toggle="tooltip" data-placement="bottom" title="Wyślij zgłoszenie" class="btn btn-success fas fa-share-square fa-2x col-md-12"></i></button>
+                                            @Html.ActionLink(" ", "Klienci", null, null, new { @class = "btn btn-dark fas fa-angle-double-left fa-2x col-md-4", @data_toggle = "tooltip", @data_placement = "bottom", title = "Wróć" })
                                         </div>
                                     </div>
                                     @section Scripts {
